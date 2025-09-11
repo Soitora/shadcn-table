@@ -15,16 +15,21 @@ import { cn } from "@/lib/utils";
 interface DataTableToolbarProps<TData> extends React.ComponentProps<"div"> {
   table: Table<TData>;
   leftExtras?: React.ReactNode;
+  isFilteredOverride?: boolean;
+  onResetOverride?: () => void;
 }
 
 export function DataTableToolbar<TData>({
   table,
   children,
   leftExtras,
+  isFilteredOverride,
+  onResetOverride,
   className,
   ...props
 }: DataTableToolbarProps<TData>) {
   const isFiltered = table.getState().columnFilters.length > 0;
+  const hasFilters = isFiltered || !!isFilteredOverride;
 
   const columns = React.useMemo(
     () => table.getAllColumns().filter((column) => column.getCanFilter()),
@@ -32,8 +37,11 @@ export function DataTableToolbar<TData>({
   );
 
   const onReset = React.useCallback(() => {
+    // Reset column filters always
     table.resetColumnFilters();
-  }, [table]);
+    // Also call optional override (e.g., clear global search `q`)
+    onResetOverride?.();
+  }, [table, onResetOverride]);
 
   return (
     <div
@@ -50,7 +58,7 @@ export function DataTableToolbar<TData>({
         {columns.map((column) => (
           <DataTableToolbarFilter key={column.id} column={column} />
         ))}
-        {isFiltered && (
+        {hasFilters && (
           <Button
             aria-label="Reset filters"
             variant="outline"

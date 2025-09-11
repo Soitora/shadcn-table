@@ -13,6 +13,7 @@ import type { DataTableRowAction } from "@/types/data-table";
 import { getInventoryTableColumns, type InventoryRowUI } from "./inventory-table-columns";
 import { useFeatureFlags } from "./feature-flags-provider";
 import { Input } from "@/components/ui/input";
+import { Button } from "@/components/ui/button";
 import { useQueryState } from "nuqs";
 import { useDebouncedCallback } from "@/hooks/use-debounced-callback";
 
@@ -96,6 +97,8 @@ export function InventoryTable({ promises }: InventoryTableProps) {
               className="h-8 w-56"
             />
           }
+          isFilteredOverride={(q ?? "").length > 0}
+          onResetOverride={() => setQ(null)}
         >
           <DataTableSortList table={table} align="end" />
         </DataTableToolbar>
