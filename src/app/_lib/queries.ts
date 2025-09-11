@@ -140,7 +140,8 @@ export async function getInventoryMkCounts() {
           .having(gt(count(inventory.mk), 0));
         return rows
           .filter((r) => !!r.mk)
-          .map((r) => ({ value: r.mk as string, label: r.mk as string, count: r.count }));
+          .map((r) => ({ value: r.mk as string, label: r.mk as string, count: r.count }))
+          .sort((a, b) => (b.count - a.count) || a.label.localeCompare(b.label));
       } catch (_err) {
         return [] as Array<{ value: string; label: string; count: number }>;
       }
@@ -161,7 +162,8 @@ export async function getInventoryLocationCounts() {
           .having(gt(count(inventory.location), 0));
         return rows
           .filter((r) => !!r.location)
-          .map((r) => ({ value: r.location as string, label: r.location as string, count: r.count }));
+          .map((r) => ({ value: r.location as string, label: r.location as string, count: r.count }))
+          .sort((a, b) => (b.count - a.count) || a.label.localeCompare(b.label));
       } catch (_err) {
         return [] as Array<{ value: string; label: string; count: number }>;
       }
