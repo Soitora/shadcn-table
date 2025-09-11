@@ -74,11 +74,6 @@ export default function RootLayout({ children }: React.PropsWithChildren) {
           fontMono.variable,
         )}
       >
-        <Script
-          defer
-          data-site-id={siteConfig.url}
-          src="https://assets.onedollarstats.com/stonks.js"
-        />
         <ThemeProvider
           attribute="class"
           defaultTheme="system"
