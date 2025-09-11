@@ -13,9 +13,9 @@ import type { DataTableRowAction } from "@/types/data-table";
 import { getInventoryTableColumns, type InventoryRowUI } from "./inventory-table-columns";
 import { useFeatureFlags } from "./feature-flags-provider";
 import { Input } from "@/components/ui/input";
-import { Button } from "@/components/ui/button";
 import { useQueryState } from "nuqs";
 import { useDebouncedCallback } from "@/hooks/use-debounced-callback";
+import { X } from "lucide-react";
 
 interface InventoryTableProps {
   promises: Promise<[
@@ -62,6 +62,11 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     // URL updates and the server data won't refresh.
     shallow: false,
   });
+  const [qInput, setQInput] = React.useState<string>(q ?? "");
+  React.useEffect(() => {
+    // Sync input when URL state changes externally (e.g., Reset button)
+    setQInput(q ?? "");
+  }, [q]);
   const onQChange = useDebouncedCallback((value: string) => setQ(value || null), 300);
 
   return (
@@ -90,15 +95,37 @@ export function InventoryTable({ promises }: InventoryTableProps) {
         <DataTableToolbar
           table={table}
           leftExtras={
-            <Input
-              placeholder="Search artikelnr or benämning..."
-              defaultValue={q ?? ""}
-              onChange={(e) => onQChange(e.target.value)}
-              className="h-8 w-56"
-            />
+            <div className="relative">
+              <Input
+                placeholder="Search artikelnr or benämning..."
+                value={qInput}
+                onChange={(e) => {
+                  const next = e.target.value;
+                  setQInput(next);
+                  onQChange(next);
+                }}
+                className="h-8 w-56 pr-8"
+              />
+              {(qInput ?? "").length > 0 && (
+                <button
+                  type="button"
+                  aria-label="Clear search"
+                  className="absolute right-1 top-1.5 inline-flex size-5 items-center justify-center rounded hover:bg-accent"
+                  onClick={() => {
+                    setQ(null);
+                    setQInput("");
+                  }}
+                >
+                  <X className="size-3.5 text-muted-foreground" />
+                </button>
+              )}
+            </div>
           }
-          isFilteredOverride={(q ?? "").length > 0}
-          onResetOverride={() => setQ(null)}
+          isFilteredOverride={(qInput ?? "").length > 0}
+          onResetOverride={() => {
+            setQ(null);
+            setQInput("");
+          }}
         >
           <DataTableSortList table={table} align="end" />
         </DataTableToolbar>
