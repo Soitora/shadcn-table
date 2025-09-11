@@ -67,7 +67,7 @@ export function DataTableToolbar<TData>({
             onClick={onReset}
           >
             <X />
-            Reset
+            Återställ
           </Button>
         )}
       </div>

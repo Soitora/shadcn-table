@@ -5,18 +5,18 @@ export type FlagConfig = typeof flagConfig;
 export const flagConfig = {
   featureFlags: [
     {
-      label: "Advanced filters",
+      label: "Avancerade filter",
       value: "advancedFilters" as const,
       icon: FileSpreadsheetIcon,
-      tooltipTitle: "Advanced filters",
-      tooltipDescription: "Airtable like advanced filters for filtering rows.",
+      tooltipTitle: "Avancerade filter",
+      tooltipDescription: "Airtable-typ avancerade filter för att filtrera rader.",
     },
     {
-      label: "Command filters",
+      label: "Kommandofilter",
       value: "commandFilters" as const,
       icon: CommandIcon,
-      tooltipTitle: "Command filter chips",
-      tooltipDescription: "Linear like command palette for filtering rows.",
+      tooltipTitle: "Kommandofilter",
+      tooltipDescription: "Linjär-typ kommandopalette för att filtrera rader.",
     },
   ],
 };

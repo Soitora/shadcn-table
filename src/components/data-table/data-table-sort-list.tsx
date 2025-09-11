@@ -176,7 +176,7 @@ export function DataTableSortList<TData>({
         <PopoverTrigger asChild>
           <Button variant="outline" size="sm" onKeyDown={onTriggerKeyDown}>
             <ArrowDownUp />
-            Sort
+            Sortera
             {sorting.length > 0 && (
               <Badge
                 variant="secondary"
@@ -195,7 +195,7 @@ export function DataTableSortList<TData>({
         >
           <div className="flex flex-col gap-1">
             <h4 id={labelId} className="font-medium leading-none">
-              {sorting.length > 0 ? "Sort by" : "No sorting applied"}
+              {sorting.length > 0 ? "Sortera efter" : "Ingen sortering tillämpad"}
             </h4>
             <p
               id={descriptionId}
@@ -205,8 +205,8 @@ export function DataTableSortList<TData>({
               )}
             >
               {sorting.length > 0
-                ? "Modify sorting to organize your rows."
-                : "Add sorting to organize your rows."}
+                ? "Ändra sortering för att organisera raderna."
+                : "Lägg till sortering för att organisera raderna."}
             </p>
           </div>
           {sorting.length > 0 && (
@@ -234,7 +234,7 @@ export function DataTableSortList<TData>({
               onClick={onSortAdd}
               disabled={columns.length === 0}
             >
-              Add sort
+              Lägg till sortering
             </Button>
             {sorting.length > 0 && (
               <Button
@@ -243,7 +243,7 @@ export function DataTableSortList<TData>({
                 className="rounded"
                 onClick={onSortingReset}
               >
-                Reset sorting
+                Återställ sortering
               </Button>
             )}
           </div>

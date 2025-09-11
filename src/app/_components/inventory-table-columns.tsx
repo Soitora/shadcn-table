@@ -234,7 +234,7 @@ export function getInventoryTableColumns({
         </div>
       ),
       meta: {
-        label: "Location",
+        label: "Verkstad",
         variant: "multiSelect",
         icon: MapPin,
         options: locationOptions,

@@ -244,7 +244,7 @@ export function DataTableFilterMenu<TData>({
       ))}
       {filters.length > 0 && (
         <Button
-          aria-label="Reset all filters"
+          aria-label="Återställ alla filter"
           variant="outline"
           size="icon"
           className="size-8"
@@ -256,7 +256,7 @@ export function DataTableFilterMenu<TData>({
       <Popover open={open} onOpenChange={onOpenChange}>
         <PopoverTrigger asChild>
           <Button
-            aria-label="Open filter command menu"
+            aria-label="Öppna filtermeny"
             variant={open || filters.length > 0 ? "default" : "outline"}
             size={filters.length > 0 ? "icon" : "sm"}
             className={cn(filters.length > 0 && "size-8", "h-8")}
@@ -280,7 +280,7 @@ export function DataTableFilterMenu<TData>({
               placeholder={
                 selectedColumn
                   ? (selectedColumn.columnDef.meta?.label ?? selectedColumn.id)
-                  : "Search fields..."
+                  : "Sök fält..."
               }
               value={inputValue}
               onValueChange={setInputValue}
@@ -290,7 +290,7 @@ export function DataTableFilterMenu<TData>({
               {selectedColumn ? (
                 <>
                   {selectedColumn.columnDef.meta?.options && (
-                    <CommandEmpty>No options found.</CommandEmpty>
+                    <CommandEmpty>Inga alternativ hittades.</CommandEmpty>
                   )}
                   <FilterValueSelector
                     column={selectedColumn}
@@ -300,7 +300,7 @@ export function DataTableFilterMenu<TData>({
                 </>
               ) : (
                 <>
-                  <CommandEmpty>No fields found.</CommandEmpty>
+                  <CommandEmpty>Inga fält hittades.</CommandEmpty>
                   <CommandGroup>
                     {columns.map((column) => (
                       <CommandItem
@@ -725,9 +725,9 @@ function onFilterInputRender<TData>({
             >
               {selectedOptions.length === 0 ? (
                 filter.variant === "multiSelect" ? (
-                  "Select options..."
+                  "Välj alternativ..."
                 ) : (
-                  "Select option..."
+                  "Välj alternativ..."
                 )
               ) : (
                 <>
@@ -745,7 +745,7 @@ function onFilterInputRender<TData>({
                   </div>
                   <span className="truncate">
                     {selectedOptions.length > 1
-                      ? `${selectedOptions.length} selected`
+                      ? `${selectedOptions.length} valda`
                       : selectedOptions[0]?.label}
                   </span>
                 </>
@@ -758,9 +758,9 @@ function onFilterInputRender<TData>({
             className="w-48 origin-[var(--radix-popover-content-transform-origin)] p-0"
           >
             <Command>
-              <CommandInput placeholder="Search options..." />
+              <CommandInput placeholder="Sök alternativ..." />
               <CommandList>
-                <CommandEmpty>No options found.</CommandEmpty>
+                <CommandEmpty>Inga alternativ hittades.</CommandEmpty>
                 <CommandGroup>
                   {options.map((option) => (
                     <CommandItem
@@ -813,7 +813,7 @@ function onFilterInputRender<TData>({
             )}`
           : dateValue[0]
             ? formatDate(new Date(Number(dateValue[0])))
-            : "Pick date...";
+            : "Välj datum...";
 
       return (
         <Popover open={showValueSelector} onOpenChange={setShowValueSelector}>

@@ -258,7 +258,7 @@ export function DataTableFilterList<TData>({
         >
           <div className="flex flex-col gap-1">
             <h4 id={labelId} className="font-medium leading-none">
-              {filters.length > 0 ? "Filters" : "No filters applied"}
+              {filters.length > 0 ? "Filter" : "Inga filter tillämpade"}
             </h4>
             <p
               id={descriptionId}
@@ -268,8 +268,8 @@ export function DataTableFilterList<TData>({
               )}
             >
               {filters.length > 0
-                ? "Modify filters to refine your rows."
-                : "Add filters to refine your rows."}
+                ? "Ändra filter för att begränsa raderna."
+                : "Lägg till filter för att begränsa raderna."}
             </p>
           </div>
           {filters.length > 0 ? (
@@ -298,7 +298,7 @@ export function DataTableFilterList<TData>({
               ref={addButtonRef}
               onClick={onFilterAdd}
             >
-              Add filter
+              Lägg till filter
             </Button>
             {filters.length > 0 ? (
               <Button
@@ -307,7 +307,7 @@ export function DataTableFilterList<TData>({
                 className="rounded"
                 onClick={onFiltersReset}
               >
-                Reset filters
+                Återställ filter
               </Button>
             ) : null}
           </div>
