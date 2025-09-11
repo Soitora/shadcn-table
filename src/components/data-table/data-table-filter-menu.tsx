@@ -9,7 +9,7 @@ import {
   Text,
   X,
 } from "lucide-react";
-import { parseAsInteger, useQueryState } from "nuqs";
+import { useQueryState } from "nuqs";
 import * as React from "react";
 
 import { DataTableRangeFilter } from "@/components/data-table/data-table-range-filter";
@@ -118,12 +118,6 @@ export function DataTableFilterMenu<TData>({
   );
   const debouncedSetFilters = useDebouncedCallback(setFilters, debounceMs);
 
-  // Reset pagination when filters change to avoid empty pages after narrowing
-  const [, setPage] = useQueryState(
-    "page",
-    parseAsInteger.withOptions({ shallow, clearOnDefault: true }).withDefault(1),
-  );
-
   const onFilterAdd = React.useCallback(
     (column: Column<TData>, value: string) => {
       if (!value.trim() && column.columnDef.meta?.variant !== "boolean") {
@@ -144,7 +138,6 @@ export function DataTableFilterMenu<TData>({
       };
 
       debouncedSetFilters([...filters, newFilter]);
-      void setPage(1);
       setOpen(false);
 
       setTimeout(() => {
@@ -161,7 +154,6 @@ export function DataTableFilterMenu<TData>({
         (filter) => filter.filterId !== filterId,
       );
       debouncedSetFilters(updatedFilters);
-      void setPage(1);
       requestAnimationFrame(() => {
         triggerRef.current?.focus();
       });
@@ -183,14 +175,12 @@ export function DataTableFilterMenu<TData>({
         });
         return updatedFilters;
       });
-      void setPage(1);
     },
     [debouncedSetFilters],
   );
 
   const onFiltersReset = React.useCallback(() => {
     debouncedSetFilters([]);
-    void setPage(1);
   }, [debouncedSetFilters]);
 
   React.useEffect(() => {

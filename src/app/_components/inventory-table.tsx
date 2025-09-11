@@ -81,10 +81,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     // Sync input when URL state changes externally (e.g., Reset button)
     setQInput(q ?? "");
   }, [q]);
-  const onQChange = useDebouncedCallback((value: string) => {
-    setQ(value || null);
-    void setPage(1);
-  }, 300);
+  const onQChange = useDebouncedCallback((value: string) => setQ(value || null), 300);
 
   return (
     <DataTable table={table}>
@@ -131,7 +128,6 @@ export function InventoryTable({ promises }: InventoryTableProps) {
                   onClick={() => {
                     setQ(null);
                     setQInput("");
-                    void setPage(1);
                   }}
                 >
                   <X className="size-3.5 text-muted-foreground" />
@@ -143,7 +139,6 @@ export function InventoryTable({ promises }: InventoryTableProps) {
           onResetOverride={() => {
             setQ(null);
             setQInput("");
-            void setPage(1);
           }}
         >
           <DataTableSortList table={table} align="end" />
