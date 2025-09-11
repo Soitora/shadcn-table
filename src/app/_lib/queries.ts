@@ -177,7 +177,7 @@ export async function getInventoryLocationCounts() {
 export interface GetInventorySchema {
   page: number;
   perPage: number;
-  sort: Array<{ id: "createdAt" | "updatedAt" | "mk" | "artikelnr" | "location" | "status"; desc: boolean }>;
+  sort: Array<{ id: "createdAt" | "mk" | "artikelnr" | "location" | "status" | "benamning" | "lagerplats"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
   q?: string; // matches artikelnr, benamning, benamning2
@@ -266,12 +266,14 @@ export async function getInventory(input: GetInventorySchema) {
                         ? inventory.location
                         : item.id === "status"
                           ? inventory.status
-                          : item.id === "updatedAt"
-                            ? inventory.updatedAt
-                            : inventory.createdAt;
+                          : item.id === "benamning"
+                            ? articles.benamning
+                            : item.id === "lagerplats"
+                              ? inventory.lagerplats
+                              : inventory.createdAt;
                 return item.desc ? desc(col) : asc(col);
               })
-            : [desc(inventory.updatedAt)];
+            : [desc(inventory.createdAt)];
 
         const { data, total } = await db.transaction(async (tx) => {
           const data = await tx

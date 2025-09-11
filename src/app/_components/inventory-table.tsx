@@ -52,6 +52,8 @@ export function InventoryTable({ promises }: InventoryTableProps) {
         paket: false,
         extrainfo: false,
         alternativart: false,
+        fordon: false,
+        location: false,
         ersattAv: false,
         ersatter: false,
       },

@@ -133,29 +133,12 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "lagerplats",
-      accessorKey: "lagerplats",
-      header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Lagerplats" />
-      ),
-      cell: ({ row }) => (
-        <span className="truncate">{row.getValue("lagerplats") ?? ""}</span>
-      ),
-      meta: {
-        label: "Lagerplats",
-        variant: "text",
-        icon: Tag,
-        placeholder: "Search lagerplats...",
-      },
-      enableColumnFilter: false,
-    },
-    {
       id: "artikelnr",
       accessorKey: "artikelnr",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Artikelnr" />
       ),
-      cell: ({ row }) => <div className="w-40">{row.getValue("artikelnr")}</div>,
+      cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("artikelnr")}</div>,
       meta: {
         label: "Artikelnr",
         variant: "text",
@@ -180,26 +163,6 @@ export function getInventoryTableColumns({
         placeholder: "Search...",
       },
       enableColumnFilter: false,
-    },
-    {
-      id: "location",
-      accessorKey: "location",
-      header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Location" />
-      ),
-      cell: ({ row }) => (
-        <div className="flex items-center gap-2">
-          <Badge variant="outline" className="py-1">{row.getValue("location")}</Badge>
-        </div>
-      ),
-      meta: {
-        label: "Location",
-        variant: "multiSelect",
-        icon: MapPin,
-        options: locationOptions,
-        placeholder: "Select locations...",
-      },
-      enableColumnFilter: true,
     },
     {
       id: "status",
@@ -249,6 +212,49 @@ export function getInventoryTableColumns({
         icon: Tag,
       },
       enableColumnFilter: true,
+    },
+    {
+      id: "location",
+      accessorKey: "location",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Location" />
+      ),
+      cell: ({ row }) => (
+        <div className="flex items-center gap-2">
+          <Badge variant="outline" className="py-1">{row.getValue("location")}</Badge>
+        </div>
+      ),
+      meta: {
+        label: "Location",
+        variant: "multiSelect",
+        icon: MapPin,
+        options: locationOptions,
+        placeholder: "Select locations...",
+      },
+      enableColumnFilter: true,
+    },
+    {
+      id: "lagerplats",
+      accessorKey: "lagerplats",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Lagerplats" />
+      ),
+      cell: ({ row }) => {
+        const value = row.getValue<string | null>("lagerplats");
+        if (!value) return null;
+        return (
+          <div className="flex items-center gap-2">
+            <Badge variant="outline" className="py-1">{value}</Badge>
+          </div>
+        );
+      },
+      meta: {
+        label: "Lagerplats",
+        variant: "text",
+        icon: Tag,
+        placeholder: "Search lagerplats...",
+      },
+      enableColumnFilter: false,
     },
     {
       id: "ersatter",
@@ -383,9 +389,7 @@ export function getInventoryTableColumns({
         const has = !!row.getValue("bild");
         return has ? (
           <Badge className="py-0.5" variant="outline">Ja</Badge>
-        ) : (
-          <span className="text-muted-foreground">Nej</span>
-        );
+        ) : "";
       },
       meta: { label: "Bild", variant: "boolean", icon: Tag },
       enableColumnFilter: false,
