@@ -56,7 +56,10 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     serialize: (v) => v ?? "",
     defaultValue: "",
     clearOnDefault: true,
-    shallow: true,
+    // Important: allow a full navigation so the server component re-fetches
+    // inventory data with the new query. If shallow is true, only the client
+    // URL updates and the server data won't refresh.
+    shallow: false,
   });
   const onQChange = useDebouncedCallback((value: string) => setQ(value || null), 300);
 

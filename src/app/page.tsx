@@ -21,6 +21,24 @@ interface IndexPageProps {
 export default async function IndexPage(props: IndexPageProps) {
   const searchParams = await props.searchParams;
   const search = searchParamsCache.parse(searchParams);
+  const qParam = Array.isArray(searchParams.q)
+    ? (searchParams.q[0] as string)
+    : ((searchParams.q as string) ?? "");
+  const statusParam = Array.isArray(searchParams.status)
+    ? (searchParams.status as string[])
+    : searchParams.status
+      ? [searchParams.status as string]
+      : [];
+  const locationParam = Array.isArray(searchParams.location)
+    ? (searchParams.location as string[])
+    : searchParams.location
+      ? [searchParams.location as string]
+      : [];
+  const mkParam = Array.isArray(searchParams.mk)
+    ? (searchParams.mk as string[])
+    : searchParams.mk
+      ? [searchParams.mk as string]
+      : [];
 
   const validFilters = getValidFilters(search.filters);
 
@@ -31,9 +49,13 @@ export default async function IndexPage(props: IndexPageProps) {
       page: search.page,
       perPage: search.perPage,
       sort: [{ id: "updatedAt", desc: true }],
-      q: search.title ?? "",
-      status: [],
-      locations: [],
+      q: qParam,
+      status: statusParam,
+      location: locationParam,
+      mk: mkParam,
+      filterFlag: search.filterFlag ?? undefined,
+      filters: validFilters,
+      joinOperator: search.joinOperator as "and" | "or",
     }),
     getInventoryStatusCounts(),
     getInventoryMkCounts(),

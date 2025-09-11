@@ -180,7 +180,16 @@ export interface GetInventorySchema {
   // simple filters
   q?: string; // matches artikelnr, benamning, benamning2
   status?: string[];
-  locations?: string[];
+  location?: string[];
+  mk?: string[];
+  // advanced/command filters
+  filters?: Array<{
+    id: string;
+    value: unknown;
+    variant?: string;
+    operator?: string;
+  }>;
+  joinOperator?: "and" | "or";
 }
 
 export async function getInventory(input: GetInventorySchema) {
@@ -189,7 +198,46 @@ export async function getInventory(input: GetInventorySchema) {
       try {
         const offset = (input.page - 1) * input.perPage;
 
-        const where = and(
+        function buildAdvancedWhere() {
+          if (!input.filters || input.filters.length === 0) return undefined;
+          const parts = input.filters.map((f) => {
+            switch (f.id) {
+              case "mk": {
+                const values = Array.isArray(f.value) ? (f.value as string[]) : [String(f.value ?? "")].filter(Boolean);
+                return values.length ? inArray(inventory.mk, values) : undefined;
+              }
+              case "location": {
+                const values = Array.isArray(f.value) ? (f.value as string[]) : [String(f.value ?? "")].filter(Boolean);
+                return values.length ? inArray(inventory.location, values) : undefined;
+              }
+              case "status": {
+                const values = Array.isArray(f.value) ? (f.value as string[]) : [String(f.value ?? "")].filter(Boolean);
+                return values.length ? inArray(inventory.status, values) : undefined;
+              }
+              case "updatedAt": {
+                const values = Array.isArray(f.value) ? (f.value as string[]) : [];
+                if (values.length === 2) {
+                  const [from, to] = values;
+                  const fromDate = from ? new Date(Number(from)) : undefined;
+                  const toDate = to ? new Date(Number(to)) : undefined;
+                  return and(
+                    fromDate ? gte(inventory.updatedAt, fromDate) : undefined,
+                    toDate ? lte(inventory.updatedAt, toDate) : undefined,
+                  );
+                }
+                return undefined;
+              }
+              default:
+                return undefined;
+            }
+          }).filter(Boolean);
+          if (parts.length === 0) return undefined;
+          return input.joinOperator === "or" ? (or as any)(...parts) : and(...parts);
+        }
+
+        const isAdvanced = input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters";
+
+        const basicWhere = and(
           input.q
             ? or(
                 ilike(articles.benamning, `%${input.q}%`),
@@ -197,13 +245,12 @@ export async function getInventory(input: GetInventorySchema) {
                 ilike(inventory.artikelnr, `%${input.q}%`),
               )
             : undefined,
-          input.status && input.status.length > 0
-            ? inArray(inventory.status, input.status)
-            : undefined,
-          input.locations && input.locations.length > 0
-            ? inArray(inventory.location, input.locations)
-            : undefined,
+          input.status && input.status.length > 0 ? inArray(inventory.status, input.status) : undefined,
+          input.location && input.location.length > 0 ? inArray(inventory.location, input.location) : undefined,
+          input.mk && input.mk.length > 0 ? inArray(inventory.mk, input.mk) : undefined,
         );
+
+        const where = isAdvanced ? buildAdvancedWhere() ?? basicWhere : basicWhere;
 
         const orderBy =
           input.sort && input.sort.length > 0
