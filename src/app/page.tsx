@@ -5,12 +5,12 @@ import { getValidFilters } from "@/lib/data-table";
 import type { SearchParams } from "@/types";
 
 import { FeatureFlagsProvider } from "./_components/feature-flags-provider";
-import { TasksTable } from "./_components/tasks-table";
+import { InventoryTable } from "./_components/inventory-table";
 import {
-  getEstimatedHoursRange,
-  getTaskPriorityCounts,
-  getTaskStatusCounts,
-  getTasks,
+  getInventory,
+  getInventoryStatusCounts,
+  getInventoryMkCounts,
+  getInventoryLocationCounts,
 } from "./_lib/queries";
 import { searchParamsCache } from "./_lib/validations";
 
@@ -24,14 +24,20 @@ export default async function IndexPage(props: IndexPageProps) {
 
   const validFilters = getValidFilters(search.filters);
 
-  const promises = Promise.all([
-    getTasks({
-      ...search,
-      filters: validFilters,
+  // For the first step, render Inventory in the table while keeping the toolbars.
+  // Map basic params from existing search to inventory query shape.
+  const invPromises = Promise.all([
+    getInventory({
+      page: search.page,
+      perPage: search.perPage,
+      sort: [{ id: "updatedAt", desc: true }],
+      q: search.title ?? "",
+      status: [],
+      locations: [],
     }),
-    getTaskStatusCounts(),
-    getTaskPriorityCounts(),
-    getEstimatedHoursRange(),
+    getInventoryStatusCounts(),
+    getInventoryMkCounts(),
+    getInventoryLocationCounts(),
   ]);
 
   return (
@@ -55,7 +61,7 @@ export default async function IndexPage(props: IndexPageProps) {
             />
           }
         >
-          <TasksTable promises={promises} />
+          <InventoryTable promises={invPromises} />
         </React.Suspense>
       </FeatureFlagsProvider>
     </Shell>

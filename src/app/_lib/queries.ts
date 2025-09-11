@@ -128,6 +128,49 @@ export async function getTasks(input: GetTasksSchema) {
   )();
 }
 
+// Option providers for faceted filters
+export async function getInventoryMkCounts() {
+  return unstable_cache(
+    async () => {
+      try {
+        const rows = await db
+          .select({ mk: inventory.mk, count: count() })
+          .from(inventory)
+          .groupBy(inventory.mk)
+          .having(gt(count(inventory.mk), 0));
+        return rows
+          .filter((r) => !!r.mk)
+          .map((r) => ({ value: r.mk as string, label: r.mk as string, count: r.count }));
+      } catch (_err) {
+        return [] as Array<{ value: string; label: string; count: number }>;
+      }
+    },
+    ["inventory-mk-counts"],
+    { revalidate: 300 },
+  )();
+}
+
+export async function getInventoryLocationCounts() {
+  return unstable_cache(
+    async () => {
+      try {
+        const rows = await db
+          .select({ location: inventory.location, count: count() })
+          .from(inventory)
+          .groupBy(inventory.location)
+          .having(gt(count(inventory.location), 0));
+        return rows
+          .filter((r) => !!r.location)
+          .map((r) => ({ value: r.location as string, label: r.location as string, count: r.count }));
+      } catch (_err) {
+        return [] as Array<{ value: string; label: string; count: number }>;
+      }
+    },
+    ["inventory-location-counts"],
+    { revalidate: 300 },
+  )();
+}
+
 // Inventory queries
 export interface GetInventorySchema {
   page: number;
@@ -135,7 +178,7 @@ export interface GetInventorySchema {
   sort: Array<{ id: "createdAt" | "updatedAt" | "mk" | "artikelnr" | "location" | "status"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
-  q?: string; // matches mk, artikelnr, benamning
+  q?: string; // matches artikelnr, benamning, benamning2
   status?: string[];
   locations?: string[];
 }
@@ -150,7 +193,7 @@ export async function getInventory(input: GetInventorySchema) {
           input.q
             ? or(
                 ilike(articles.benamning, `%${input.q}%`),
-                ilike(inventory.mk, `%${input.q}%`),
+                ilike(articles.benamning2, `%${input.q}%`),
                 ilike(inventory.artikelnr, `%${input.q}%`),
               )
             : undefined,

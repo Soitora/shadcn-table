@@ -231,7 +231,13 @@ export function DataTableFilterList<TData>({
     >
       <Popover open={open} onOpenChange={setOpen}>
         <PopoverTrigger asChild>
-          <Button variant="outline" size="sm" onKeyDown={onTriggerKeyDown}>
+          <Button
+            variant={filters.length > 0 ? "default" : "outline"}
+            size="sm"
+            onKeyDown={onTriggerKeyDown}
+            aria-pressed={open || filters.length > 0}
+            disabled={columns.length === 0}
+          >
             <ListFilter />
             Filter
             {filters.length > 0 && (

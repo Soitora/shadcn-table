@@ -257,11 +257,13 @@ export function DataTableFilterMenu<TData>({
         <PopoverTrigger asChild>
           <Button
             aria-label="Open filter command menu"
-            variant="outline"
+            variant={open || filters.length > 0 ? "default" : "outline"}
             size={filters.length > 0 ? "icon" : "sm"}
             className={cn(filters.length > 0 && "size-8", "h-8")}
             ref={triggerRef}
             onKeyDown={onTriggerKeyDown}
+            aria-pressed={open || filters.length > 0}
+            disabled={columns.length === 0}
           >
             <ListFilter />
             {filters.length > 0 ? null : "Filter"}
