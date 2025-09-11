@@ -13,7 +13,7 @@ import type { DataTableRowAction } from "@/types/data-table";
 import { getInventoryTableColumns, type InventoryRowUI } from "./inventory-table-columns";
 import { useFeatureFlags } from "./feature-flags-provider";
 import { Input } from "@/components/ui/input";
-import { useQueryState } from "nuqs";
+import { useQueryState, parseAsInteger } from "nuqs";
 import { useDebouncedCallback } from "@/hooks/use-debounced-callback";
 import { X } from "lucide-react";
 
@@ -43,13 +43,27 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     pageCount,
     enableAdvancedFilter,
     initialState: {
-      sorting: [{ id: "updatedAt", desc: true }],
+      sorting: [{ id: "createdAt", desc: true }],
       columnPinning: { right: ["actions"] },
+      columnVisibility: {
+        paket: false,
+        extrainfo: false,
+        alternativart: false,
+        ersattAv: false,
+        ersatter: false,
+      },
     },
     getRowId: (row) => row.id,
     shallow: false,
     clearOnDefault: true,
   });
+  // Keep pagination in range when searching: jump back to page 1 on any q change
+  const [, setPage] = useQueryState(
+    "page",
+    parseAsInteger
+      .withOptions({ shallow: false, clearOnDefault: true })
+      .withDefault(1),
+  );
 
   // Global search (q): searches Artikelnr + Benämning(+2)
   const [q, setQ] = useQueryState("q", {
@@ -67,7 +81,10 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     // Sync input when URL state changes externally (e.g., Reset button)
     setQInput(q ?? "");
   }, [q]);
-  const onQChange = useDebouncedCallback((value: string) => setQ(value || null), 300);
+  const onQChange = useDebouncedCallback((value: string) => {
+    setQ(value || null);
+    void setPage(1);
+  }, 300);
 
   return (
     <DataTable table={table}>
@@ -97,7 +114,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
           leftExtras={
             <div className="relative">
               <Input
-                placeholder="Search artikelnr or benämning..."
+                placeholder="Sök artiklar..."
                 value={qInput}
                 onChange={(e) => {
                   const next = e.target.value;
@@ -114,6 +131,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
                   onClick={() => {
                     setQ(null);
                     setQInput("");
+                    void setPage(1);
                   }}
                 >
                   <X className="size-3.5 text-muted-foreground" />
@@ -125,6 +143,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
           onResetOverride={() => {
             setQ(null);
             setQInput("");
+            void setPage(1);
           }}
         >
           <DataTableSortList table={table} align="end" />

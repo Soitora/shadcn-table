@@ -9,7 +9,7 @@ import {
   ListFilter,
   Trash2,
 } from "lucide-react";
-import { parseAsStringEnum, useQueryState } from "nuqs";
+import { parseAsInteger, parseAsStringEnum, useQueryState } from "nuqs";
 import * as React from "react";
 
 import { DataTableRangeFilter } from "@/components/data-table/data-table-range-filter";
@@ -114,6 +114,12 @@ export function DataTableFilterList<TData>({
   );
   const debouncedSetFilters = useDebouncedCallback(setFilters, debounceMs);
 
+  // Ensure we jump back to page 1 when filters change to avoid empty pages
+  const [, setPage] = useQueryState(
+    "page",
+    parseAsInteger.withOptions({ shallow, clearOnDefault: true }).withDefault(1),
+  );
+
   const [joinOperator, setJoinOperator] = useQueryState(
     JOIN_OPERATOR_KEY,
     parseAsStringEnum(["and", "or"]).withDefault("and").withOptions({
@@ -139,6 +145,7 @@ export function DataTableFilterList<TData>({
         filterId: generateId({ length: 8 }),
       },
     ]);
+    void setPage(1);
   }, [columns, filters, debouncedSetFilters]);
 
   const onFilterUpdate = React.useCallback(
@@ -155,6 +162,7 @@ export function DataTableFilterList<TData>({
         });
         return updatedFilters;
       });
+      void setPage(1);
     },
     [debouncedSetFilters],
   );
@@ -165,6 +173,7 @@ export function DataTableFilterList<TData>({
         (filter) => filter.filterId !== filterId,
       );
       void setFilters(updatedFilters);
+      void setPage(1);
       requestAnimationFrame(() => {
         addButtonRef.current?.focus();
       });
@@ -175,6 +184,7 @@ export function DataTableFilterList<TData>({
   const onFiltersReset = React.useCallback(() => {
     void setFilters(null);
     void setJoinOperator("and");
+    void setPage(1);
   }, [setFilters, setJoinOperator]);
 
   React.useEffect(() => {

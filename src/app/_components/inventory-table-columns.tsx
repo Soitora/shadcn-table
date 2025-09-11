@@ -25,6 +25,12 @@ export interface InventoryRowUI {
   location: string;
   status: string | null;
   lagerplats: string | null;
+  extrainfo: string | null;
+  bild: boolean | null;
+  paket: string[] | null;
+  fordon: string[] | null;
+  alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
+  articleData?: Record<string, unknown> | null;
   createdAt: Date;
   updatedAt: Date | null;
 }
@@ -125,6 +131,23 @@ export function getInventoryTableColumns({
         placeholder: "Select MK...",
       },
       enableColumnFilter: true,
+    },
+    {
+      id: "lagerplats",
+      accessorKey: "lagerplats",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Lagerplats" />
+      ),
+      cell: ({ row }) => (
+        <span className="truncate">{row.getValue("lagerplats") ?? ""}</span>
+      ),
+      meta: {
+        label: "Lagerplats",
+        variant: "text",
+        icon: Tag,
+        placeholder: "Search lagerplats...",
+      },
+      enableColumnFilter: false,
     },
     {
       id: "artikelnr",
@@ -228,18 +251,144 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "updatedAt",
-      accessorKey: "updatedAt",
+      id: "ersatter",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Updated" />
+        <DataTableColumnHeader column={column} title="Ersätter" />
       ),
-      cell: ({ cell }) => (cell.getValue<Date | null>() ? formatDate(cell.getValue<Date>()) : ""),
-      meta: {
-        label: "Updated",
-        variant: "dateRange",
-        icon: CalendarIcon,
+      cell: ({ row }) => {
+        const data = (row.original.articleData ?? {}) as Record<string, unknown>;
+        const values =
+          (data["Ersätter"] as string[] | undefined) ||
+          (data["ersatter"] as string[] | undefined) ||
+          (data["ersätter"] as string[] | undefined) || [];
+        if (values.length === 0) return null;
+        return (
+          <div className="flex max-w-[28rem] flex-wrap gap-1">
+            {values.map((val) => (
+              <Badge key={val} variant="outline" className="px-1 py-0.5">
+                {val}
+              </Badge>
+            ))}
+          </div>
+        );
       },
-      enableColumnFilter: true,
+      meta: { label: "Ersätter", variant: "text", icon: Tag },
+      enableColumnFilter: false,
+    },
+    {
+      id: "ersattAv",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Ersatt av" />
+      ),
+      cell: ({ row }) => {
+        const data = (row.original.articleData ?? {}) as Record<string, unknown>;
+        const values =
+          (data["Ersatt av"] as string[] | undefined) ||
+          (data["Ersatt_av"] as string[] | undefined) ||
+          (data["ersatt_av"] as string[] | undefined) ||
+          (data["ersattav"] as string[] | undefined) || [];
+        if (values.length === 0) return null;
+        return (
+          <div className="flex max-w-[28rem] flex-wrap gap-1">
+            {values.map((val) => (
+              <Badge key={val} variant="outline" className="px-1 py-0.5">
+                {val}
+              </Badge>
+            ))}
+          </div>
+        );
+      },
+      meta: { label: "Ersatt av", variant: "text", icon: Tag },
+      enableColumnFilter: false,
+    },
+    {
+      id: "alternativart",
+      accessorKey: "alternativart",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Alternativ Artikel" />
+      ),
+      cell: ({ row }) => {
+        const list = (row.getValue("alternativart") as InventoryRowUI["alternativart"]) || [];
+        if (!list || list.length === 0) return null;
+        return (
+          <div className="flex max-w-[28rem] flex-wrap gap-1">
+            {list.map((item) => (
+              <Badge key={`${item.märkeskod}-${item.artikelnummer}`} variant="outline" className="px-1 py-0.5">
+                {item.märkeskod} {item.artikelnummer}
+              </Badge>
+            ))}
+          </div>
+        );
+      },
+      meta: { label: "Alternativ Artikel", variant: "text", icon: Tag },
+      enableColumnFilter: false,
+    },
+    {
+      id: "fordon",
+      accessorKey: "fordon",
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Fordon" />,
+      cell: ({ row }) => {
+        const list = (row.getValue("fordon") as string[] | null) || [];
+        if (!list || list.length === 0) return null;
+        return (
+          <div className="flex max-w-[28rem] flex-wrap gap-1">
+            {list.map((item) => (
+              <Badge key={item} variant="outline" className="px-1 py-0.5">
+                {item}
+              </Badge>
+            ))}
+          </div>
+        );
+      },
+      meta: { label: "Fordon", variant: "text", icon: Tag },
+      enableColumnFilter: false,
+    },
+    {
+      id: "paket",
+      accessorKey: "paket",
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Paket" />,
+      cell: ({ row }) => {
+        const list = (row.getValue("paket") as string[] | null) || [];
+        if (!list || list.length === 0) return null;
+        return (
+          <div className="flex max-w-[28rem] flex-wrap gap-1">
+            {list.map((item) => (
+              <Badge key={item} variant="outline" className="px-1 py-0.5">
+                {item}
+              </Badge>
+            ))}
+          </div>
+        );
+      },
+      meta: { label: "Paket", variant: "text", icon: Tag },
+      enableColumnFilter: false,
+    },
+    {
+      id: "extrainfo",
+      accessorKey: "extrainfo",
+      header: ({ column }) => (
+        <DataTableColumnHeader column={column} title="Extra Information" />
+      ),
+      cell: ({ row }) => (
+        <span className="max-w-[28rem] truncate">{row.getValue("extrainfo") ?? ""}</span>
+      ),
+      meta: { label: "Extra Information", variant: "text", icon: Tag },
+      enableColumnFilter: false,
+    },
+    {
+      id: "bild",
+      accessorKey: "bild",
+      header: ({ column }) => <DataTableColumnHeader column={column} title="Bild" />,
+      cell: ({ row }) => {
+        const has = !!row.getValue("bild");
+        return has ? (
+          <Badge className="py-0.5" variant="outline">Ja</Badge>
+        ) : (
+          <span className="text-muted-foreground">Nej</span>
+        );
+      },
+      meta: { label: "Bild", variant: "boolean", icon: Tag },
+      enableColumnFilter: false,
     },
     {
       id: "actions",

@@ -286,6 +286,12 @@ export async function getInventory(input: GetInventorySchema) {
               updatedAt: inventory.updatedAt,
               benamning: articles.benamning,
               benamning2: articles.benamning2,
+              extrainfo: articles.extrainfo,
+              bild: articles.bild,
+              paket: articles.paket,
+              fordon: articles.fordon,
+              alternativart: articles.alternativart,
+              articleData: articles.data,
             })
             .from(inventory)
             .leftJoin(

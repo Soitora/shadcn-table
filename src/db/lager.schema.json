@@ -10,6 +10,8 @@
           "properties": {
             "MK": { "type": "string" },
             "Artikelnr": { "type": "string" },
+            "Ersätter": { "type": "string" },
+            "ErsattAv": { "type": "string" },
             "Benämning": { "type": "string" },
             "Benämning2": { "type": "string" },
             "Status": { "type": "string" },
