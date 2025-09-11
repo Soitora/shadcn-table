@@ -12,7 +12,7 @@ import {
   getInventoryMkCounts,
   getInventoryLocationCounts,
 } from "./_lib/queries";
-import { searchParamsCache } from "./_lib/validations";
+import { inventorySearchParamsCache } from "./_lib/inventory-validations";
 
 interface IndexPageProps {
   searchParams: Promise<SearchParams>;
@@ -20,42 +20,23 @@ interface IndexPageProps {
 
 export default async function IndexPage(props: IndexPageProps) {
   const searchParams = await props.searchParams;
-  const search = searchParamsCache.parse(searchParams);
-  const qParam = Array.isArray(searchParams.q)
-    ? (searchParams.q[0] as string)
-    : ((searchParams.q as string) ?? "");
-  const statusParam = Array.isArray(searchParams.status)
-    ? (searchParams.status as string[])
-    : searchParams.status
-      ? [searchParams.status as string]
-      : [];
-  const locationParam = Array.isArray(searchParams.location)
-    ? (searchParams.location as string[])
-    : searchParams.location
-      ? [searchParams.location as string]
-      : [];
-  const mkParam = Array.isArray(searchParams.mk)
-    ? (searchParams.mk as string[])
-    : searchParams.mk
-      ? [searchParams.mk as string]
-      : [];
-
-  const validFilters = getValidFilters(search.filters);
+  const inv = inventorySearchParamsCache.parse(searchParams);
+  const validFilters = getValidFilters(inv.filters);
 
   // For the first step, render Inventory in the table while keeping the toolbars.
   // Map basic params from existing search to inventory query shape.
   const invPromises = Promise.all([
     getInventory({
-      page: search.page,
-      perPage: search.perPage,
-      sort: [{ id: "updatedAt", desc: true }],
-      q: qParam,
-      status: statusParam,
-      location: locationParam,
-      mk: mkParam,
-      filterFlag: search.filterFlag ?? undefined,
+      page: inv.page,
+      perPage: inv.perPage,
+      sort: (inv.sort as any) ?? [{ id: "createdAt", desc: true }],
+      q: inv.q ?? "",
+      status: inv.status,
+      location: inv.location,
+      mk: inv.mk,
+      filterFlag: inv.filterFlag ?? undefined,
       filters: validFilters,
-      joinOperator: search.joinOperator as "and" | "or",
+      joinOperator: inv.joinOperator as "and" | "or",
     }),
     getInventoryStatusCounts(),
     getInventoryMkCounts(),

@@ -43,7 +43,10 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     pageCount,
     enableAdvancedFilter,
     initialState: {
-      sorting: [{ id: "createdAt", desc: true }],
+      sorting: [
+        { id: "mk", desc: false },
+        { id: "benamning", desc: false },
+      ],
       columnPinning: { right: ["actions"] },
       columnVisibility: {
         paket: false,
