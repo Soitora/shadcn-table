@@ -1,0 +1,43 @@
+{
+    "folders": [
+        {
+            "path": "src/lib",
+            "name": "Library",
+        },
+        {
+            "path": "src/routes",
+            "name": "Routes",
+        },
+        {
+            "path": "static/data",
+            "name": "Data",
+        },
+        {
+            "path": ".",
+            "name": "Root",
+        },
+    ],
+    "settings": {
+        "notebook.defaultFormatter": "dbaeumer.vscode-eslint",
+        "files.exclude": {
+            "**/.idea": true,
+            "**/.vscode": true,
+            "**/node_modules": true,
+            "**/.svelte-kit": true,
+            "**/.wrangler": true,
+            "scripts": true,
+            "src/lib": true,
+            "src/routes": true,
+            "static/data": true,
+            ".gitattributes": true,
+            ".npmrc": true,
+            ".nvmrc": true,
+            ".node-version": true,
+            "LICENSE": true,
+            "README.md": true,
+            "components.json": true,
+            "pnpm-lock.yaml": true,
+            ".hintrc": true,
+        },
+    },
+}

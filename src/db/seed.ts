@@ -1,11 +1,12 @@
-import { seedTasks } from "@/app/_lib/seeds";
+import { seedInventoryFromFile } from "@/db/seed-inventory";
 
 async function runSeed() {
   console.log("⏳ Running seed...");
 
   const start = Date.now();
 
-  await seedTasks({ count: 100 });
+  // Seed inventory from src/db/lager.json into JSONB table
+  await seedInventoryFromFile("src/db/lager.json");
 
   const end = Date.now();
 

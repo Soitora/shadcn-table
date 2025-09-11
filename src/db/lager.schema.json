@@ -1,0 +1,46 @@
+{
+    "$schema": "https://json-schema.org/draft/2020-12/schema",
+    "type": "object",
+    "patternProperties": {
+      ".*": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["MK", "Artikelnr"],
+          "properties": {
+            "MK": { "type": "string" },
+            "Artikelnr": { "type": "string" },
+            "Benämning": { "type": "string" },
+            "Benämning2": { "type": "string" },
+            "Status": { "type": "string" },
+            "ExtraInfo": { "type": "string" },
+            "Lagerplats": { "type": "string" },
+            "Bild": { "type": "boolean" },
+            "Paket": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "Fordon": {
+              "type": "array",
+              "items": { "type": "string" }
+            },
+            "AlternativArt": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "required": ["märkeskod", "artikelnummer"],
+                "properties": {
+                  "märkeskod": { "type": "string" },
+                  "artikelnummer": { "type": "string" }
+                },
+                "additionalProperties": false
+              }
+            }
+          },
+          "additionalProperties": false
+        }
+      }
+    },
+    "additionalProperties": false
+  }
+  

@@ -1,0 +1,70 @@
+# Project Development Guidelines
+## General Code Style & Formatting
+- Use functional and declarative programming patterns; avoid class-style components.
+- Split logic and markup cleanly: helper functions, stores, and composable modules.
+- Use descriptive, readable variable names (`isLoading`, `hasError`, `canSubmit`).
+- File structure:
+  - Exported main component first.
+  - Then subcomponents.
+  - Then helpers.
+  - Then static content/constants.
+  - Finally types/interfaces.
+
+Follow official SvelteKit, Svelte 5, and shadcn-svelte documentation for setup and project structure.
+
+## Naming Conventions
+- Directories: lowercase with dashes (e.g., `components/auth-wizard`).
+- Files: lowercase with dashes (e.g., `auth-wizard.svelte`).
+- Exports: prefer named exports for stores, utilities, helpers, and modules.
+
+## Svelte 5-Specific Rules
+- Read Svelte 5 documentation: https://svelte.dev/llms-small.txt
+- Use Runes (`$state`, `@effect`, `@memo`, etc.) for reactivity and state management.
+- Prefer Runes syntax over traditional `$:` labels for cleaner logic.
+- Rune declarations should be at the top of the `<script>` block after imports.
+- Typed Runes: ensure `$state` variables are explicitly typed with TypeScript when possible.
+
+## TypeScript Best Practices
+- Use TypeScript everywhere (`.ts`, `.svelte`).
+- Prefer `interface` over `type` unless a type is necessary for unions.
+- Avoid `any` and `enum`; use explicit types and object maps.
+- Enable `strict: true` in `tsconfig.json`.
+- Props and events must be strongly typed.
+
+## Syntax & Formatting
+- Indentation: 4 spaces (never tabs).
+- Quotes: prefer double quotes ("...").
+- Line endings: use LF (Line Feed) style.
+- Max line length: wrap lines at 100 characters.
+- Pure functions: always declared with the `function` keyword.
+- Simple conditionals: avoid unnecessary curly braces.
+```svelte
+{#if isOpen}
+    <Modal />
+{/if}
+```
+- Declarative Svelte markup: keep templates clean and reactive.
+- Use Prettier with appropriate plugins for formatting (`svelte`, `typescript`).
+
+## Styling & UI
+- Use shadcn-svelte components first.
+- Use TailwindCSS for styling.
+- Responsive design with Tailwind's utility classes.
+- Dark mode: Tailwind’s `dark:` variants and `media` strategy.
+
+- Accessibility (a11y):
+  - Prioritize native elements.
+  - Use ARIA roles and semantic markup.
+
+- Animations:
+  - Prefer Svelte’s transitions (`fade`, `slide`).
+  - For advanced animations, use motion-svelte.
+
+## Language Settings
+- Website content: written in Swedish (e.g., "labels", "headings", "user-facing text").
+- Code, comments, and commits: always written in English.
+
+## Tooling & Package Management
+- Prefer pnpm over npm/yarn.
+- Always use TypeScript over JavaScript.
+- Set up projects with pnpm init and prefer workspace organization if multiple packages are involved.

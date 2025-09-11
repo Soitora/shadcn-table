@@ -1,5 +1,5 @@
 import { sql } from "drizzle-orm";
-import { boolean, real, timestamp, varchar } from "drizzle-orm/pg-core";
+import { boolean, jsonb, real, timestamp, varchar } from "drizzle-orm/pg-core";
 import { pgTable } from "@/db/utils";
 
 import { generateId } from "@/lib/id";
@@ -38,3 +38,21 @@ export const tasks = pgTable("tasks", {
 
 export type Task = typeof tasks.$inferSelect;
 export type NewTask = typeof tasks.$inferInsert;
+
+// Inventory table backed by JSONB items, sourced from src/db/lager.json
+export const inventory = pgTable("inventory", {
+  id: varchar("id", { length: 30 })
+    .$defaultFn(() => generateId())
+    .primaryKey(),
+  // Lager location key, e.g. "Partille"
+  location: varchar("location", { length: 128 }).notNull(),
+  // Raw JSON item as provided in lager.json arrays
+  item: jsonb("item").$type<Record<string, unknown>>().notNull(),
+  createdAt: timestamp("created_at").defaultNow().notNull(),
+  updatedAt: timestamp("updated_at")
+    .default(sql`current_timestamp`)
+    .$onUpdate(() => new Date()),
+});
+
+export interface InventoryRow extends Omit<typeof inventory.$inferInsert, "id"> {}
+export type Inventory = typeof inventory.$inferSelect;
