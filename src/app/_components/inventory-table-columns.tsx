@@ -153,9 +153,18 @@ export function getInventoryTableColumns({
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Benämning" />
       ),
-      cell: ({ row }) => (
-        <span className="max-w-[28rem] truncate">{row.getValue("benamning")}</span>
-      ),
+      cell: ({ row }) => {
+        const benamning = row.getValue<string | null>("benamning");
+        const benamning2 = row.original.benamning2;
+        return (
+          <div className="max-w-[28rem]">
+            <div className="truncate">{benamning}</div>
+            {benamning2 ? (
+              <div className="truncate text-muted-foreground text-sm">{benamning2}</div>
+            ) : null}
+          </div>
+        );
+      },
       meta: {
         label: "Benämning",
         variant: "text",
