@@ -1,8 +1,7 @@
 ---
-description: 
-globs: 
-alwaysApply: true
+trigger: always_on
 ---
+
 # Expert Guidelines
 
 You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, Radix UI and Tailwind.
@@ -56,4 +55,3 @@ You are an expert in TypeScript, Node.js, Next.js App Router, React, Shadcn UI, 
 - Follow Next.js docs for Data Fetching, Rendering, and Routing.
 
 Make sure not to start the dev server or run type of lint checking on agent mode. 
-

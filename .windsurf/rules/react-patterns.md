@@ -1,8 +1,7 @@
 ---
-description: 
-globs: 
-alwaysApply: true
+trigger: always_on
 ---
+
 # React Patterns and Best Practices
 
 ## Core Philosophy

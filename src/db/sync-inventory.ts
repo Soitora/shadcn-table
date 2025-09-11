@@ -4,6 +4,7 @@ import Ajv, { type ValidateFunction } from "ajv";
 
 import { db } from "@/db/index";
 import { articles, inventory, type InventoryRow, type NewArticle } from "@/db/schema";
+import { and, eq, inArray } from "drizzle-orm";
 
 interface LagerJson {
   [location: string]: unknown[];
@@ -47,7 +48,6 @@ function splitRows(
         continue;
       }
 
-      // Immutable article fields
       const a: NewArticle = {
         mk,
         artikelnr,
@@ -76,7 +76,6 @@ function splitRows(
       const key = `${mk}::${artikelnr}`;
       if (!articleMap.has(key)) articleMap.set(key, a);
 
-      // Per-location inventory fields
       const status = (obj["Status"] as string | undefined) ?? undefined;
       const lagerplats = (obj["Lagerplats"] as string | undefined) ?? undefined;
 
@@ -94,33 +93,110 @@ function splitRows(
   return { articles: Array.from(articleMap.values()), inventory: inventoryRows };
 }
 
-export async function seedInventoryFromFile(relFile = "src/db/lager.json") {
-  const filePath = path.isAbsolute(relFile) ? relFile : path.join(process.cwd(), relFile);
+async function main() {
+  console.log("⏳ Sync inventory from src/db/lager.json → DB");
+  const start = Date.now();
 
+  const jsonPath = path.join(process.cwd(), "src/db/lager.json");
   const [schema, jsonRaw] = await Promise.all([
     loadSchema(),
-    fs.readFile(filePath, "utf8"),
+    fs.readFile(jsonPath, "utf8"),
   ]);
-
   const validate = createValidator(schema);
+
   const parsed = JSON.parse(jsonRaw) as LagerJson;
   const { articles: articleRows, inventory: inventoryRows } = splitRows(parsed, validate);
 
-  // Clear existing data for a clean seed
-  await db.delete(inventory);
-  await db.delete(articles);
+  // Build identity sets
+  const desiredArticleKeys = new Set(articleRows.map((a) => `${a.mk}::${a.artikelnr}`));
+  const desiredInvKeys = new Set(
+    inventoryRows.map((r) => `${r.mk}::${r.artikelnr}::${r.location}`),
+  );
 
-  // Insert articles in batches
-  const ARTICLE_BATCH = 1000;
+  // Delete inventory rows not present anymore
+  const existingInv = await db
+    .select({ id: inventory.id, mk: inventory.mk, artikelnr: inventory.artikelnr, location: inventory.location })
+    .from(inventory);
+
+  const toDeleteInvIds: string[] = [];
+  for (const row of existingInv) {
+    const key = `${row.mk}::${row.artikelnr}::${row.location}`;
+    if (!desiredInvKeys.has(key)) toDeleteInvIds.push(row.id);
+  }
+  if (toDeleteInvIds.length > 0) {
+    const BATCH = 1000;
+    for (let i = 0; i < toDeleteInvIds.length; i += BATCH) {
+      const batch = toDeleteInvIds.slice(i, i + BATCH);
+      await db.delete(inventory).where(inArray(inventory.id, batch));
+    }
+    console.log(`🗑️ Deleted inventory rows: ${toDeleteInvIds.length}`);
+  }
+
+  // Delete articles not present anymore (safe only if no inventory references; we delete inventory first)
+  const existingArticles = await db
+    .select({ id: articles.id, mk: articles.mk, artikelnr: articles.artikelnr })
+    .from(articles);
+  const toDeleteArticleIds: string[] = [];
+  for (const row of existingArticles) {
+    const key = `${row.mk}::${row.artikelnr}`;
+    if (!desiredArticleKeys.has(key)) toDeleteArticleIds.push(row.id);
+  }
+  if (toDeleteArticleIds.length > 0) {
+    const BATCH = 1000;
+    for (let i = 0; i < toDeleteArticleIds.length; i += BATCH) {
+      const batch = toDeleteArticleIds.slice(i, i + BATCH);
+      await db.delete(articles).where(inArray(articles.id, batch));
+    }
+    console.log(`🗑️ Deleted articles: ${toDeleteArticleIds.length}`);
+  }
+
+  // Upsert articles
+  const ARTICLE_BATCH = 500;
   for (let i = 0; i < articleRows.length; i += ARTICLE_BATCH) {
     const batch = articleRows.slice(i, i + ARTICLE_BATCH);
-    await db.insert(articles).values(batch).onConflictDoNothing();
+    await db
+      .insert(articles)
+      .values(batch)
+      .onConflictDoUpdate({
+        target: [articles.mk, articles.artikelnr],
+        set: {
+          benamning: (articles as any).benamning,
+          benamning2: (articles as any).benamning2,
+          extrainfo: (articles as any).extrainfo,
+          bild: (articles as any).bild,
+          paket: (articles as any).paket,
+          fordon: (articles as any).fordon,
+          alternativart: (articles as any).alternativart,
+          data: (articles as any).data,
+          updatedAt: new Date(),
+        },
+      });
   }
 
-  // Insert inventory in batches
-  const INV_BATCH = 1000;
+  // Upsert inventory per location
+  const INV_BATCH = 500;
   for (let i = 0; i < inventoryRows.length; i += INV_BATCH) {
     const batch = inventoryRows.slice(i, i + INV_BATCH);
-    await db.insert(inventory).values(batch).onConflictDoNothing();
+    await db
+      .insert(inventory)
+      .values(batch)
+      .onConflictDoUpdate({
+        target: [inventory.mk, inventory.artikelnr, inventory.location],
+        set: {
+          status: (inventory as any).status,
+          lagerplats: (inventory as any).lagerplats,
+          locationData: (inventory as any).locationData,
+          updatedAt: new Date(),
+        },
+      });
   }
+
+  const end = Date.now();
+  console.log(`✅ Sync completed in ${end - start}ms`);
 }
+
+main().catch((err) => {
+  console.error("❌ Sync failed");
+  console.error(err);
+  process.exit(1);
+});
