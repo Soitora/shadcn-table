@@ -65,12 +65,6 @@ export function InventoryTable({ promises }: InventoryTableProps) {
       {enableAdvancedFilter ? (
         <DataTableAdvancedToolbar table={table}>
           <DataTableSortList table={table} align="start" />
-          <Input
-            placeholder="Search artikelnr or benämning..."
-            defaultValue={q ?? ""}
-            onChange={(e) => onQChange(e.target.value)}
-            className="h-8 w-56"
-          />
           {filterFlag === "advancedFilters" ? (
             <DataTableFilterList
               table={table}
@@ -89,14 +83,18 @@ export function InventoryTable({ promises }: InventoryTableProps) {
           )}
         </DataTableAdvancedToolbar>
       ) : (
-        <DataTableToolbar table={table}>
+        <DataTableToolbar
+          table={table}
+          leftExtras={
+            <Input
+              placeholder="Search artikelnr or benämning..."
+              defaultValue={q ?? ""}
+              onChange={(e) => onQChange(e.target.value)}
+              className="h-8 w-56"
+            />
+          }
+        >
           <DataTableSortList table={table} align="end" />
-          <Input
-            placeholder="Search artikelnr or benämning..."
-            defaultValue={q ?? ""}
-            onChange={(e) => onQChange(e.target.value)}
-            className="h-8 w-56"
-          />
         </DataTableToolbar>
       )}
     </DataTable>
