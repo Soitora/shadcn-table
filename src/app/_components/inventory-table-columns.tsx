@@ -46,6 +46,40 @@ export function getInventoryTableColumns({
   locationOptions = [],
   setRowAction,
 }: GetInventoryTableColumnsProps): ColumnDef<InventoryRowUI>[] {
+  const STATUS_INFO: Record<string, { label: string; tone: "positive" | "neutral" | "negative" }> = {
+    J: { label: "Lagervara", tone: "positive" },
+    U: { label: "Utgående", tone: "neutral" },
+    H: { label: "Hemtagen", tone: "neutral" },
+    A: { label: "Avskriven", tone: "neutral" },
+    B: { label: "Beställd", tone: "negative" },
+    R: { label: "Rörelseregistrerad", tone: "negative" },
+    N: { label: "Ej lagerförd", tone: "negative" },
+  };
+
+  function getToneClasses(tone: "positive" | "neutral" | "negative") {
+    switch (tone) {
+      case "positive":
+        return "border-green-200 bg-green-500/10 text-green-700 dark:border-green-900/40 dark:text-green-400";
+      case "negative":
+        return "border-red-200 bg-red-500/10 text-red-700 dark:border-red-900/40 dark:text-red-400";
+      default:
+        return "border-yellow-200 bg-yellow-500/10 text-yellow-700 dark:border-yellow-900/40 dark:text-yellow-400";
+    }
+  }
+
+  const StatusDot: React.FC<{ tone: "positive" | "neutral" | "negative" }> = ({ tone }) => (
+    <span
+      aria-hidden
+      className={
+        "mr-1 inline-block size-2 rounded-full " +
+        (tone === "positive"
+          ? "bg-green-500"
+          : tone === "negative"
+            ? "bg-red-500"
+            : "bg-yellow-500")
+      }
+    />
+  );
   return [
     {
       id: "select",
@@ -153,20 +187,42 @@ export function getInventoryTableColumns({
       cell: ({ row }) => {
         const status = row.getValue<string | null>("status");
         if (!status) return null;
+        const info = STATUS_INFO[status] ?? { label: "Okänd", tone: "neutral" as const };
         return (
-          <Badge variant="outline" className="py-1">
-            <span className="capitalize">{status}</span>
+          <Badge
+            variant="outline"
+            className={"py-1 " + getToneClasses(info.tone)}
+            title={info.label}
+            aria-label={info.label}
+          >
+            <span className="truncate font-semibold">{info.label}</span>
           </Badge>
         );
       },
       meta: {
         label: "Status",
         variant: "multiSelect",
-        options: Object.entries(statusCounts).map(([value, count]) => ({
-          label: value,
-          value,
-          count,
-        })),
+        options: (() => {
+          const statusOrder = ["J", "U", "H", "A", "B", "R", "N"]; // desired order
+          return Object.entries(statusCounts)
+            .sort(([a], [b]) => {
+              const ia = statusOrder.indexOf(a);
+              const ib = statusOrder.indexOf(b);
+              const oa = ia === -1 ? Number.MAX_SAFE_INTEGER : ia;
+              const ob = ib === -1 ? Number.MAX_SAFE_INTEGER : ib;
+              return oa - ob;
+            })
+            .map(([value, count]) => {
+              const info = STATUS_INFO[value] ?? { label: "Okänd", tone: "neutral" as const };
+              const Icon = () => <StatusDot tone={info.tone} />;
+              return {
+                label: info.label,
+                value,
+                count,
+                icon: Icon,
+              };
+            });
+        })(),
         icon: Tag,
       },
       enableColumnFilter: true,
