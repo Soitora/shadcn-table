@@ -5,15 +5,17 @@ import {
   asc,
   count,
   desc,
+  eq,
   gt,
   gte,
   ilike,
   inArray,
   lte,
+  or,
   sql,
 } from "drizzle-orm";
 import { db } from "@/db";
-import { tasks } from "@/db/schema";
+import { articles, inventory, tasks } from "@/db/schema";
 
 import { filterColumns } from "@/lib/filter-columns";
 import { unstable_cache } from "@/lib/unstable-cache";
@@ -125,6 +127,140 @@ export async function getTasks(input: GetTasksSchema) {
     },
   )();
 }
+
+// Inventory queries
+export interface GetInventorySchema {
+  page: number;
+  perPage: number;
+  sort: Array<{ id: "createdAt" | "updatedAt" | "mk" | "artikelnr" | "location" | "status"; desc: boolean }>;
+  filterFlag?: "advancedFilters" | "commandFilters" | "simple";
+  // simple filters
+  q?: string; // matches mk, artikelnr, benamning
+  status?: string[];
+  locations?: string[];
+}
+
+export async function getInventory(input: GetInventorySchema) {
+  return await unstable_cache(
+    async () => {
+      try {
+        const offset = (input.page - 1) * input.perPage;
+
+        const where = and(
+          input.q
+            ? or(
+                ilike(articles.benamning, `%${input.q}%`),
+                ilike(inventory.mk, `%${input.q}%`),
+                ilike(inventory.artikelnr, `%${input.q}%`),
+              )
+            : undefined,
+          input.status && input.status.length > 0
+            ? inArray(inventory.status, input.status)
+            : undefined,
+          input.locations && input.locations.length > 0
+            ? inArray(inventory.location, input.locations)
+            : undefined,
+        );
+
+        const orderBy =
+          input.sort && input.sort.length > 0
+            ? input.sort.map((item) => {
+                const col =
+                  item.id === "mk"
+                    ? inventory.mk
+                    : item.id === "artikelnr"
+                      ? inventory.artikelnr
+                      : item.id === "location"
+                        ? inventory.location
+                        : item.id === "status"
+                          ? inventory.status
+                          : item.id === "updatedAt"
+                            ? inventory.updatedAt
+                            : inventory.createdAt;
+                return item.desc ? desc(col) : asc(col);
+              })
+            : [desc(inventory.updatedAt)];
+
+        const { data, total } = await db.transaction(async (tx) => {
+          const data = await tx
+            .select({
+              id: inventory.id,
+              mk: inventory.mk,
+              artikelnr: inventory.artikelnr,
+              location: inventory.location,
+              status: inventory.status,
+              lagerplats: inventory.lagerplats,
+              createdAt: inventory.createdAt,
+              updatedAt: inventory.updatedAt,
+              benamning: articles.benamning,
+              benamning2: articles.benamning2,
+            })
+            .from(inventory)
+            .leftJoin(
+              articles,
+              and(
+                eq(articles.mk, inventory.mk),
+                eq(articles.artikelnr, inventory.artikelnr),
+              ),
+            )
+            .where(where)
+            .limit(input.perPage)
+            .offset(offset)
+            .orderBy(...orderBy);
+
+          const total = await tx
+            .select({ count: count() })
+            .from(inventory)
+            .leftJoin(
+              articles,
+              and(
+                eq(articles.mk, inventory.mk),
+                eq(articles.artikelnr, inventory.artikelnr),
+              ),
+            )
+            .where(where)
+            .execute()
+            .then((res) => res[0]?.count ?? 0);
+
+          return { data, total };
+        });
+
+        const pageCount = Math.ceil(total / input.perPage);
+        return { data, pageCount };
+      } catch (_err) {
+        return { data: [], pageCount: 0 };
+      }
+    },
+    ["inventory", JSON.stringify(input)],
+    { revalidate: 1, tags: ["inventory"] },
+  )();
+}
+
+export async function getInventoryStatusCounts() {
+  return unstable_cache(
+    async () => {
+      try {
+        return await db
+          .select({ status: inventory.status, count: count() })
+          .from(inventory)
+          .groupBy(inventory.status)
+          .having(gt(count(inventory.status), 0))
+          .then((res) =>
+            res.reduce<Record<string, number>>((acc, { status, count }) => {
+              if (!status) return acc;
+              acc[status] = count;
+              return acc;
+            }, {}),
+          );
+      } catch (_err) {
+        return {} as Record<string, number>;
+      }
+    },
+    ["inventory-status-counts"],
+    { revalidate: 300 },
+  )();
+}
+
 
 export async function getTaskStatusCounts() {
   return unstable_cache(
