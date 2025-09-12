@@ -57,7 +57,6 @@ export function getInventoryTableColumns({
     U: { label: "Utgående", tone: "neutral" },
     H: { label: "Hemtagen", tone: "neutral" },
     A: { label: "Avskriven", tone: "neutral" },
-    B: { label: "Beställd", tone: "negative" },
     R: { label: "Rörelseregistrerad", tone: "negative" },
     N: { label: "Ej lagerförd", tone: "negative" },
   };

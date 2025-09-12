@@ -43531,7 +43531,7 @@
             "Artikelnr": "A.000.540.00.63",
             "Benämning": "DIMLJUS, VÄ",
             "Benämning2": "VARSELLJUS",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -43739,7 +43739,7 @@
             "Artikelnr": "A.000.982.04.22",
             "Benämning": "MIKROBRYTARE, LUCKOR",
             "Benämning2": "MED RULLARE",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -43789,7 +43789,7 @@
             "Status": "N",
             "Bild": true
         },
-        { "MK": "EV", "Artikelnr": "A.000.992.27.03", "Benämning": "PLASTBUSSNING", "Status": "B", "Bild": true },
+        { "MK": "EV", "Artikelnr": "A.000.992.27.03", "Benämning": "PLASTBUSSNING", "Status": "R", "Bild": true },
         {
             "MK": "EV",
             "Artikelnr": "A.000.992.62.05",
@@ -43837,7 +43837,7 @@
             "Benämning2": "LAGERBOCK",
             "Status": "H"
         },
-        { "MK": "EV", "Artikelnr": "A.001.820.11.64", "Benämning": "BAKLYKTA, VÄ", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.001.820.11.64", "Benämning": "BAKLYKTA, VÄ", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.001.820.17.64",
@@ -43949,7 +43949,7 @@
             "Artikelnr": "A.003.540.95.45",
             "Benämning": "LJUS-/REGNSENSOR",
             "Benämning2": "S431",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -44033,7 +44033,7 @@
             "Artikelnr": "A.009.987.33.51",
             "Benämning": "TÄTNINGSLIST",
             "Benämning2": "FIRMALOGO/VÄRMEPAKET",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
@@ -44126,7 +44126,7 @@
             "Artikelnr": "A.311.657.51.14",
             "Benämning": "FÄSTE / ANB. BEPLANKUNG",
             "Benämning2": "DACH",
-            "Status": "B"
+            "Status": "R"
         },
         { "MK": "EV", "Artikelnr": "A.311.885.32.05.A0", "Benämning": "STÖTFÅNGARE HÖ BAK", "Status": "R" },
         {
@@ -44134,7 +44134,7 @@
             "Artikelnr": "A.323.657.57.14",
             "Benämning": "FÄSTE TILL TAKPANEL",
             "Benämning2": "CKEYBL.21",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
@@ -44164,21 +44164,21 @@
             "Benämning2": "LACKERAD",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.410.400.10.25.A0", "Benämning": "NAVKAPSEL / GRUNDIERT", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.400.10.25.A0", "Benämning": "NAVKAPSEL / GRUNDIERT", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.400.12.25",
             "Benämning": "NAVKAPSEL LOGGO/ CHROM-L",
             "Benämning2": "OGO",
-            "Status": "B"
+            "Status": "R"
         },
         { "MK": "EV", "Artikelnr": "A.410.620.00.09", "Benämning": "DÖRRPLÅT TILL BAKDÖRR", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.627.05.08", "Benämning": "FRONTKÅPA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.627.09.14", "Benämning": "FÄSTE FRONT", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.647.36.84", "Benämning": "PLÅT UNDER BAKRUTA CC531", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.647.37.84", "Benämning": "BAKLJUSFÖRDJUPNING, VÄ", "Status": "R" },
-        { "MK": "EV", "Artikelnr": "A.410.657.19.12", "Benämning": "FÄSTE", "Status": "B" },
-        { "MK": "EV", "Artikelnr": "A.410.657.20.12", "Benämning": "FÄSTE", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.657.19.12", "Benämning": "FÄSTE", "Status": "R" },
+        { "MK": "EV", "Artikelnr": "A.410.657.20.12", "Benämning": "FÄSTE", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.670.03.06",
@@ -44192,7 +44192,7 @@
             "Artikelnr": "A.410.670.17.01",
             "Benämning": "VINDRUTA / BEHEIZT MBB R",
             "Benämning2": "HD",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
@@ -44215,13 +44215,13 @@
         { "MK": "EV", "Artikelnr": "A.410.673.28.05", "Benämning": "SIDORUTA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.673.30.07", "Benämning": "RUTA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.673.31.07", "Benämning": "SIDORUTA, VÄ", "Status": "R" },
-        { "MK": "EV", "Artikelnr": "A.410.673.34.07", "Benämning": "SIDORUTA", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.673.34.07", "Benämning": "SIDORUTA", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.673.60.09",
             "Benämning": "DUBBELFÖNSTER",
             "Benämning2": "HÖGER-UPP-BAK",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
@@ -44236,9 +44236,9 @@
             "Artikelnr": "A.410.673.70.09",
             "Benämning": "SIDORUTA, HÖ-NER, NR 5",
             "Benämning2": "BAKOM DÖRR 2",
-            "Status": "B"
+            "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.410.673.92.07", "Benämning": "RUTA ENKELGLAS", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.673.92.07", "Benämning": "RUTA ENKELGLAS", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.673.99.07",
@@ -44246,9 +44246,9 @@
             "Benämning2": "FÖRSTA BAKOM DÖRR 1",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.410.678.04.10", "Benämning": "BAKRUTA TC 500", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.678.04.10", "Benämning": "BAKRUTA TC 500", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.682.18.26", "Benämning": "ISOLERING, MOTORLUCKA", "Status": "H" },
-        { "MK": "EV", "Artikelnr": "A.410.690.01.87", "Benämning": "PANEL, FIRMAMÄRKE", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.690.01.87", "Benämning": "PANEL, FIRMAMÄRKE", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.690.01.87.05",
@@ -44293,7 +44293,7 @@
             "Artikelnr": "A.410.698.73.02",
             "Benämning": "DEKORLIST, SIDORUTA, HÖ",
             "Benämning2": "POS 80",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
@@ -44339,7 +44339,7 @@
             "Benämning2": "T2 UL 900",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.410.730.31.78", "Benämning": "DÖRRLIST, YTTRE, RAM", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.730.31.78", "Benämning": "DÖRRLIST, YTTRE, RAM", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.730.33.78", "Benämning": "DÖRRLIST, YTTRE", "Status": "R" },
         {
             "MK": "EV",
@@ -44354,7 +44354,7 @@
             "Artikelnr": "A.410.730.51.78",
             "Benämning": "GUMMILIST / GUMMI PORTAL",
             "Benämning2": "T2 HD MD",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
@@ -44363,11 +44363,11 @@
             "Benämning2": "PORTAL *PRISLÖS",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.410.750.02.20", "Benämning": "GÅNGJÄRN HÖ", "Status": "B" },
-        { "MK": "EV", "Artikelnr": "A.410.750.02.21", "Benämning": "GÅNGJÄRN", "Status": "B" },
-        { "MK": "EV", "Artikelnr": "A.410.750.03.20", "Benämning": "GÅNGJÄRN HÖ", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.750.02.20", "Benämning": "GÅNGJÄRN HÖ", "Status": "R" },
+        { "MK": "EV", "Artikelnr": "A.410.750.02.21", "Benämning": "GÅNGJÄRN", "Status": "R" },
+        { "MK": "EV", "Artikelnr": "A.410.750.03.20", "Benämning": "GÅNGJÄRN HÖ", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.750.03.21", "Benämning": "GÅNGJÄRN, VÄ", "Status": "H" },
-        { "MK": "EV", "Artikelnr": "A.410.750.04.20", "Benämning": "GÅNGJÄRN DUBBELT", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.750.04.20", "Benämning": "GÅNGJÄRN DUBBELT", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.750.04.21", "Benämning": "GÅNGJÄRN, HÖ", "Status": "H" },
         {
             "MK": "EV",
@@ -44400,7 +44400,7 @@
             "Bild": true
         },
         { "MK": "EV", "Artikelnr": "A.410.750.13.95", "Benämning": "LUCKAROHBAU 1360LG", "Status": "R" },
-        { "MK": "EV", "Artikelnr": "A.410.750.18.93", "Benämning": "HANDTAG C-LÅS/DIODLAMPA", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.750.18.93", "Benämning": "HANDTAG C-LÅS/DIODLAMPA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.750.19.14", "Benämning": "HÅLLARE, LÅSMEKANISM", "Status": "H" },
         {
             "MK": "EV",
@@ -44436,10 +44436,10 @@
             "Artikelnr": "A.410.750.29.13",
             "Benämning": "MOTORLUCKA",
             "Benämning2": "S531",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
-        { "MK": "EV", "Artikelnr": "A.410.750.31.13", "Benämning": "LUCKA AVGAS VÄ BAK", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.750.31.13", "Benämning": "LUCKA AVGAS VÄ BAK", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.750.32.13",
@@ -44456,7 +44456,7 @@
             "Benämning2": "AN FÖNSTER / RHD",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.410.750.50.70", "Benämning": "LUCKA 1640LG", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.750.50.70", "Benämning": "LUCKA 1640LG", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.750.54.06", "Benämning": "LUCKA, VÄ", "Status": "R" },
         {
             "MK": "EV",
@@ -44471,7 +44471,7 @@
             "Artikelnr": "A.410.750.58.05",
             "Benämning": "HJULHUSLUCKA, VÄ-DRIV",
             "Benämning2": "S531",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -44492,7 +44492,7 @@
             "Artikelnr": "A.410.750.97.05",
             "Benämning": "SIDOLUCKA, TOALETT",
             "Benämning2": "VÄ-FRAMFÖR BAKAXEL 1",
-            "Status": "B",
+            "Status": "R",
             "Lagerplats": "VÅN-2"
         },
         {
@@ -44511,8 +44511,8 @@
         { "MK": "EV", "Artikelnr": "A.410.757.17.14", "Benämning": "HÅLLARE, ISOLERING", "Status": "H" },
         { "MK": "EV", "Artikelnr": "A.410.757.24.14", "Benämning": "HÅLLARE, HÖ", "Status": "H" },
         { "MK": "EV", "Artikelnr": "A.410.757.25.14", "Benämning": "HÅLLARE, VÄ", "Status": "H" },
-        { "MK": "EV", "Artikelnr": "A.410.760.52.85", "Benämning": "ALULIST DÖRR 2. HÖGER", "Status": "B" },
-        { "MK": "EV", "Artikelnr": "A.410.760.56.85", "Benämning": "LIST FRÄMRE", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.760.52.85", "Benämning": "ALULIST DÖRR 2. HÖGER", "Status": "R" },
+        { "MK": "EV", "Artikelnr": "A.410.760.56.85", "Benämning": "LIST FRÄMRE", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.810.00.69", "Benämning": "SETRA LOGO TC500", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.810.01.69", "Benämning": "SETRA LOGO CC500", "Status": "R" },
         {
@@ -44631,12 +44631,12 @@
         { "MK": "EV", "Artikelnr": "A.410.880.15.72", "Benämning": "STÖTFÅNGARHÖRN, HÖ-BAK", "Status": "H" },
         { "MK": "EV", "Artikelnr": "A.410.880.20.72", "Benämning": "STÖTFÅNGARE BAK VÄ", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.880.40.72", "Benämning": "STÖTFÅNGARHÖRN, VÄ-FRAM", "Status": "H" },
-        { "MK": "EV", "Artikelnr": "A.410.880.41.72", "Benämning": "STÖTFÅNGARHÖRN, HÖ-FRAM", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.880.41.72", "Benämning": "STÖTFÅNGARHÖRN, HÖ-FRAM", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.880.46.72", "Benämning": "STÖTFÅNGARE HÖGER FRAM", "Status": "H" },
         { "MK": "EV", "Artikelnr": "A.410.880.54.70", "Benämning": "STÖTFÅNGARHÖRN, VÄ-FRAM", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.880.67.72", "Benämning": "STÖTFÅNGARE VÄNSRER BAK", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.410.885.00.24", "Benämning": "TÄCKLOCK MITTSTÖTFÅNGARE", "Status": "H" },
-        { "MK": "EV", "Artikelnr": "A.410.885.13.14", "Benämning": "FÄSTE HÖGER", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.410.885.13.14", "Benämning": "FÄSTE HÖGER", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.410.885.21.22",
@@ -44666,28 +44666,28 @@
             "Artikelnr": "A.620.673.20.83",
             "Benämning": "DEKORLIST, SIDORUTA, HÖ",
             "Benämning2": "POS 115",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
             "Artikelnr": "A.620.673.23.83",
             "Benämning": "DEKORLIST, SIDORUTA, HÖ",
             "Benämning2": "POS 85",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
             "Artikelnr": "A.620.673.38.83",
             "Benämning": "DEKORLIST, SIDORUTA, HÖ",
             "Benämning2": "POS 90",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "EV",
             "Artikelnr": "A.620.673.40.83",
             "Benämning": "DEKORLIST, SIDORUTA, HÖ",
             "Benämning2": "POS 110",
-            "Status": "B"
+            "Status": "R"
         },
         { "MK": "EV", "Artikelnr": "A.620.750.00.04", "Benämning": "LUCKA", "Status": "R" },
         {
@@ -44725,7 +44725,7 @@
         { "MK": "EV", "Artikelnr": "A.620.750.12.70", "Benämning": "LUCKA FRAMFÖR DÖRR", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.620.750.52.70", "Benämning": "LUCKA BAKOM DÖRR", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.620.750.59.70", "Benämning": "LUCKA LITEN BAKOM DÖRR", "Status": "H" },
-        { "MK": "EV", "Artikelnr": "A.620.754.31.14", "Benämning": "FÄSTE HJULHUSLUCKA", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.620.754.31.14", "Benämning": "FÄSTE HJULHUSLUCKA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.620.754.46.14", "Benämning": "FÄSTE", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.620.754.78.19", "Benämning": "MANÖVERSTÅNG", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.620.754.88.19", "Benämning": "MANÖVERSTÅNG", "Status": "R" },
@@ -44764,7 +44764,7 @@
             "Benämning2": "SST EVO II",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "A.628.750.46.21", "Benämning": "GÅNGJÄRN MOTORLUCKA", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.628.750.46.21", "Benämning": "GÅNGJÄRN MOTORLUCKA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.628.755.16.11", "Benämning": "FÄSTPLATTA, GÅNGJÄRN", "Status": "H" },
         { "MK": "EV", "Artikelnr": "A.628.860.00.47", "Benämning": "STRÅLKASTARSPOLNING", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.628.869.00.94", "Benämning": "SPOLSLANG", "Status": "R" },
@@ -44800,7 +44800,7 @@
             "Artikelnr": "A.629.401.01.20",
             "Benämning": "SPÄNNRING, NAVKAPSEL",
             "Benämning2": "LL PLASTKAPSEL",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -44829,7 +44829,7 @@
         { "MK": "EV", "Artikelnr": "A.629.720.05.11", "Benämning": "FÄSTPLATTA VÄ", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.629.720.06.11", "Benämning": "FÄSTPLATTA", "Status": "R" },
         { "MK": "EV", "Artikelnr": "A.629.720.21.30", "Benämning": "DÖRRRAM", "Benämning2": "CR T2", "Status": "R" },
-        { "MK": "EV", "Artikelnr": "A.629.720.57.78", "Benämning": "GUMMIRAM DÖRR HD T2 TÜR", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.629.720.57.78", "Benämning": "GUMMIRAM DÖRR HD T2 TÜR", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.629.750.00.20",
@@ -44886,7 +44886,7 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "EV", "Artikelnr": "A.629.763.28.21", "Benämning": "FÄSTSKENA", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "A.629.763.28.21", "Benämning": "FÄSTSKENA", "Status": "R" },
         {
             "MK": "EV",
             "Artikelnr": "A.629.810.44.16",
@@ -44936,7 +44936,7 @@
             "MK": "EV",
             "Artikelnr": "A.632.980.01.64",
             "Benämning": "GASFJÄDER, 450N, 585MM",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         { "MK": "EV", "Artikelnr": "A.632.980.02.64", "Benämning": "GASFJÄDER, 550N, 565MM", "Status": "R" },
@@ -45066,8 +45066,8 @@
             "Benämning2": "LÄNKARM",
             "Status": "R"
         },
-        { "MK": "EV", "Artikelnr": "N.000000.006387", "Benämning": "MUTTER, M2", "Status": "B", "Bild": true },
-        { "MK": "EV", "Artikelnr": "N.000000.006419", "Benämning": "SKRUV, M2X0.4, 12MM", "Status": "B" },
+        { "MK": "EV", "Artikelnr": "N.000000.006387", "Benämning": "MUTTER, M2", "Status": "R", "Bild": true },
+        { "MK": "EV", "Artikelnr": "N.000000.006419", "Benämning": "SKRUV, M2X0.4, 12MM", "Status": "R" },
         { "MK": "EV", "Artikelnr": "N.000000.006753", "Benämning": "BLINDNIT, 4X8", "Status": "H" },
         {
             "MK": "EV",
@@ -45117,7 +45117,7 @@
         { "MK": "HU", "Artikelnr": "1710-MA3850", "Benämning": "MASKERINGSTAPE 38MM 50M", "Status": "R" },
         { "MK": "HU", "Artikelnr": "2PS964295057", "Benämning": "SIDOMARKERINGSLJUS LED G", "Status": "R" },
         { "MK": "HU", "Artikelnr": "8-131254", "Benämning": "BACKSPEGELARM, HÖ", "Status": "R", "Bild": true },
-        { "MK": "HU", "Artikelnr": "8-131258", "Benämning": "VIDVINKELSPEGEL, HÖ, UTV", "Status": "B", "Bild": true },
+        { "MK": "HU", "Artikelnr": "8-131258", "Benämning": "VIDVINKELSPEGEL, HÖ, UTV", "Status": "R", "Bild": true },
         { "MK": "HU", "Artikelnr": "8-131456", "Benämning": "BACKSPEGEL, HÖ, UTV", "Status": "R", "Bild": true },
         {
             "MK": "HU",
@@ -45180,7 +45180,7 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "KG", "Artikelnr": "3547230", "Benämning": "BALK", "Status": "B" },
+        { "MK": "KG", "Artikelnr": "3547230", "Benämning": "BALK", "Status": "R" },
         {
             "MK": "KG",
             "Artikelnr": "SCI A13-194BPS",
@@ -45716,9 +45716,9 @@
             "Artikelnr": "A000860324764",
             "Benämning": "MUNSTYCKE VINDRUTESPOLAR",
             "Benämning2": "E",
-            "Status": "B"
+            "Status": "R"
         },
-        { "MK": "MBT", "Artikelnr": "A0008603347", "Benämning": "MUNSTYCKE", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A0008603347", "Benämning": "MUNSTYCKE", "Status": "R" },
         {
             "MK": "MBT",
             "Artikelnr": "A0009985185",
@@ -46037,7 +46037,7 @@
         { "MK": "MBT", "Artikelnr": "A9607513914", "Benämning": "HÅLLARE", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608170516", "Benämning": "MERCEDES-STJÄRNA", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608200639", "Benämning": "BELYSNINGSENHET", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9608200726", "Benämning": "ST.ENH. REGN-/LJUSSENSOR", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9608200726", "Benämning": "ST.ENH. REGN-/LJUSSENSOR", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608201721", "Benämning": "EXTRABLINKERS, HÖ", "Status": "R", "Bild": true },
         { "MK": "MBT", "Artikelnr": "A9608202256", "Benämning": "DIMLJUS", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608202956", "Benämning": "DIMLJUS, VÄ", "Status": "R", "Bild": true },
@@ -46046,7 +46046,7 @@
         { "MK": "MBT", "Artikelnr": "A9608203256", "Benämning": "VARSELJUS", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608260117", "Benämning": "STRÅLKASTARGÅNGJÄRN, HÖ", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608260159  9135", "Benämning": "TÄCKRAM", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9608260359  9135", "Benämning": "TÄCKRAM", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9608260359  9135", "Benämning": "TÄCKRAM", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608300983", "Benämning": "VÄTSKEBEHÅLLARE", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608302016", "Benämning": "AVGASRÖR", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608303316", "Benämning": "KÖLDMEDIELEDNING", "Status": "R" },
@@ -46112,7 +46112,7 @@
         { "MK": "MBT", "Artikelnr": "A9608851051", "Benämning": "GÅNGJÄRN", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608851151", "Benämning": "GÅNGJÄRN", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A960885124564", "Benämning": "HÅLLARE", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9608852108  9135", "Benämning": "LOCK, STÖTFÅNGARE", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9608852108  9135", "Benämning": "LOCK, STÖTFÅNGARE", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608852425  9135", "Benämning": "FRONTSPOILER,", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608852574  9135", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608852584  9135", "Benämning": "SKYDD", "Status": "R" },
@@ -46120,7 +46120,7 @@
         { "MK": "MBT", "Artikelnr": "A9608853674", "Benämning": "FRONTSPOILERSKYDD, VÄ", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A960885367464", "Benämning": "SKYDD, VÄ", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608853774", "Benämning": "PANEL", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9608853874", "Benämning": "PANEL", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9608853874", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608853974", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608854045", "Benämning": "HÅLLARE", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608854925  9135", "Benämning": "FRONTSPOILER", "Status": "R" },
@@ -46137,9 +46137,9 @@
         { "MK": "MBT", "Artikelnr": "A9608857874", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608857974", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A960885797464", "Benämning": "PANEL, HÖ", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9608858574", "Benämning": "PANEL", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9608858574", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9608858940", "Benämning": "HÅLLARE", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9608858974", "Benämning": "PANEL", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9608858974", "Benämning": "PANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A960885964164", "Benämning": "HÅLLARE", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9609920401", "Benämning": "HYLSA SPECIALFORM", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9609930107", "Benämning": "KLÄMFJÄDER", "Status": "R" },
@@ -46194,8 +46194,8 @@
         { "MK": "MBT", "Artikelnr": "A9678840274", "Benämning": "TÄCKPANEL", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9678840822", "Benämning": "SKYDD", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9678840922", "Benämning": "SKYDD", "Status": "R" },
-        { "MK": "MBT", "Artikelnr": "A9737500351", "Benämning": "GÅNGJÄRN", "Status": "B" },
-        { "MK": "MBT", "Artikelnr": "A9737500451", "Benämning": "GÅNGJÄRN", "Status": "B" },
+        { "MK": "MBT", "Artikelnr": "A9737500351", "Benämning": "GÅNGJÄRN", "Status": "R" },
+        { "MK": "MBT", "Artikelnr": "A9737500451", "Benämning": "GÅNGJÄRN", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9737500493", "Benämning": "HANDTAG", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9738202661", "Benämning": "BELYSNINGSENHET", "Status": "R" },
         { "MK": "MBT", "Artikelnr": "A9909820826", "Benämning": "KONTAKTHYLSA", "Status": "R" },
@@ -46392,11 +46392,11 @@
         { "MK": "SCAN", "Artikelnr": "1535052", "Benämning": "FOTSTEG, NEDRE", "Status": "H", "Bild": true },
         { "MK": "SCAN", "Artikelnr": "1727992", "Benämning": "STRÅLKASTARPLÅT", "Status": "H" },
         { "MK": "SCAN", "Artikelnr": "1732510", "Benämning": "STRÅLKASTARE, HÖ", "Status": "H", "Bild": true },
-        { "MK": "SCAN", "Artikelnr": "1767068", "Benämning": "PANEL", "Status": "B" },
-        { "MK": "SCAN", "Artikelnr": "1769963", "Benämning": "KÖRVISARLYKTA", "Status": "B" },
-        { "MK": "SCAN", "Artikelnr": "1769965", "Benämning": "STOPPLYKTA", "Status": "B" },
-        { "MK": "SCAN", "Artikelnr": "1769966", "Benämning": "BACKSTRÅLKASTARE", "Status": "B" },
-        { "MK": "SCAN", "Artikelnr": "1769967", "Benämning": "DIMBAKLYKTA", "Status": "B" },
+        { "MK": "SCAN", "Artikelnr": "1767068", "Benämning": "PANEL", "Status": "R" },
+        { "MK": "SCAN", "Artikelnr": "1769963", "Benämning": "KÖRVISARLYKTA", "Status": "R" },
+        { "MK": "SCAN", "Artikelnr": "1769965", "Benämning": "STOPPLYKTA", "Status": "R" },
+        { "MK": "SCAN", "Artikelnr": "1769966", "Benämning": "BACKSTRÅLKASTARE", "Status": "R" },
+        { "MK": "SCAN", "Artikelnr": "1769967", "Benämning": "DIMBAKLYKTA", "Status": "R" },
         {
             "MK": "SCAN",
             "Artikelnr": "1780732",
@@ -46419,7 +46419,7 @@
         { "MK": "SCAN", "Artikelnr": "1936675", "Benämning": "STRÅLKASTARHUS", "Status": "H" },
         { "MK": "SCAN", "Artikelnr": "2001385", "Benämning": "LOCK", "Status": "R" },
         { "MK": "SCAN", "Artikelnr": "2165864", "Benämning": "HYTTHÖRN, HÖ-FRAM", "Status": "H", "Bild": true },
-        { "MK": "SCAN", "Artikelnr": "2190920", "Benämning": "PANEL", "Status": "B" },
+        { "MK": "SCAN", "Artikelnr": "2190920", "Benämning": "PANEL", "Status": "R" },
         { "MK": "SCAN", "Artikelnr": "2241232", "Benämning": "FÄSTE", "Status": "R" },
         {
             "MK": "SCAN",
@@ -46579,9 +46579,9 @@
             "Artikelnr": "20372148",
             "Benämning": "LÅSPINNE, LUCKA",
             "Benämning2": "STRÅLKASTARE",
-            "Status": "B"
+            "Status": "R"
         },
-        { "MK": "VO", "Artikelnr": "20425414", "Benämning": "LÅS, STRÅLKASTARLUCKA", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "20425414", "Benämning": "LÅS, STRÅLKASTARLUCKA", "Status": "R" },
         { "MK": "VO", "Artikelnr": "20429834", "Benämning": "KONTAKTHUS, 2-POL", "Benämning2": "2.8MM", "Status": "N" },
         { "MK": "VO", "Artikelnr": "20442878", "Benämning": "TORKARMOTOR, 24V", "Status": "R", "Bild": true },
         {
@@ -46624,7 +46624,7 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "VO", "Artikelnr": "20580094", "Benämning": "HÅLLARE", "Benämning2": " ", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "20580094", "Benämning": "HÅLLARE", "Benämning2": " ", "Status": "R" },
         { "MK": "VO", "Artikelnr": "20592783", "Benämning": "V-KLAMMA", "Status": "N" },
         { "MK": "VO", "Artikelnr": "20726409", "Benämning": "GÅNGJÄRN", "Benämning2": "HINGE", "Status": "R" },
         {
@@ -46669,7 +46669,7 @@
             "Artikelnr": "20866290",
             "Benämning": "TÄTNINGSLIST",
             "Benämning2": "SEALING STRIP",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "VO",
@@ -46709,7 +46709,7 @@
             "Status": "R"
         },
         { "MK": "VO", "Artikelnr": "20893383", "Benämning": "REFLEX, VÄ-BAK", "Benämning2": "B12", "Status": "R" },
-        { "MK": "VO", "Artikelnr": "20893384", "Benämning": "REFLEX, HÖ-BAK", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "20893384", "Benämning": "REFLEX, HÖ-BAK", "Status": "R" },
         { "MK": "VO", "Artikelnr": "20904895", "Benämning": "BREDDMARKERING, ÖVRE", "Status": "R" },
         { "MK": "VO", "Artikelnr": "20939645", "Benämning": "LAMPA", "Benämning2": "LAMP", "Status": "R" },
         { "MK": "VO", "Artikelnr": "20968442", "Benämning": "KANTPROFIL", "Status": "R" },
@@ -46737,9 +46737,9 @@
             "Benämning2": "STRIP",
             "Status": "R"
         },
-        { "MK": "VO", "Artikelnr": "21313130", "Benämning": "VINDRUTA", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "21313130", "Benämning": "VINDRUTA", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21363177", "Benämning": "STOLPE", "Benämning2": "PILLAR", "Status": "R" },
-        { "MK": "VO", "Artikelnr": "21363181", "Benämning": "STOLPE", "Benämning2": "PILLAR", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "21363181", "Benämning": "STOLPE", "Benämning2": "PILLAR", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21370999", "Benämning": "KÅPA", "Benämning2": "COVER", "Status": "R" },
         {
             "MK": "VO",
@@ -46758,7 +46758,7 @@
         },
         { "MK": "VO", "Artikelnr": "21457828", "Benämning": "VOLVO EMBLEM, FRONT", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21464470", "Benämning": "STRÅLKASTARE, HALVLJUS", "Status": "R", "Bild": true },
-        { "MK": "VO", "Artikelnr": "21464473", "Benämning": "STRÅLKASTARE, HELLJUS", "Status": "B", "Bild": true },
+        { "MK": "VO", "Artikelnr": "21464473", "Benämning": "STRÅLKASTARE, HELLJUS", "Status": "R", "Bild": true },
         {
             "MK": "VO",
             "Artikelnr": "21464812",
@@ -46782,7 +46782,7 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "VO", "Artikelnr": "21521925", "Benämning": "KULLED", "Benämning2": "BALL JOINT", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "21521925", "Benämning": "KULLED", "Benämning2": "BALL JOINT", "Status": "R" },
         {
             "MK": "VO",
             "Artikelnr": "21535312",
@@ -46796,10 +46796,10 @@
             "Artikelnr": "21540846",
             "Benämning": "KANTPROFIL, NEDRE",
             "Benämning2": "2563MM",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
-        { "MK": "VO", "Artikelnr": "21552887", "Benämning": "KÅPA", "Benämning2": "COVER", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "21552887", "Benämning": "KÅPA", "Benämning2": "COVER", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21563743", "Benämning": "GASFJÄDER", "Status": "R" },
         {
             "MK": "VO",
@@ -46809,7 +46809,7 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "VO", "Artikelnr": "21614435", "Benämning": "SIDOFÖNSTER", "Benämning2": "SIDE WINDOW", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "21614435", "Benämning": "SIDOFÖNSTER", "Benämning2": "SIDE WINDOW", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21614463", "Benämning": "SIDOFÖNSTER", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21614474", "Benämning": "SIDOFÖNSTER", "Benämning2": "SIDE WINDOW", "Status": "R" },
         { "MK": "VO", "Artikelnr": "21614476", "Benämning": "SIDOFÖNSTER", "Benämning2": "SIDE WINDOW", "Status": "R" },
@@ -46888,7 +46888,7 @@
             "Artikelnr": "22023061",
             "Benämning": "LAMPSKYDD",
             "Benämning2": " ",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -46915,7 +46915,7 @@
             "Artikelnr": "22080089",
             "Benämning": "STOLPE, FRONTPANEL, VÄ",
             "Benämning2": "PILLAR",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "VO",
@@ -46956,7 +46956,7 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "VO", "Artikelnr": "22200144", "Benämning": "TÄCKGLAS", "Benämning2": "COVER GLASS", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "22200144", "Benämning": "TÄCKGLAS", "Benämning2": "COVER GLASS", "Status": "R" },
         { "MK": "VO", "Artikelnr": "22212133", "Benämning": "BACKSPEGELARM, HÖ", "Status": "R", "Bild": true },
         { "MK": "VO", "Artikelnr": "22273882", "Benämning": "BLINKLYKTA", "Benämning2": "FLASH LAMP", "Status": "R" },
         { "MK": "VO", "Artikelnr": "22284548", "Benämning": "FRONTPANEL", "Benämning2": "FRONT PANEL", "Status": "R" },
@@ -47002,7 +47002,7 @@
             "Status": "R"
         },
         { "MK": "VO", "Artikelnr": "22488919", "Benämning": "PACKNING", "Benämning2": "GASKET", "Status": "R" },
-        { "MK": "VO", "Artikelnr": "22490920", "Benämning": "GÅNGJÄRN", "Benämning2": "HINGE", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "22490920", "Benämning": "GÅNGJÄRN", "Benämning2": "HINGE", "Status": "R" },
         { "MK": "VO", "Artikelnr": "22492985", "Benämning": "SIDOFÖNSTER", "Benämning2": "SIDE WINDOW", "Status": "R" },
         { "MK": "VO", "Artikelnr": "22493004", "Benämning": "SIDOFÖNSTER", "Benämning2": "SIDE WINDOW", "Status": "R" },
         {
@@ -47114,7 +47114,7 @@
             "Artikelnr": "23279480",
             "Benämning": "LUCKA HÖGER SIDA LÄNGST",
             "Benämning2": "BAK",
-            "Status": "B"
+            "Status": "R"
         },
         { "MK": "VO", "Artikelnr": "23279548", "Benämning": "GÅNGJÄRN, LUCKOR", "Status": "R", "Bild": true },
         { "MK": "VO", "Artikelnr": "23289509", "Benämning": "STÖTFÅNGARE FRAM", "Benämning2": "BUMPER", "Status": "R" },
@@ -47162,7 +47162,7 @@
             "Benämning2": "6",
             "Status": "R"
         },
-        { "MK": "VO", "Artikelnr": "23661949", "Benämning": "BATTERILUCKA", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "23661949", "Benämning": "BATTERILUCKA", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23684050", "Benämning": "GÅNGJÄRN", "Benämning2": "HINGE", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23702057", "Benämning": "KYLVÄTSKERÖR", "Status": "H" },
         {
@@ -47172,11 +47172,11 @@
             "Benämning2": "HEADLAMP PANEL",
             "Status": "R"
         },
-        { "MK": "VO", "Artikelnr": "23750648", "Benämning": "SENSOR ADAS", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "23750648", "Benämning": "SENSOR ADAS", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23760215", "Benämning": "STÅNG", "Benämning2": "ROD", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23769752", "Benämning": "PANEL", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23773117", "Benämning": "LUFTKANAL", "Benämning2": "AIR DUCT", "Status": "R" },
-        { "MK": "VO", "Artikelnr": "23774320", "Benämning": "FÄSTE TILL SENSOR", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "23774320", "Benämning": "FÄSTE TILL SENSOR", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23774776", "Benämning": "KONSOL", "Benämning2": "BRACKET", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23774797", "Benämning": "KONSOL", "Benämning2": "BRACKET", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23774807", "Benämning": "KONSOL", "Benämning2": "BRACKET", "Status": "R" },
@@ -47185,7 +47185,7 @@
         { "MK": "VO", "Artikelnr": "23869764", "Benämning": "DÖRRFÖNSTERGLAS", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23871074", "Benämning": "KOMPLETT DÖRR", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23883077", "Benämning": "FLÄKTKÅPA", "Benämning2": "FAN SHROUD", "Status": "R" },
-        { "MK": "VO", "Artikelnr": "23894777", "Benämning": "KYLARLUCKA", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "23894777", "Benämning": "KYLARLUCKA", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23935875", "Benämning": "BRYGGA", "Benämning2": "BRIDGE", "Status": "H" },
         { "MK": "VO", "Artikelnr": "23936716", "Benämning": "BOTTENPLÅT", "Status": "R" },
         { "MK": "VO", "Artikelnr": "23960791", "Benämning": "LUCKA, P-VÄRMARE", "Status": "R" },
@@ -47422,7 +47422,7 @@
             "Artikelnr": "70353193",
             "Benämning": "KONSOL, LEDSTÅNG",
             "Benämning2": "T-FORM",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         {
@@ -47433,22 +47433,22 @@
             "Status": "R",
             "Bild": true
         },
-        { "MK": "VO", "Artikelnr": "70357627", "Benämning": "LAMPA EXTRALJUS", "Benämning2": " ", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "70357627", "Benämning": "LAMPA EXTRALJUS", "Benämning2": " ", "Status": "R" },
         { "MK": "VO", "Artikelnr": "70360533", "Benämning": "SPEGELKÅPA", "Status": "R", "Bild": true },
-        { "MK": "VO", "Artikelnr": "78546711", "Benämning": "VINDRUTETORKARE", "Benämning2": " ", "Status": "B" },
-        { "MK": "VO", "Artikelnr": "8141836", "Benämning": "V-NIPPEL", "Benämning2": " ", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "78546711", "Benämning": "VINDRUTETORKARE", "Benämning2": " ", "Status": "R" },
+        { "MK": "VO", "Artikelnr": "8141836", "Benämning": "V-NIPPEL", "Benämning2": " ", "Status": "R" },
         { "MK": "VO", "Artikelnr": "8150740", "Benämning": "LAGERTAPP, TANKBAND, 1", "Status": "N" },
         { "MK": "VO", "Artikelnr": "8150742", "Benämning": "LAGERTAPP, TANKBAND, 2", "Status": "N" },
-        { "MK": "VO", "Artikelnr": "82214988", "Benämning": "TORKARARM", "Benämning2": " ", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "82214988", "Benämning": "TORKARARM", "Benämning2": " ", "Status": "R" },
         { "MK": "VO", "Artikelnr": "82215326", "Benämning": "SKYDDSKÅPA", "Benämning2": " ", "Status": "R" },
-        { "MK": "VO", "Artikelnr": "82366018", "Benämning": "SATS", "Benämning2": " ", "Status": "B" },
-        { "MK": "VO", "Artikelnr": "82485681", "Benämning": "MUNSTYCKE", "Benämning2": " ", "Status": "B" },
+        { "MK": "VO", "Artikelnr": "82366018", "Benämning": "SATS", "Benämning2": " ", "Status": "R" },
+        { "MK": "VO", "Artikelnr": "82485681", "Benämning": "MUNSTYCKE", "Benämning2": " ", "Status": "R" },
         {
             "MK": "VO",
             "Artikelnr": "82485683",
             "Benämning": "TORKARBLAD",
             "Benämning2": " ",
-            "Status": "B",
+            "Status": "R",
             "Bild": true
         },
         { "MK": "VO", "Artikelnr": "84458120", "Benämning": "STRÅLKASTARSPOLARE", "Status": "R" },
@@ -47480,7 +47480,7 @@
             "Artikelnr": "990941",
             "Benämning": "FLÄNSMUTTER, M10",
             "Benämning2": "STARTMOTOR",
-            "Status": "B"
+            "Status": "R"
         },
         {
             "MK": "VO",
@@ -47727,8 +47727,8 @@
             "Status": "J",
             "Lagerplats": "VÅN-2"
         },
-        { "MK": "VPS", "Artikelnr": "SHBH", "Benämning": "HÖRN, HÖ-BAK", "Status": "B" },
-        { "MK": "VPS", "Artikelnr": "SHBV", "Benämning": "HÖRN, VÄ-BAK", "Status": "B" },
+        { "MK": "VPS", "Artikelnr": "SHBH", "Benämning": "HÖRN, HÖ-BAK", "Status": "R" },
+        { "MK": "VPS", "Artikelnr": "SHBV", "Benämning": "HÖRN, VÄ-BAK", "Status": "R" },
         { "MK": "VPS", "Artikelnr": "SMB", "Benämning": "KOFÅNGARE, MITT-BAK", "Status": "H", "Bild": true },
         {
             "MK": "WU",
