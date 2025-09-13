@@ -101,27 +101,18 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
         Artikelnr: it.Artikelnr ?? "",
         Benämning: (it["Benämning"] as string | undefined) ?? null,
         Benämning2: (it["Benämning2"] as string | undefined) ?? null,
-        ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
         Status: (() => {
           const s = it["Status"] as string | undefined;
           return typeof s === "string" ? s.trim() : null;
         })(),
         Lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
-        Bild: (it["Bild"] as boolean | undefined) ?? null,
-        Paket: (it["Paket"] as string[] | undefined) ?? null,
-        Fordon: (it["Fordon"] as string[] | undefined) ?? null,
+        Ersätter: (it.Ersätter as string[] | undefined) ?? null,
+        ErsattAv: (it.ErsattAv as string[] | undefined) ?? null,
         AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-        Ersätter:
-          (it["Ersätter"] as string[] | undefined) ||
-          (it["ersatter"] as string[] | undefined) ||
-          (it["ersätter"] as string[] | undefined) ||
-          null,
-        ErsattAv:
-          (it["Ersatt av"] as string[] | undefined) ||
-          (it["Ersatt_av"] as string[] | undefined) ||
-          (it["ersatt_av"] as string[] | undefined) ||
-          (it["ersattav"] as string[] | undefined) ||
-          null,
+        Fordon: (it["Fordon"] as string[] | undefined) ?? null,
+        Paket: (it["Paket"] as string[] | undefined) ?? null,
+        ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
+        Bild: (it["Bild"] as boolean | undefined) ?? null,
       });
     }
   } else if (json && typeof json === "object") {
@@ -135,27 +126,18 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           Artikelnr: it.Artikelnr ?? "",
           Benämning: (it["Benämning"] as string | undefined) ?? null,
           Benämning2: (it["Benämning2"] as string | undefined) ?? null,
-          ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
           Status: (() => {
             const s = it["Status"] as string | undefined;
             return typeof s === "string" ? s.trim() : null;
           })(),
           Lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
-          Bild: (it["Bild"] as boolean | undefined) ?? null,
+          Ersätter: (it.Ersätter as string[] | undefined) ?? null,
+          ErsattAv: (it.ErsattAv as string[] | undefined) ?? null,
+          AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
           Paket: (it["Paket"] as string[] | undefined) ?? null,
           Fordon: (it["Fordon"] as string[] | undefined) ?? null,
-          AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-          Ersätter:
-            (it["Ersätter"] as string[] | undefined) ||
-            (it["ersatter"] as string[] | undefined) ||
-            (it["ersätter"] as string[] | undefined) ||
-            null,
-          ErsattAv:
-            (it["Ersatt av"] as string[] | undefined) ||
-            (it["Ersatt_av"] as string[] | undefined) ||
-            (it["ersatt_av"] as string[] | undefined) ||
-            (it["ersattav"] as string[] | undefined) ||
-            null,
+          ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
+          Bild: (it["Bild"] as boolean | undefined) ?? null,
         });
       }
     }
