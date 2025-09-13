@@ -1,4 +1,3 @@
-import { faker } from "@faker-js/faker";
 import {
   ArrowDownIcon,
   ArrowRightIcon,
@@ -9,29 +8,8 @@ import {
   CircleX,
   Timer,
 } from "lucide-react";
-import { customAlphabet } from "nanoid";
-import { type Task, tasks } from "@/db/schema";
 
-import { generateId } from "@/lib/id";
-
-export function generateRandomTask(): Task {
-  return {
-    id: generateId("task"),
-    code: `TASK-${customAlphabet("0123456789", 4)()}`,
-    title: faker.hacker
-      .phrase()
-      .replace(/^./, (letter) => letter.toUpperCase()),
-    estimatedHours: faker.number.int({ min: 1, max: 24 }),
-    status: faker.helpers.shuffle(tasks.status.enumValues)[0] ?? "todo",
-    label: faker.helpers.shuffle(tasks.label.enumValues)[0] ?? "bug",
-    priority: faker.helpers.shuffle(tasks.priority.enumValues)[0] ?? "low",
-    archived: faker.datatype.boolean({ probability: 0.2 }),
-    createdAt: new Date(),
-    updatedAt: new Date(),
-  };
-}
-
-export function getStatusIcon(status: Task["status"]) {
+export function getStatusIcon(status: string) {
   const statusIcons = {
     canceled: CircleX,
     done: CheckCircle2,
@@ -39,15 +17,15 @@ export function getStatusIcon(status: Task["status"]) {
     todo: CircleHelp,
   };
 
-  return statusIcons[status] || CircleIcon;
+  return statusIcons[status as keyof typeof statusIcons] || CircleIcon;
 }
 
-export function getPriorityIcon(priority: Task["priority"]) {
+export function getPriorityIcon(priority: string) {
   const priorityIcons = {
     high: ArrowUpIcon,
     low: ArrowDownIcon,
     medium: ArrowRightIcon,
   };
 
-  return priorityIcons[priority] || CircleIcon;
+  return priorityIcons[priority as keyof typeof priorityIcons] || CircleIcon;
 }
