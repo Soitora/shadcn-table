@@ -31,8 +31,6 @@ export interface InventoryRowUI {
   alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
   ersatter: string[] | null;
   ersattAv: string[] | null;
-  createdAt: Date;
-  updatedAt: Date | null;
 }
 
 interface FacetOption { value: string; label: string; count?: number }

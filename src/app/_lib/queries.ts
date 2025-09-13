@@ -6,7 +6,7 @@ import path from "node:path";
 export interface GetInventorySchema {
   page: number;
   perPage: number;
-  sort: Array<{ id: "createdAt" | "mk" | "artikelnr" | "status" | "benamning" | "lagerplats"; desc: boolean }>;
+  sort: Array<{ id: "mk" | "artikelnr" | "status" | "benamning" | "lagerplats"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
   q?: string; // matches artikelnr, benamning, benamning2
@@ -83,8 +83,6 @@ interface InventoryRowUIShape {
   alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
   ersatter: string[] | null;
   ersattAv: string[] | null;
-  createdAt: Date;
-  updatedAt: Date | null;
 }
 
 async function readLager(): Promise<unknown> {
@@ -126,8 +124,6 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           (it["ersatt_av"] as string[] | undefined) ||
           (it["ersattav"] as string[] | undefined) ||
           null,
-        createdAt: new Date(0),
-        updatedAt: null,
       });
     }
   } else if (json && typeof json === "object") {
@@ -162,8 +158,6 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
             (it["ersatt_av"] as string[] | undefined) ||
             (it["ersattav"] as string[] | undefined) ||
             null,
-          createdAt: new Date(0),
-          updatedAt: null,
         });
       }
     }
@@ -241,7 +235,7 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
 }
 
 function applySorting(rows: InventoryRowUIShape[], sort: GetInventorySchema["sort"] | undefined): InventoryRowUIShape[] {
-  if (!sort || sort.length === 0) return [...rows].sort((a, b) => Number(b.createdAt) - Number(a.createdAt));
+  if (!sort || sort.length === 0) return [...rows].sort((a, b) => a.artikelnr.localeCompare(b.artikelnr));
   const cmp = (a: InventoryRowUIShape, b: InventoryRowUIShape, id: GetInventorySchema["sort"][number]["id"], desc: boolean) => {
     const dir = desc ? -1 : 1;
     switch (id) {
@@ -255,9 +249,8 @@ function applySorting(rows: InventoryRowUIShape[], sort: GetInventorySchema["sor
         return dir * ((a.benamning ?? "").localeCompare(b.benamning ?? ""));
       case "lagerplats":
         return dir * ((a.lagerplats ?? "").localeCompare(b.lagerplats ?? ""));
-      case "createdAt":
       default:
-        return dir * (Number(a.createdAt) - Number(b.createdAt));
+        return dir * a.artikelnr.localeCompare(b.artikelnr);
     }
   };
 
