@@ -6,12 +6,11 @@ import path from "node:path";
 export interface GetInventorySchema {
   page: number;
   perPage: number;
-  sort: Array<{ id: "createdAt" | "mk" | "artikelnr" | "location" | "status" | "benamning" | "lagerplats"; desc: boolean }>;
+  sort: Array<{ id: "createdAt" | "mk" | "artikelnr" | "status" | "benamning" | "lagerplats"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
   q?: string; // matches artikelnr, benamning, benamning2
   status?: string[];
-  location?: string[];
   mk?: string[];
   // advanced/command filters
   filters?: Array<{
@@ -75,7 +74,6 @@ interface InventoryRowUIShape {
   artikelnr: string;
   benamning: string | null;
   benamning2: string | null;
-  location: string;
   status: string | null;
   lagerplats: string | null;
   extrainfo: string | null;
@@ -99,8 +97,7 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
   if (Array.isArray(json)) {
     for (const itRaw of json as RawInventoryItem[]) {
       const it = itRaw ?? ({} as RawInventoryItem);
-      const location = "";
-      const id = `${it.MK ?? ""}:${it.Artikelnr ?? ""}:${location}`;
+      const id = `${it.MK} ${it.Artikelnr}`;
       rows.push({
         id,
         mk: it.MK ?? "",
@@ -118,16 +115,15 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
         fordon: (it["Fordon"] as string[] | undefined) ?? null,
         alternativart: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
         articleData: { ...it },
-        location,
         createdAt: new Date(0),
         updatedAt: null,
       });
     }
   } else if (json && typeof json === "object") {
-    for (const [location, items] of Object.entries(json as Record<string, RawInventoryItem[]>)) {
+    for (const items of Object.values(json as Record<string, RawInventoryItem[]>)) {
       if (!Array.isArray(items)) continue;
       for (const it of items) {
-        const id = `${it.MK ?? ""}:${it.Artikelnr ?? ""}:${location}`;
+        const id = `${it.MK} ${it.Artikelnr}`;
         rows.push({
           id,
           mk: it.MK ?? "",
@@ -145,7 +141,6 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           fordon: (it["Fordon"] as string[] | undefined) ?? null,
           alternativart: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
           articleData: { ...it },
-          location,
           createdAt: new Date(0),
           updatedAt: null,
         });
@@ -159,7 +154,6 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
   const q = (input.q ?? "").trim().toLowerCase();
   const hasQ = q.length > 0;
   const statusSet = new Set(input.status ?? []);
-  const locationSet = new Set(input.location ?? []);
   const mkSet = new Set(input.mk ?? []);
 
   const isCmdLike = input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters";
@@ -167,7 +161,7 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
     isCmdLike && input.filters
       ? input.filters
           .map((f) => f.id)
-          .filter((id): id is "mk" | "location" | "status" => id === "mk" || id === "location" || id === "status")
+          .filter((id): id is "mk" | "status" => id === "mk" || id === "status")
       : [],
   );
 
@@ -179,12 +173,11 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
       if (!(inArt || inName || inName2)) return false;
     }
     if (!overridden.has("status") && statusSet.size > 0 && (!r.status || !statusSet.has(r.status))) return false;
-    if (!overridden.has("location") && locationSet.size > 0 && !locationSet.has(r.location)) return false;
     if (!overridden.has("mk") && mkSet.size > 0 && !mkSet.has(r.mk)) return false;
     return true;
   });
 
-  // Advanced/command filters (limited support for mk/location/status)
+  // Advanced/command filters (limited support for mk/status)
   if ((input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters") && input.filters?.length) {
     const joinOr = input.joinOperator === "or";
     const preds = input.filters
@@ -201,13 +194,6 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
             if (values.length === 0) return null;
             if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.mk);
             return (r: InventoryRowUIShape) => values.includes(r.mk);
-          }
-          case "location": {
-            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.location;
-            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.location;
-            if (values.length === 0) return null;
-            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.location);
-            return (r: InventoryRowUIShape) => values.includes(r.location);
           }
           case "status": {
             if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.status;
@@ -242,8 +228,6 @@ function applySorting(rows: InventoryRowUIShape[], sort: GetInventorySchema["sor
         return dir * a.mk.localeCompare(b.mk);
       case "artikelnr":
         return dir * a.artikelnr.localeCompare(b.artikelnr);
-      case "location":
-        return dir * a.location.localeCompare(b.location);
       case "status":
         return dir * ((a.status ?? "").localeCompare(b.status ?? ""));
       case "benamning":
@@ -311,27 +295,6 @@ export async function getInventoryMkCounts() {
   )();
 }
 
-export async function getInventoryLocationCounts() {
-  return unstable_cache(
-    async () => {
-      try {
-        const all = mapToRows(await readLager());
-        const map = new Map<string, number>();
-        for (const r of all) {
-          if (!r.location) continue;
-          map.set(r.location, (map.get(r.location) ?? 0) + 1);
-        }
-        return Array.from(map.entries())
-          .map(([value, count]) => ({ value, label: value, count }))
-          .sort((a, b) => (b.count - a.count) || a.label.localeCompare(b.label));
-      } catch (_err) {
-        return [] as Array<{ value: string; label: string; count: number }>;
-      }
-    },
-    ["inventory-location-counts"],
-    { revalidate: 300 },
-  )();
-}
 
 export async function getInventoryStatusCounts() {
   return unstable_cache(

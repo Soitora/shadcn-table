@@ -22,7 +22,6 @@ interface InventoryTableProps {
     Awaited<ReturnType<typeof import("../_lib/queries").getInventory>>,
     Awaited<ReturnType<typeof import("../_lib/queries").getInventoryStatusCounts>>,
     Awaited<ReturnType<typeof import("../_lib/queries").getInventoryMkCounts>>,
-    Awaited<ReturnType<typeof import("../_lib/queries").getInventoryLocationCounts>>,
   ]>;
 }
 
@@ -30,11 +29,11 @@ export function InventoryTable({ promises }: InventoryTableProps) {
   const { enableAdvancedFilter, filterFlag } = useFeatureFlags();
   const [rowAction, setRowAction] = React.useState<DataTableRowAction<InventoryRowUI> | null>(null);
 
-  const [{ data, pageCount }, statusCounts, mkOptions, locationOptions] = React.use(promises);
+  const [{ data, pageCount }, statusCounts, mkOptions] = React.use(promises);
 
   const columns = React.useMemo(
-    () => getInventoryTableColumns({ statusCounts, mkOptions, locationOptions, setRowAction }),
-    [statusCounts, mkOptions, locationOptions]
+    () => getInventoryTableColumns({ statusCounts, mkOptions, setRowAction }),
+    [statusCounts, mkOptions]
   );
 
   const { table, shallow, debounceMs, throttleMs } = useDataTable({
@@ -53,7 +52,6 @@ export function InventoryTable({ promises }: InventoryTableProps) {
         extrainfo: false,
         alternativart: false,
         fordon: false,
-        location: false,
         ersattAv: false,
         ersatter: false,
       },

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { CalendarIcon, Ellipsis, Hash, MapPin, Tag } from "lucide-react";
+import { CalendarIcon, Ellipsis, Hash, Tag } from "lucide-react";
 import * as React from "react";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { Badge } from "@/components/ui/badge";
@@ -22,7 +22,6 @@ export interface InventoryRowUI {
   artikelnr: string;
   benamning: string | null;
   benamning2: string | null;
-  location: string;
   status: string | null;
   lagerplats: string | null;
   extrainfo: string | null;
@@ -40,7 +39,6 @@ interface FacetOption { value: string; label: string; count?: number }
 interface GetInventoryTableColumnsProps {
   statusCounts: Record<string, number>;
   mkOptions?: FacetOption[];
-  locationOptions?: FacetOption[];
   setRowAction?: React.Dispatch<
     React.SetStateAction<DataTableRowAction<InventoryRowUI> | null>
   >;
@@ -49,7 +47,6 @@ interface GetInventoryTableColumnsProps {
 export function getInventoryTableColumns({
   statusCounts,
   mkOptions = [],
-  locationOptions = [],
   setRowAction,
 }: GetInventoryTableColumnsProps): ColumnDef<InventoryRowUI>[] {
   const STATUS_INFO: Record<string, { label: string; tone: "positive" | "neutral" | "negative" }> = {

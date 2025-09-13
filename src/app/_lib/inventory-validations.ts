@@ -13,7 +13,6 @@ export const inventorySearchParamsCache = createSearchParamsCache({
   ]),
   q: parseAsString.withDefault(""),
   status: parseAsArrayOf(z.string()).withDefault([]),
-  location: parseAsArrayOf(z.string()).withDefault([]),
   mk: parseAsArrayOf(z.string()).withDefault([]),
   // advanced filter
   filters: getFiltersStateParser().withDefault([]),

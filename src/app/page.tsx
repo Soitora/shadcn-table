@@ -11,7 +11,6 @@ import {
   getInventory,
   getInventoryStatusCounts,
   getInventoryMkCounts,
-  getInventoryLocationCounts,
 } from "./_lib/queries";
 import { inventorySearchParamsCache } from "./_lib/inventory-validations";
 
@@ -33,7 +32,6 @@ export default async function IndexPage(props: IndexPageProps) {
       sort: (inv.sort as any) ?? [{ id: "createdAt", desc: true }],
       q: inv.q ?? "",
       status: inv.status,
-      location: inv.location,
       mk: inv.mk,
       filterFlag: inv.filterFlag ?? undefined,
       filters: validFilters,
@@ -41,7 +39,6 @@ export default async function IndexPage(props: IndexPageProps) {
     }),
     getInventoryStatusCounts(),
     getInventoryMkCounts(),
-    getInventoryLocationCounts(),
   ]);
 
   return (
