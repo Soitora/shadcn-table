@@ -64,7 +64,7 @@ interface RawInventoryItem {
   Benämning?: string | null;
   Benämning2?: string | null;
   ExtraInfo?: string | null;
-  // Optional misc keys we keep in articleData
+  // Raw JSON may include additional keys we don't map; they are ignored here
   [key: string]: unknown;
 }
 
@@ -81,7 +81,8 @@ interface InventoryRowUIShape {
   paket: string[] | null;
   fordon: string[] | null;
   alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
-  articleData?: Record<string, unknown> | null;
+  ersatter: string[] | null;
+  ersattAv: string[] | null;
   createdAt: Date;
   updatedAt: Date | null;
 }
@@ -114,7 +115,17 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
         paket: (it["Paket"] as string[] | undefined) ?? null,
         fordon: (it["Fordon"] as string[] | undefined) ?? null,
         alternativart: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-        articleData: { ...it },
+        ersatter:
+          (it["Ersätter"] as string[] | undefined) ||
+          (it["ersatter"] as string[] | undefined) ||
+          (it["ersätter"] as string[] | undefined) ||
+          null,
+        ersattAv:
+          (it["Ersatt av"] as string[] | undefined) ||
+          (it["Ersatt_av"] as string[] | undefined) ||
+          (it["ersatt_av"] as string[] | undefined) ||
+          (it["ersattav"] as string[] | undefined) ||
+          null,
         createdAt: new Date(0),
         updatedAt: null,
       });
@@ -140,7 +151,17 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           paket: (it["Paket"] as string[] | undefined) ?? null,
           fordon: (it["Fordon"] as string[] | undefined) ?? null,
           alternativart: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-          articleData: { ...it },
+          ersatter:
+            (it["Ersätter"] as string[] | undefined) ||
+            (it["ersatter"] as string[] | undefined) ||
+            (it["ersätter"] as string[] | undefined) ||
+            null,
+          ersattAv:
+            (it["Ersatt av"] as string[] | undefined) ||
+            (it["Ersatt_av"] as string[] | undefined) ||
+            (it["ersatt_av"] as string[] | undefined) ||
+            (it["ersattav"] as string[] | undefined) ||
+            null,
           createdAt: new Date(0),
           updatedAt: null,
         });

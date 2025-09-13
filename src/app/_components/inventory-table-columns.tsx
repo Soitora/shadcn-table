@@ -29,7 +29,8 @@ export interface InventoryRowUI {
   paket: string[] | null;
   fordon: string[] | null;
   alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
-  articleData?: Record<string, unknown> | null;
+  ersatter: string[] | null;
+  ersattAv: string[] | null;
   createdAt: Date;
   updatedAt: Date | null;
 }
@@ -247,11 +248,7 @@ export function getInventoryTableColumns({
         <DataTableColumnHeader column={column} title="Ersätter" />
       ),
       cell: ({ row }) => {
-        const data = (row.original.articleData ?? {}) as Record<string, unknown>;
-        const values =
-          (data["Ersätter"] as string[] | undefined) ||
-          (data["ersatter"] as string[] | undefined) ||
-          (data["ersätter"] as string[] | undefined) || [];
+        const values = row.original.ersatter ?? [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -272,12 +269,7 @@ export function getInventoryTableColumns({
         <DataTableColumnHeader column={column} title="Ersatt av" />
       ),
       cell: ({ row }) => {
-        const data = (row.original.articleData ?? {}) as Record<string, unknown>;
-        const values =
-          (data["Ersatt av"] as string[] | undefined) ||
-          (data["Ersatt_av"] as string[] | undefined) ||
-          (data["ersatt_av"] as string[] | undefined) ||
-          (data["ersattav"] as string[] | undefined) || [];
+        const values = row.original.ersattAv ?? [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
