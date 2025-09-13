@@ -15,23 +15,9 @@ import {
 } from "@/components/ui/dropdown-menu";
 import { formatDate } from "@/lib/format";
 import type { DataTableRowAction } from "@/types/data-table";
+import type { InventoryRowUIShape } from "../_lib/queries";
 
-export interface InventoryRowUI {
-  id: string;
-  mk: string;
-  artikelnr: string;
-  benamning: string | null;
-  benamning2: string | null;
-  status: string | null;
-  lagerplats: string | null;
-  ersatter: string[] | null;
-  ersattAv: string[] | null;
-  alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
-  fordon: string[] | null;
-  paket: string[] | null;
-  extrainfo: string | null;
-  bild: boolean | null;
-}
+export type InventoryRowUI = InventoryRowUIShape;
 
 interface FacetOption { value: string; label: string; count?: number }
 
@@ -108,14 +94,14 @@ export function getInventoryTableColumns({
       size: 40,
     },
     {
-      id: "mk",
-      accessorKey: "mk",
+      id: "MK",
+      accessorKey: "MK",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="MK" />
       ),
       cell: ({ row }) => (
         <div className="flex items-center gap-2">
-          <Badge variant="outline" className="py-1">{row.getValue("mk")}</Badge>
+          <Badge variant="outline" className="py-1">{row.getValue("MK")}</Badge>
         </div>
       ),
       meta: {
@@ -128,12 +114,12 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "artikelnr",
-      accessorKey: "artikelnr",
+      id: "Artikelnr",
+      accessorKey: "Artikelnr",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Artikelnummer" />
       ),
-      cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("artikelnr")}</div>,
+      cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("Artikelnr")}</div>,
       meta: {
         label: "Artikelnummer",
         variant: "text",
@@ -143,14 +129,14 @@ export function getInventoryTableColumns({
       enableColumnFilter: false,
     },
     {
-      id: "benamning",
-      accessorKey: "benamning",
+      id: "Benämning",
+      accessorKey: "Benämning",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Benämning" />
       ),
       cell: ({ row }) => {
-        const benamning = row.getValue<string | null>("benamning");
-        const benamning2 = row.original.benamning2;
+        const benamning = row.getValue<string | null>("Benämning");
+        const benamning2 = row.original.Benämning2;
         return (
           <div className="max-w-[28rem]">
             <div className="truncate">{benamning}</div>
@@ -169,13 +155,13 @@ export function getInventoryTableColumns({
       enableColumnFilter: false,
     },
     {
-      id: "status",
-      accessorKey: "status",
+      id: "Status",
+      accessorKey: "Status",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Status" />
       ),
       cell: ({ row }) => {
-        const status = row.getValue<string | null>("status");
+        const status = row.getValue<string | null>("Status");
         if (!status) return null;
         const info = STATUS_INFO[status] ?? { label: "Okänd", tone: "neutral" as const };
         return (
@@ -218,13 +204,13 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "lagerplats",
-      accessorKey: "lagerplats",
+      id: "Lagerplats",
+      accessorKey: "Lagerplats",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Lagerplats" />
       ),
       cell: ({ row }) => {
-        const value = row.getValue<string | null>("lagerplats");
+        const value = row.getValue<string | null>("Lagerplats");
         if (!value) return null;
         return (
           <div className="flex items-center gap-2">
@@ -246,7 +232,7 @@ export function getInventoryTableColumns({
         <DataTableColumnHeader column={column} title="Ersätter" />
       ),
       cell: ({ row }) => {
-        const values = row.original.ersatter ?? [];
+        const values = row.original.Ersätter ?? [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -267,7 +253,7 @@ export function getInventoryTableColumns({
         <DataTableColumnHeader column={column} title="Ersatt av" />
       ),
       cell: ({ row }) => {
-        const values = row.original.ersattAv ?? [];
+        const values = row.original.ErsattAv ?? [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -283,13 +269,13 @@ export function getInventoryTableColumns({
       enableColumnFilter: false,
     },
     {
-      id: "alternativart",
-      accessorKey: "alternativart",
+      id: "AlternativArt",
+      accessorKey: "AlternativArt",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Alternativ Artikel" />
       ),
       cell: ({ row }) => {
-        const list = (row.getValue("alternativart") as InventoryRowUI["alternativart"]) || [];
+        const list = (row.getValue("AlternativArt") as InventoryRowUI["AlternativArt"]) || [];
         if (!list || list.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -305,11 +291,11 @@ export function getInventoryTableColumns({
       enableColumnFilter: false,
     },
     {
-      id: "fordon",
-      accessorKey: "fordon",
+      id: "Fordon",
+      accessorKey: "Fordon",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Fordon" />,
       cell: ({ row }) => {
-        const list = (row.getValue("fordon") as string[] | null) || [];
+        const list = (row.getValue("Fordon") as string[] | null) || [];
         if (!list || list.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -325,11 +311,11 @@ export function getInventoryTableColumns({
       enableColumnFilter: false,
     },
     {
-      id: "paket",
-      accessorKey: "paket",
+      id: "Paket",
+      accessorKey: "Paket",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Paket" />,
       cell: ({ row }) => {
-        const list = (row.getValue("paket") as string[] | null) || [];
+        const list = (row.getValue("Paket") as string[] | null) || [];
         if (!list || list.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -345,23 +331,23 @@ export function getInventoryTableColumns({
       enableColumnFilter: false,
     },
     {
-      id: "extrainfo",
-      accessorKey: "extrainfo",
+      id: "ExtraInfo",
+      accessorKey: "ExtraInfo",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Extra Information" />
       ),
       cell: ({ row }) => (
-        <span className="max-w-[28rem] truncate">{row.getValue("extrainfo") ?? ""}</span>
+        <span className="max-w-[28rem] truncate">{row.getValue("ExtraInfo") ?? ""}</span>
       ),
       meta: { label: "Extra Information", variant: "text", icon: Tag },
       enableColumnFilter: false,
     },
     {
-      id: "bild",
-      accessorKey: "bild",
+      id: "Bild",
+      accessorKey: "Bild",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Bild" />,
       cell: ({ row }) => {
-        const has = !!row.getValue("bild");
+        const has = !!row.getValue("Bild");
         return has ? (
           <Badge className="py-0.5" variant="outline">Ja</Badge>
         ) : "";

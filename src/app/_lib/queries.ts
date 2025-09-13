@@ -6,7 +6,7 @@ import path from "node:path";
 export interface GetInventorySchema {
   page: number;
   perPage: number;
-  sort: Array<{ id: "mk" | "artikelnr" | "status" | "benamning" | "lagerplats"; desc: boolean }>;
+  sort: Array<{ id: "MK" | "Artikelnr" | "Benämning" | "Status" | "Lagerplats"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
   q?: string; // matches artikelnr, benamning, benamning2
@@ -30,20 +30,17 @@ function normalizeStatusTokenToCode(token: string): string | null {
   // Accept common Swedish labels (case-insensitive)
   const s = t.toLowerCase();
   switch (s) {
-    case "lagervara":
+    case "Lagervara":
       return "J";
-    case "utgående":
-    case "utgaende":
+    case "Utgående":
       return "U";
-    case "hemtagen":
+    case "Hemtagen":
       return "H";
-    case "avskriven":
+    case "Avskriven":
       return "A";
-    case "rörelseregistrerad":
-    case "rorelseregistrerad":
+    case "Rörelseregistrerad":
       return "R";
-    case "ej lagerförd":
-    case "ej lagerford":
+    case "Ej lagerförd":
       return "N";
     default:
       return null;
@@ -54,35 +51,36 @@ interface RawAlternativArt { "märkeskod": string; "artikelnummer": string }
 interface RawInventoryItem {
   MK: string;
   Artikelnr: string;
-  Status?: string | null;
-  Lagerplats?: string | null;
-  Bild?: boolean | null;
-  Paket?: string[] | null;
-  Fordon?: string[] | null;
-  AlternativArt?: RawAlternativArt[] | null;
-  // Names & extra info
   Benämning?: string | null;
   Benämning2?: string | null;
+  Status?: string | null;
+  Lagerplats?: string | null;
+  Paket?: string[] | null;
+  Fordon?: string[] | null;
+  Ersätter?: string[] | null;
+  ErsattAv?: string[] | null;
+  AlternativArt?: RawAlternativArt[] | null;
   ExtraInfo?: string | null;
+  Bild?: boolean | null;
   // Raw JSON may include additional keys we don't map; they are ignored here
   [key: string]: unknown;
 }
 
-interface InventoryRowUIShape {
-  id: string;
-  mk: string;
-  artikelnr: string;
-  benamning: string | null;
-  benamning2: string | null;
-  status: string | null;
-  lagerplats: string | null;
-  extrainfo: string | null;
-  bild: boolean | null;
-  paket: string[] | null;
-  fordon: string[] | null;
-  alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
-  ersatter: string[] | null;
-  ersattAv: string[] | null;
+export interface InventoryRowUIShape {
+  ID: string;
+  MK: string;
+  Artikelnr: string;
+  Benämning: string | null;
+  Benämning2: string | null;
+  Status: string | null;
+  Lagerplats: string | null;
+  Ersätter: string[] | null;
+  ErsattAv: string[] | null;
+  AlternativArt: Array<{ märkeskod: string; artikelnummer: string }> | null;
+  Fordon: string[] | null;
+  Paket: string[] | null;
+  ExtraInfo: string | null;
+  Bild: boolean | null;
 }
 
 async function readLager(): Promise<unknown> {
@@ -98,27 +96,27 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
       const it = itRaw ?? ({} as RawInventoryItem);
       const id = `${it.MK} ${it.Artikelnr}`;
       rows.push({
-        id,
-        mk: it.MK ?? "",
-        artikelnr: it.Artikelnr ?? "",
-        benamning: (it["Benämning"] as string | undefined) ?? null,
-        benamning2: (it["Benämning2"] as string | undefined) ?? null,
-        extrainfo: (it["ExtraInfo"] as string | undefined) ?? null,
-        status: (() => {
+        ID: id,
+        MK: it.MK ?? "",
+        Artikelnr: it.Artikelnr ?? "",
+        Benämning: (it["Benämning"] as string | undefined) ?? null,
+        Benämning2: (it["Benämning2"] as string | undefined) ?? null,
+        ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
+        Status: (() => {
           const s = it["Status"] as string | undefined;
           return typeof s === "string" ? s.trim() : null;
         })(),
-        lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
-        bild: (it["Bild"] as boolean | undefined) ?? null,
-        paket: (it["Paket"] as string[] | undefined) ?? null,
-        fordon: (it["Fordon"] as string[] | undefined) ?? null,
-        alternativart: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-        ersatter:
+        Lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
+        Bild: (it["Bild"] as boolean | undefined) ?? null,
+        Paket: (it["Paket"] as string[] | undefined) ?? null,
+        Fordon: (it["Fordon"] as string[] | undefined) ?? null,
+        AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
+        Ersätter:
           (it["Ersätter"] as string[] | undefined) ||
           (it["ersatter"] as string[] | undefined) ||
           (it["ersätter"] as string[] | undefined) ||
           null,
-        ersattAv:
+        ErsattAv:
           (it["Ersatt av"] as string[] | undefined) ||
           (it["Ersatt_av"] as string[] | undefined) ||
           (it["ersatt_av"] as string[] | undefined) ||
@@ -132,27 +130,27 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
       for (const it of items) {
         const id = `${it.MK} ${it.Artikelnr}`;
         rows.push({
-          id,
-          mk: it.MK ?? "",
-          artikelnr: it.Artikelnr ?? "",
-          benamning: (it["Benämning"] as string | undefined) ?? null,
-          benamning2: (it["Benämning2"] as string | undefined) ?? null,
-          extrainfo: (it["ExtraInfo"] as string | undefined) ?? null,
-          status: (() => {
+          ID: id,
+          MK: it.MK ?? "",
+          Artikelnr: it.Artikelnr ?? "",
+          Benämning: (it["Benämning"] as string | undefined) ?? null,
+          Benämning2: (it["Benämning2"] as string | undefined) ?? null,
+          ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
+          Status: (() => {
             const s = it["Status"] as string | undefined;
             return typeof s === "string" ? s.trim() : null;
           })(),
-          lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
-          bild: (it["Bild"] as boolean | undefined) ?? null,
-          paket: (it["Paket"] as string[] | undefined) ?? null,
-          fordon: (it["Fordon"] as string[] | undefined) ?? null,
-          alternativart: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-          ersatter:
+          Lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
+          Bild: (it["Bild"] as boolean | undefined) ?? null,
+          Paket: (it["Paket"] as string[] | undefined) ?? null,
+          Fordon: (it["Fordon"] as string[] | undefined) ?? null,
+          AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
+          Ersätter:
             (it["Ersätter"] as string[] | undefined) ||
             (it["ersatter"] as string[] | undefined) ||
             (it["ersätter"] as string[] | undefined) ||
             null,
-          ersattAv:
+          ErsattAv:
             (it["Ersatt av"] as string[] | undefined) ||
             (it["Ersatt_av"] as string[] | undefined) ||
             (it["ersatt_av"] as string[] | undefined) ||
@@ -176,19 +174,19 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
     isCmdLike && input.filters
       ? input.filters
           .map((f) => f.id)
-          .filter((id): id is "mk" | "status" => id === "mk" || id === "status")
+          .filter((id): id is "MK" | "Status" => id === "MK" || id === "Status")
       : [],
   );
 
   let out = rows.filter((r) => {
     if (hasQ) {
-      const inArt = r.artikelnr.toLowerCase().includes(q);
-      const inName = (r.benamning ?? "").toLowerCase().includes(q);
-      const inName2 = (r.benamning2 ?? "").toLowerCase().includes(q);
+      const inArt = r.Artikelnr.toLowerCase().includes(q);
+      const inName = (r.Benämning ?? "").toLowerCase().includes(q);
+      const inName2 = (r.Benämning2 ?? "").toLowerCase().includes(q);
       if (!(inArt || inName || inName2)) return false;
     }
-    if (!overridden.has("status") && statusSet.size > 0 && (!r.status || !statusSet.has(r.status))) return false;
-    if (!overridden.has("mk") && mkSet.size > 0 && !mkSet.has(r.mk)) return false;
+    if (!overridden.has("Status") && statusSet.size > 0 && (!r.Status || !statusSet.has(r.Status))) return false;
+    if (!overridden.has("MK") && mkSet.size > 0 && !mkSet.has(r.MK)) return false;
     return true;
   });
 
@@ -203,23 +201,23 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
           : [String(f.value ?? "")].filter(Boolean);
 
         switch (f.id) {
-          case "mk": {
-            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.mk;
-            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.mk;
+          case "MK": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.MK;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.MK;
             if (values.length === 0) return null;
-            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.mk);
-            return (r: InventoryRowUIShape) => values.includes(r.mk);
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.MK);
+            return (r: InventoryRowUIShape) => values.includes(r.MK);
           }
-          case "status": {
-            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.status;
-            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.status;
+          case "Status": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.Status;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.Status;
             if (values.length === 0) return null;
             const normValues = values
               .map((v) => normalizeStatusTokenToCode(v))
               .filter((v): v is string => !!v);
             if (normValues.length === 0) return null;
-            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.status || !normValues.includes(r.status);
-            return (r: InventoryRowUIShape) => !!r.status && normValues.includes(r.status);
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.Status || !normValues.includes(r.Status);
+            return (r: InventoryRowUIShape) => !!r.Status && normValues.includes(r.Status);
           }
           default:
             return null;
@@ -235,22 +233,22 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
 }
 
 function applySorting(rows: InventoryRowUIShape[], sort: GetInventorySchema["sort"] | undefined): InventoryRowUIShape[] {
-  if (!sort || sort.length === 0) return [...rows].sort((a, b) => a.artikelnr.localeCompare(b.artikelnr));
+  if (!sort || sort.length === 0) return [...rows].sort((a, b) => a.Artikelnr.localeCompare(b.Artikelnr));
   const cmp = (a: InventoryRowUIShape, b: InventoryRowUIShape, id: GetInventorySchema["sort"][number]["id"], desc: boolean) => {
     const dir = desc ? -1 : 1;
     switch (id) {
-      case "mk":
-        return dir * a.mk.localeCompare(b.mk);
-      case "artikelnr":
-        return dir * a.artikelnr.localeCompare(b.artikelnr);
-      case "status":
-        return dir * ((a.status ?? "").localeCompare(b.status ?? ""));
-      case "benamning":
-        return dir * ((a.benamning ?? "").localeCompare(b.benamning ?? ""));
-      case "lagerplats":
-        return dir * ((a.lagerplats ?? "").localeCompare(b.lagerplats ?? ""));
+      case "MK":
+        return dir * a.MK.localeCompare(b.MK);
+      case "Artikelnr":
+        return dir * a.Artikelnr.localeCompare(b.Artikelnr);
+      case "Status":
+        return dir * ((a.Status ?? "").localeCompare(b.Status ?? ""));
+      case "Benämning":
+        return dir * ((a.Benämning ?? "").localeCompare(b.Benämning ?? ""));
+      case "Lagerplats":
+        return dir * ((a.Lagerplats ?? "").localeCompare(b.Lagerplats ?? ""));
       default:
-        return dir * a.artikelnr.localeCompare(b.artikelnr);
+        return dir * a.Artikelnr.localeCompare(b.Artikelnr);
     }
   };
 
@@ -294,8 +292,8 @@ export async function getInventoryMkCounts() {
         const all = mapToRows(await readLager());
         const map = new Map<string, number>();
         for (const r of all) {
-          if (!r.mk) continue;
-          map.set(r.mk, (map.get(r.mk) ?? 0) + 1);
+          if (!r.MK) continue;
+          map.set(r.MK, (map.get(r.MK) ?? 0) + 1);
         }
         return Array.from(map.entries())
           .map(([value, count]) => ({ value, label: value, count }))
@@ -316,8 +314,8 @@ export async function getInventoryStatusCounts() {
       try {
         const all = mapToRows(await readLager());
         return all.reduce<Record<string, number>>((acc, r) => {
-          if (!r.status) return acc;
-          acc[r.status] = (acc[r.status] ?? 0) + 1;
+          if (!r.Status) return acc;
+          acc[r.Status] = (acc[r.Status] ?? 0) + 1;
           return acc;
         }, {});
       } catch (_err) {

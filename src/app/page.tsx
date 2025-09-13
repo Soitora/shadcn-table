@@ -29,7 +29,7 @@ export default async function IndexPage(props: IndexPageProps) {
     getInventory({
       page: inv.page,
       perPage: inv.perPage,
-      sort: (inv.sort as any) ?? [{ id: "artikelnr", desc: false }],
+      sort: (inv.sort as any) ?? [{ id: "Artikelnr", desc: false }],
       q: inv.q ?? "",
       status: inv.status,
       mk: inv.mk,

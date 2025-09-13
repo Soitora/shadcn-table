@@ -43,20 +43,20 @@ export function InventoryTable({ promises }: InventoryTableProps) {
     enableAdvancedFilter,
     initialState: {
       sorting: [
-        { id: "mk", desc: false },
-        { id: "benamning", desc: false },
+        { id: "MK", desc: false },
+        { id: "Benämning", desc: false },
       ],
       columnPinning: { right: ["actions"] },
       columnVisibility: {
-        paket: false,
-        extrainfo: false,
-        alternativart: false,
-        fordon: false,
+        Paket: false,
+        ExtraInfo: false,
+        AlternativArt: false,
+        Fordon: false,
         ersattAv: false,
         ersatter: false,
       },
     },
-    getRowId: (row) => row.id,
+    getRowId: (row) => row.ID,
     shallow: false,
     clearOnDefault: true,
   });

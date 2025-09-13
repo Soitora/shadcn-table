@@ -9,7 +9,7 @@ export const inventorySearchParamsCache = createSearchParamsCache({
   perPage: parseAsInteger.withDefault(10),
   // Use a generic that permits string IDs so we can sort by column IDs coming from the table
   sort: getSortingStateParser<Record<string, unknown>>().withDefault([
-    { id: "artikelnr", desc: false },
+    { id: "Artikelnr", desc: false },
   ]),
   q: parseAsString.withDefault(""),
   status: parseAsArrayOf(z.string()).withDefault([]),
