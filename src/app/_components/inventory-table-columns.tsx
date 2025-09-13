@@ -24,13 +24,13 @@ export interface InventoryRowUI {
   benamning2: string | null;
   status: string | null;
   lagerplats: string | null;
-  extrainfo: string | null;
-  bild: boolean | null;
-  paket: string[] | null;
-  fordon: string[] | null;
-  alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
   ersatter: string[] | null;
   ersattAv: string[] | null;
+  alternativart: Array<{ märkeskod: string; artikelnummer: string }> | null;
+  fordon: string[] | null;
+  paket: string[] | null;
+  extrainfo: string | null;
+  bild: boolean | null;
 }
 
 interface FacetOption { value: string; label: string; count?: number }
@@ -131,11 +131,11 @@ export function getInventoryTableColumns({
       id: "artikelnr",
       accessorKey: "artikelnr",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Artikelnr" />
+        <DataTableColumnHeader column={column} title="Artikelnummer" />
       ),
       cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("artikelnr")}</div>,
       meta: {
-        label: "Artikelnr",
+        label: "Artikelnummer",
         variant: "text",
         icon: Tag,
         placeholder: "Search...",
@@ -164,7 +164,7 @@ export function getInventoryTableColumns({
         label: "Benämning",
         variant: "text",
         icon: Tag,
-        placeholder: "Search...",
+        placeholder: "Sök...",
       },
       enableColumnFilter: false,
     },
@@ -193,7 +193,7 @@ export function getInventoryTableColumns({
         label: "Status",
         variant: "multiSelect",
         options: (() => {
-          const statusOrder = ["J", "U", "H", "A", "R", "N"]; // desired order
+          const statusOrder = ["J", "U", "H", "A", "R", "N"];
           return Object.entries(statusCounts)
             .sort(([a], [b]) => {
               const ia = statusOrder.indexOf(a);
