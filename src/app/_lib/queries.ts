@@ -23,6 +23,34 @@ export interface GetInventorySchema {
   joinOperator?: "and" | "or";
 }
 
+function normalizeStatusTokenToCode(token: string): string | null {
+  const t = token.trim();
+  if (!t) return null;
+  // Already a one-letter code
+  if (t.length === 1) return t.toUpperCase();
+  // Accept common Swedish labels (case-insensitive)
+  const s = t.toLowerCase();
+  switch (s) {
+    case "lagervara":
+      return "J";
+    case "utgående":
+    case "utgaende":
+      return "U";
+    case "hemtagen":
+      return "H";
+    case "avskriven":
+      return "A";
+    case "rörelseregistrerad":
+    case "rorelseregistrerad":
+      return "R";
+    case "ej lagerförd":
+    case "ej lagerford":
+      return "N";
+    default:
+      return null;
+  }
+}
+
 interface RawAlternativArt { "märkeskod": string; "artikelnummer": string }
 interface RawInventoryItem {
   MK: string;
@@ -80,7 +108,10 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
         benamning: (it["Benämning"] as string | undefined) ?? null,
         benamning2: (it["Benämning2"] as string | undefined) ?? null,
         extrainfo: (it["ExtraInfo"] as string | undefined) ?? null,
-        status: (it["Status"] as string | undefined) ?? null,
+        status: (() => {
+          const s = it["Status"] as string | undefined;
+          return typeof s === "string" ? s.trim() : null;
+        })(),
         lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
         bild: (it["Bild"] as boolean | undefined) ?? null,
         paket: (it["Paket"] as string[] | undefined) ?? null,
@@ -104,7 +135,10 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           benamning: (it["Benämning"] as string | undefined) ?? null,
           benamning2: (it["Benämning2"] as string | undefined) ?? null,
           extrainfo: (it["ExtraInfo"] as string | undefined) ?? null,
-          status: (it["Status"] as string | undefined) ?? null,
+          status: (() => {
+            const s = it["Status"] as string | undefined;
+            return typeof s === "string" ? s.trim() : null;
+          })(),
           lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
           bild: (it["Bild"] as boolean | undefined) ?? null,
           paket: (it["Paket"] as string[] | undefined) ?? null,
@@ -128,6 +162,15 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
   const locationSet = new Set(input.location ?? []);
   const mkSet = new Set(input.mk ?? []);
 
+  const isCmdLike = input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters";
+  const overridden = new Set<string>(
+    isCmdLike && input.filters
+      ? input.filters
+          .map((f) => f.id)
+          .filter((id): id is "mk" | "location" | "status" => id === "mk" || id === "location" || id === "status")
+      : [],
+  );
+
   let out = rows.filter((r) => {
     if (hasQ) {
       const inArt = r.artikelnr.toLowerCase().includes(q);
@@ -135,9 +178,9 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
       const inName2 = (r.benamning2 ?? "").toLowerCase().includes(q);
       if (!(inArt || inName || inName2)) return false;
     }
-    if (statusSet.size > 0 && (!r.status || !statusSet.has(r.status))) return false;
-    if (locationSet.size > 0 && !locationSet.has(r.location)) return false;
-    if (mkSet.size > 0 && !mkSet.has(r.mk)) return false;
+    if (!overridden.has("status") && statusSet.size > 0 && (!r.status || !statusSet.has(r.status))) return false;
+    if (!overridden.has("location") && locationSet.size > 0 && !locationSet.has(r.location)) return false;
+    if (!overridden.has("mk") && mkSet.size > 0 && !mkSet.has(r.mk)) return false;
     return true;
   });
 
@@ -170,8 +213,12 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
             if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.status;
             if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.status;
             if (values.length === 0) return null;
-            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.status || !values.includes(r.status);
-            return (r: InventoryRowUIShape) => !!r.status && values.includes(r.status);
+            const normValues = values
+              .map((v) => normalizeStatusTokenToCode(v))
+              .filter((v): v is string => !!v);
+            if (normValues.length === 0) return null;
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.status || !normValues.includes(r.status);
+            return (r: InventoryRowUIShape) => !!r.status && normValues.includes(r.status);
           }
           default:
             return null;
