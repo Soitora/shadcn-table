@@ -197,7 +197,7 @@ export function getInventoryTableColumns({
         label: "Status",
         variant: "multiSelect",
         options: (() => {
-          const statusOrder = ["J", "U", "H", "A", "B", "R", "N"]; // desired order
+          const statusOrder = ["J", "U", "H", "A", "R", "N"]; // desired order
           return Object.entries(statusCounts)
             .sort(([a], [b]) => {
               const ia = statusOrder.indexOf(a);
@@ -218,26 +218,6 @@ export function getInventoryTableColumns({
             });
         })(),
         icon: Tag,
-      },
-      enableColumnFilter: true,
-    },
-    {
-      id: "location",
-      accessorKey: "location",
-      header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Location" />
-      ),
-      cell: ({ row }) => (
-        <div className="flex items-center gap-2">
-          <Badge variant="outline" className="py-1">{row.getValue("location")}</Badge>
-        </div>
-      ),
-      meta: {
-        label: "Verkstad",
-        variant: "multiSelect",
-        icon: MapPin,
-        options: locationOptions,
-        placeholder: "Select locations...",
       },
       enableColumnFilter: true,
     },

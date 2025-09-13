@@ -1,4 +1,5 @@
 import * as React from "react";
+export const runtime = "nodejs";
 import { DataTableSkeleton } from "@/components/data-table/data-table-skeleton";
 import { Shell } from "@/components/shell";
 import { getValidFilters } from "@/lib/data-table";
