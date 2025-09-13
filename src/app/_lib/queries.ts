@@ -146,15 +146,33 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
     const joinOr = input.joinOperator === "or";
     const preds = input.filters
       .map((f) => {
-        const values = Array.isArray(f.value) ? (f.value as string[]) : [String(f.value ?? "")].filter(Boolean);
-        if (values.length === 0) return null;
+        const op = (f.operator ?? "inArray") as string;
+        const values = Array.isArray(f.value)
+          ? (f.value as string[])
+          : [String(f.value ?? "")].filter(Boolean);
+
         switch (f.id) {
-          case "mk":
+          case "mk": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.mk;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.mk;
+            if (values.length === 0) return null;
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.mk);
             return (r: InventoryRowUIShape) => values.includes(r.mk);
-          case "location":
+          }
+          case "location": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.location;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.location;
+            if (values.length === 0) return null;
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.location);
             return (r: InventoryRowUIShape) => values.includes(r.location);
-          case "status":
+          }
+          case "status": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.status;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.status;
+            if (values.length === 0) return null;
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.status || !values.includes(r.status);
             return (r: InventoryRowUIShape) => !!r.status && values.includes(r.status);
+          }
           default:
             return null;
         }
