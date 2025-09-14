@@ -57,8 +57,8 @@ interface RawInventoryItem {
   lagerplats?: string | null;
   paket?: string[] | null;
   fordon?: string[] | null;
-  ersatter?: string[] | null;
-  ersatt_av?: string[] | null;
+  ersatter?: string | string[] | null;
+  ersatt_av?: string | string[] | null;
   korsnummer?: RawKorsnummer[] | null;
   extra_info?: string | null;
   bild?: boolean | null;
@@ -91,6 +91,15 @@ async function readLager(): Promise<unknown> {
 
 function mapToRows(json: unknown): InventoryRowUIShape[] {
   const rows: InventoryRowUIShape[] = [];
+  function toStringArray(v: unknown): string[] | null {
+    if (v == null) return null;
+    if (Array.isArray(v)) {
+      const out = v.map((x) => String(x)).filter(Boolean);
+      return out.length ? out : null;
+    }
+    const s = String(v);
+    return s ? [s] : null;
+  }
   if (Array.isArray(json)) {
     for (const itRaw of json as RawInventoryItem[]) {
       const it = itRaw ?? ({} as RawInventoryItem);
@@ -106,8 +115,8 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           return typeof s === "string" ? s.trim() : null;
         })(),
         lagerplats: (it["lagerplats"] as string | undefined) ?? null,
-        ersatter: (it["ersatter"] as string[] | undefined) ?? null,
-        ersatt_av: (it["ersatt_av"] as string[] | undefined) ?? null,
+        ersatter: toStringArray(it["ersatter"]),
+        ersatt_av: toStringArray(it["ersatt_av"]),
         korsnummer: (it["korsnummer"] as RawKorsnummer[] | undefined) ?? null,
         fordon: (it["fordon"] as string[] | undefined) ?? null,
         paket: (it["paket"] as string[] | undefined) ?? null,
@@ -118,7 +127,7 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
   } else if (json && typeof json === "object") {
     for (const items of Object.values(json as Record<string, RawInventoryItem[]>)) {
       if (!Array.isArray(items)) continue;
-      for (const it of items) {
+      for (const it of items as RawInventoryItem[]) {
         const id = `${it.markeskod} ${it.artikelnummer}`;
         rows.push({
           id,
@@ -131,8 +140,8 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
             return typeof s === "string" ? s.trim() : null;
           })(),
           lagerplats: (it["lagerplats"] as string | undefined) ?? null,
-          ersatter: (it["ersatter"] as string[] | undefined) ?? null,
-          ersatt_av: (it["ersatt_av"] as string[] | undefined) ?? null,
+          ersatter: toStringArray(it["ersatter"]),
+          ersatt_av: toStringArray(it["ersatt_av"]),
           korsnummer: (it["korsnummer"] as RawKorsnummer[] | undefined) ?? null,
           paket: (it["paket"] as string[] | undefined) ?? null,
           fordon: (it["fordon"] as string[] | undefined) ?? null,

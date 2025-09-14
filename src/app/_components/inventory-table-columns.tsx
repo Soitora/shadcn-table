@@ -227,7 +227,12 @@ export function getInventoryTableColumns({
         <DataTableColumnHeader column={column} title="Ersätter" />
       ),
       cell: ({ row }) => {
-        const values = row.original.ersatter ?? [];
+        const raw = (row.original as InventoryRowUI).ersatter as unknown;
+        const values = Array.isArray(raw)
+          ? (raw.filter(Boolean) as string[])
+          : raw
+            ? [String(raw)]
+            : [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -239,7 +244,7 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Ersätter", variant: "text", icon: Replace },
+      meta: { label: "Ersätter", icon: Replace },
       enableColumnFilter: true,
     },
     {
@@ -249,7 +254,12 @@ export function getInventoryTableColumns({
         <DataTableColumnHeader column={column} title="Ersatt av" />
       ),
       cell: ({ row }) => {
-        const values = row.original.ersatt_av ?? [];
+        const raw = (row.original as InventoryRowUI).ersatt_av as unknown;
+        const values = Array.isArray(raw)
+          ? (raw.filter(Boolean) as string[])
+          : raw
+            ? [String(raw)]
+            : [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -261,7 +271,7 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Ersatt av", variant: "text", icon: ReplaceAll },
+      meta: { label: "Ersatt av", icon: ReplaceAll },
       enableColumnFilter: true,
     },
     {
