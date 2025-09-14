@@ -89,8 +89,10 @@ export function InventoryTable({ promises }: InventoryTableProps) {
   return (
     <DataTable table={table}>
       {enableAdvancedFilter ? (
-        <DataTableAdvancedToolbar table={table}>
-          <DataTableSortList table={table} align="start" />
+        <DataTableAdvancedToolbar
+          table={table}
+          rightExtras={<DataTableSortList table={table} align="end" />}
+        >
           {filterFlag === "advancedFilters" ? (
             <DataTableFilterList
               table={table}
