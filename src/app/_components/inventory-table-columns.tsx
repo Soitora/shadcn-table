@@ -2,6 +2,7 @@
 
 import type { ColumnDef } from "@tanstack/react-table";
 import { Ellipsis, Hash, Tag, Bolt, Loader, Package, Replace, ReplaceAll, Boxes, Truck, Blocks, ALargeSmall, Image as ImageIcon, Baseline } from "lucide-react";
+import { ImageZoom } from '@/components/ui/shadcn-io/image-zoom';
 import Image from "next/image";
 import * as React from "react";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
@@ -360,7 +361,7 @@ export function getInventoryTableColumns({
         if (!artikel) return null;
         const cleanArticleNr = artikel.replace(/[/.\s]/g, "");
         const src = `https://sts.xhs.gg/img/lager/${cleanArticleNr}.webp`;
-        return <Image src={src} alt={`Bild ${cleanArticleNr}`} width={50} height={50} />;
+        return <ImageZoom><Image src={src} alt={`Bild ${cleanArticleNr}`} className="w-12 h-12" width={1000} height={1000} /></ImageZoom>;
       },
       meta: { label: "Bild", variant: "boolean", icon: ImageIcon },
       enableColumnFilter: true,
