@@ -199,7 +199,7 @@ export interface DataTablePaginationProps<TData> extends EmptyProps<"div"> {
 
   /**
    * The options of the pagination.
-   * @default [10, 20, 30, 40, 50]
+   * @default [10, 15, 30, 60, 120]
    */
   pageSizeOptions?: number[];
 }
