@@ -305,7 +305,15 @@ export async function getInventory(input: GetInventorySchema) {
   return await unstable_cache(
     async () => {
       try {
-        const all = mapToRows(await readLager());
+        // Read data and fetch file modification time
+        const filePath = path.join(process.cwd(), "public", "db", "lager.json");
+        const [json, stat] = await Promise.all([
+          readLager(),
+          fs.stat(filePath).catch(() => null),
+        ]);
+        const lastUpdatedMs = stat ? stat.mtimeMs : Date.now();
+
+        const all = mapToRows(json);
         const filtered = applyFilters(all, input);
         const sorted = applySorting(filtered, input.sort);
         const total = sorted.length;
@@ -313,9 +321,9 @@ export async function getInventory(input: GetInventorySchema) {
         const end = start + input.perPage;
         const page = sorted.slice(start, end);
         const pageCount = Math.ceil(total / input.perPage);
-        return { data: page, pageCount };
+        return { data: page, pageCount, total, lastUpdatedMs };
       } catch (_err) {
-        return { data: [], pageCount: 0 };
+        return { data: [], pageCount: 0, total: 0, lastUpdatedMs: Date.now() };
       }
     },
     ["inventory", JSON.stringify(input)],

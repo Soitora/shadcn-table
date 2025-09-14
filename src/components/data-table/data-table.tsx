@@ -16,11 +16,15 @@ import { cn } from "@/lib/utils";
 interface DataTableProps<TData> extends React.ComponentProps<"div"> {
   table: TanstackTable<TData>;
   actionBar?: React.ReactNode;
+  total?: number;
+  lastUpdatedMs?: number;
 }
 
 export function DataTable<TData>({
   table,
   actionBar,
+  total,
+  lastUpdatedMs,
   children,
   className,
   ...props
@@ -92,7 +96,7 @@ export function DataTable<TData>({
         </Table>
       </div>
       <div className="flex flex-col gap-2.5">
-        <DataTablePagination table={table} />
+        <DataTablePagination table={table} total={total} lastUpdatedMs={lastUpdatedMs} />
         {actionBar &&
           table.getFilteredSelectedRowModel().rows.length > 0 &&
           actionBar}

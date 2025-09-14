@@ -29,7 +29,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
   const { enableAdvancedFilter, filterFlag } = useFeatureFlags();
   const [rowAction, setRowAction] = React.useState<DataTableRowAction<InventoryRowUI> | null>(null);
 
-  const [{ data, pageCount }, statusCounts, markeskodOptions] = React.use(promises);
+  const [{ data, pageCount, total, lastUpdatedMs }, statusCounts, markeskodOptions] = React.use(promises);
 
   const columns = React.useMemo(
     () => getInventoryTableColumns({ statusCounts, markeskodOptions, setRowAction }),
@@ -87,7 +87,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
   const onQChange = useDebouncedCallback((value: string) => setQ(value || null), 300);
 
   return (
-    <DataTable table={table}>
+    <DataTable table={table} total={total} lastUpdatedMs={lastUpdatedMs}>
       {enableAdvancedFilter ? (
         <DataTableAdvancedToolbar
           table={table}

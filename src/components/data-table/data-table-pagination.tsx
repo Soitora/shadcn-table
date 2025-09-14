@@ -15,15 +15,20 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
+import { formatRelativeTime } from "@/lib/format";
 
 interface DataTablePaginationProps<TData> extends React.ComponentProps<"div"> {
   table: Table<TData>;
   pageSizeOptions?: number[];
+  total?: number;
+  lastUpdatedMs?: number;
 }
 
 export function DataTablePagination<TData>({
   table,
   pageSizeOptions = [15, 30, 60, 120],
+  total,
+  lastUpdatedMs,
   className,
   ...props
 }: DataTablePaginationProps<TData>) {
@@ -36,8 +41,8 @@ export function DataTablePagination<TData>({
       {...props}
     >
       <div className="flex-1 whitespace-nowrap text-muted-foreground text-sm">
-        {table.getFilteredSelectedRowModel().rows.length} av{" "}
-        {table.getFilteredRowModel().rows.length} rader valda.
+        {table.getFilteredSelectedRowModel().rows.length} av {table.getFilteredRowModel().rows.length} rader valda{typeof total === "number" ? ` • ${total} artiklar` : ""}
+        {typeof lastUpdatedMs === "number" ? ` • Uppdaterad ${formatRelativeTime(lastUpdatedMs)}` : ""}
       </div>
       <div className="flex flex-col-reverse items-center gap-4 sm:flex-row sm:gap-6 lg:gap-8">
         <div className="flex items-center space-x-2">
