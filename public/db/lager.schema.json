@@ -6,33 +6,33 @@
         "type": "array",
         "items": {
           "type": "object",
-          "required": ["MK", "Artikelnr"],
+          "required": ["markeskod", "artikelnummer"],
           "properties": {
-            "MK": { "type": "string" },
-            "Artikelnr": { "type": "string" },
-            "Ersätter": { "type": "string" },
-            "ErsattAv": { "type": "string" },
-            "Benämning": { "type": "string" },
-            "Benämning2": { "type": "string" },
-            "Status": { "type": "string" },
-            "ExtraInfo": { "type": "string" },
-            "Lagerplats": { "type": "string" },
-            "Bild": { "type": "boolean" },
-            "Paket": {
+            "markeskod": { "type": "string" },
+            "artikelnummer": { "type": "string" },
+            "ersatter": { "type": "string" },
+            "ersatt_av": { "type": "string" },
+            "benamning": { "type": "string" },
+            "benamning_alt": { "type": "string" },
+            "status": { "type": "string" },
+            "extra_info": { "type": "string" },
+            "lagerplats": { "type": "string" },
+            "bild": { "type": "boolean" },
+            "paket": {
               "type": "array",
               "items": { "type": "string" }
             },
-            "Fordon": {
+            "fordon": {
               "type": "array",
               "items": { "type": "string" }
             },
-            "AlternativArt": {
+            "alternativa_artiklar": {
               "type": "array",
               "items": {
                 "type": "object",
-                "required": ["märkeskod", "artikelnummer"],
+                "required": ["markeskod", "artikelnummer"],
                 "properties": {
-                  "märkeskod": { "type": "string" },
+                  "markeskod": { "type": "string" },
                   "artikelnummer": { "type": "string" }
                 },
                 "additionalProperties": false
