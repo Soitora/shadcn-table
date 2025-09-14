@@ -6,6 +6,7 @@ import {
   ChevronsRight,
 } from "lucide-react";
 
+import React from "react";
 import { Button } from "@/components/ui/button";
 import {
   Select,
@@ -15,7 +16,8 @@ import {
   SelectValue,
 } from "@/components/ui/select";
 import { cn } from "@/lib/utils";
-import { formatRelativeTime } from "@/lib/format";
+import { formatRelativeTime, formatAbsolute } from "@/lib/format";
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from "@/components/ui/tooltip";
 
 interface DataTablePaginationProps<TData> extends React.ComponentProps<"div"> {
   table: Table<TData>;
@@ -46,18 +48,44 @@ export function DataTablePagination<TData>({
         {(() => {
           const selectedCount = table.getFilteredSelectedRowModel().rows.length;
           const filteredCount = table.getFilteredRowModel().rows.length;
-          const parts: string[] = [];
-          if (typeof lastUpdatedMs === "number") parts.push(`Uppdaterad ${formatRelativeTime(lastUpdatedMs)}`);
+          const parts: React.ReactNode[] = [];
+          if (typeof lastUpdatedMs === "number") {
+            parts.push(
+              <TooltipProvider key="updated">
+                <Tooltip>
+                  <TooltipTrigger asChild>
+                    <span>Uppdaterad {formatRelativeTime(lastUpdatedMs)}</span>
+                  </TooltipTrigger>
+                  <TooltipContent>
+                    {formatAbsolute(lastUpdatedMs, "LLLL", "sv")}
+                  </TooltipContent>
+                </Tooltip>
+              </TooltipProvider>,
+            );
+          }
           if (typeof total === "number" && typeof totalUnfiltered === "number") {
             const isFiltered = total < totalUnfiltered;
-            if (isFiltered) {
-              parts.push(`${total} av ${totalUnfiltered} artiklar`);
-            } else {
-              parts.push(`${total} artiklar`);
-            }
+            parts.push(
+              <span key="counts">
+                {isFiltered ? `${total} av ${totalUnfiltered} artiklar` : `${total} artiklar`}
+              </span>,
+            );
           }
-          if (selectedCount > 0) parts.push(`${selectedCount} av ${filteredCount} rader valda`);
-          return parts.join(" • ");
+          if (selectedCount > 0) {
+            parts.push(
+              <span key="selected">{`${selectedCount} av ${filteredCount} rader valda`}</span>,
+            );
+          }
+          return (
+            <>
+              {parts.map((node, idx) => (
+                <React.Fragment key={`status-part-${idx}`}>
+                  {idx > 0 ? <span className="px-1" aria-hidden>•</span> : null}
+                  {node}
+                </React.Fragment>
+              ))}
+            </>
+          );
         })()}
       </div>
       <div className="flex flex-col-reverse items-center gap-4 sm:flex-row sm:gap-6 lg:gap-8">
