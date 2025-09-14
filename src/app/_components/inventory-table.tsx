@@ -120,6 +120,15 @@ export function InventoryTable({ promises }: InventoryTableProps) {
                   const next = e.target.value;
                   setQInput(next);
                   onQChange(next);
+                  // Always jump to page 1 when query changes so results are in range
+                  setPage(1);
+                }}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter") {
+                    // Commit immediately on Enter (bypass debounce)
+                    setQ(qInput || null);
+                    setPage(1);
+                  }
                 }}
                 className="h-8 w-56 pr-8"
               />
@@ -131,6 +140,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
                   onClick={() => {
                     setQ(null);
                     setQInput("");
+                    setPage(1);
                   }}
                 >
                   <X className="size-3.5 text-muted-foreground" />
@@ -142,6 +152,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
           onResetOverride={() => {
             setQ(null);
             setQInput("");
+            setPage(1);
           }}
         >
           <DataTableSortList table={table} align="end" />

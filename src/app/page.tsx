@@ -35,7 +35,7 @@ export default async function IndexPage(props: IndexPageProps) {
       mk: inv.mk,
       filterFlag: inv.filterFlag ?? undefined,
       filters: validFilters,
-      joinOperator: inv.joinOperator as "and" | "or",
+      joinOperator: inv.joinOperator as "och" | "eller",
     }),
     getInventoryStatusCounts(),
     getInventoryMkCounts(),

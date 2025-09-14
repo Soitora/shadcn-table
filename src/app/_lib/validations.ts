@@ -22,5 +22,5 @@ export const searchParamsCache = createSearchParamsCache({
   status: parseAsArrayOf(z.string()).withDefault([]),
   // advanced filter
   filters: getFiltersStateParser().withDefault([]),
-  joinOperator: parseAsStringEnum(["and", "or"]).withDefault("and"),
+  joinOperator: parseAsStringEnum(["och", "eller"]).withDefault("och"),
 });

@@ -1,7 +1,7 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { CalendarIcon, Ellipsis, Hash, Tag } from "lucide-react";
+import { Ellipsis, Hash, Tag, Bolt, Loader, Package, Replace, ReplaceAll, Boxes, Truck, Blocks, ALargeSmall, Image } from "lucide-react";
 import * as React from "react";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { Badge } from "@/components/ui/badge";
@@ -13,7 +13,6 @@ import {
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { formatDate } from "@/lib/format";
 import type { DataTableRowAction } from "@/types/data-table";
 import type { InventoryRowUIShape } from "../_lib/queries";
 
@@ -105,11 +104,11 @@ export function getInventoryTableColumns({
         </div>
       ),
       meta: {
-        label: "MK",
+        label: "Märkeskod",
         variant: "multiSelect",
-        icon: Hash,
+        icon: Bolt,
         options: mkOptions,
-        placeholder: "Select MK...",
+        placeholder: "Välj Märkeskod...",
       },
       enableColumnFilter: true,
     },
@@ -122,11 +121,9 @@ export function getInventoryTableColumns({
       cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("Artikelnr")}</div>,
       meta: {
         label: "Artikelnummer",
-        variant: "text",
-        icon: Tag,
-        placeholder: "Search...",
+        icon: Hash,
       },
-      enableColumnFilter: false,
+      enableColumnFilter: true,
     },
     {
       id: "Benämning",
@@ -199,7 +196,7 @@ export function getInventoryTableColumns({
               };
             });
         })(),
-        icon: Tag,
+        icon: Loader,
       },
       enableColumnFilter: true,
     },
@@ -220,11 +217,9 @@ export function getInventoryTableColumns({
       },
       meta: {
         label: "Lagerplats",
-        variant: "text",
-        icon: Tag,
-        placeholder: "Search lagerplats...",
+        icon: Package,
       },
-      enableColumnFilter: false,
+      enableColumnFilter: true,
     },
     {
       id: "ersatter",
@@ -244,7 +239,7 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Ersätter", variant: "text", icon: Tag },
+      meta: { label: "Ersätter", variant: "text", icon: Replace },
       enableColumnFilter: false,
     },
     {
@@ -265,7 +260,7 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Ersatt av", variant: "text", icon: Tag },
+      meta: { label: "Ersatt av", variant: "text", icon: ReplaceAll },
       enableColumnFilter: false,
     },
     {
@@ -287,7 +282,7 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Alternativ Artikel", variant: "text", icon: Tag },
+      meta: { label: "Alternativ Artikel", variant: "text", icon: Boxes },
       enableColumnFilter: false,
     },
     {
@@ -307,8 +302,8 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Fordon", variant: "text", icon: Tag },
-      enableColumnFilter: false,
+      meta: { label: "Fordon", icon: Truck },
+      enableColumnFilter: true,
     },
     {
       id: "Paket",
@@ -327,8 +322,8 @@ export function getInventoryTableColumns({
           </div>
         );
       },
-      meta: { label: "Paket", variant: "text", icon: Tag },
-      enableColumnFilter: false,
+      meta: { label: "Paket", icon: Blocks },
+      enableColumnFilter: true,
     },
     {
       id: "ExtraInfo",
@@ -339,8 +334,8 @@ export function getInventoryTableColumns({
       cell: ({ row }) => (
         <span className="max-w-[28rem] truncate">{row.getValue("ExtraInfo") ?? ""}</span>
       ),
-      meta: { label: "Extra Information", variant: "text", icon: Tag },
-      enableColumnFilter: false,
+      meta: { label: "Extra Information", icon: ALargeSmall },
+      enableColumnFilter: true,
     },
     {
       id: "Bild",
@@ -352,7 +347,7 @@ export function getInventoryTableColumns({
           <Badge className="py-0.5" variant="outline">Ja</Badge>
         ) : "";
       },
-      meta: { label: "Bild", variant: "boolean", icon: Tag },
+      meta: { label: "Bild", variant: "boolean", icon: Image },
       enableColumnFilter: false,
     },
     {

@@ -19,7 +19,7 @@ export interface GetInventorySchema {
     variant?: string;
     operator?: string;
   }>;
-  joinOperator?: "and" | "or";
+  joinOperator?: "och" | "eller";
 }
 
 function normalizeStatusTokenToCode(token: string): string | null {
@@ -174,7 +174,7 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
 
   // Advanced/command filters (limited support for mk/status)
   if ((input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters") && input.filters?.length) {
-    const joinOr = input.joinOperator === "or";
+    const joinOr = input.joinOperator === "eller";
     const preds = input.filters
       .map((f) => {
         const op = (f.operator ?? "inArray") as string;
@@ -189,6 +189,30 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
             if (values.length === 0) return null;
             if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.MK);
             return (r: InventoryRowUIShape) => values.includes(r.MK);
+          }
+          case "Artikelnr": {
+            const get = (r: InventoryRowUIShape) => r.Artikelnr ?? "";
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => get(r).trim() === "";
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => get(r).trim() !== "";
+            if (values.length === 0) return null;
+            const v = String(values[0]);
+            if (op === "eq") return (r: InventoryRowUIShape) => get(r) === v;
+            if (op === "ne") return (r: InventoryRowUIShape) => get(r) !== v;
+            if (op === "iLike") return (r: InventoryRowUIShape) => get(r).toLowerCase().includes(v.toLowerCase());
+            if (op === "notILike") return (r: InventoryRowUIShape) => !get(r).toLowerCase().includes(v.toLowerCase());
+            return null;
+          }
+          case "Lagerplats": {
+            const get = (r: InventoryRowUIShape) => r.Lagerplats ?? "";
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => get(r).trim() === "";
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => get(r).trim() !== "";
+            if (values.length === 0) return null;
+            const v = String(values[0]);
+            if (op === "eq") return (r: InventoryRowUIShape) => get(r) === v;
+            if (op === "ne") return (r: InventoryRowUIShape) => get(r) !== v;
+            if (op === "iLike") return (r: InventoryRowUIShape) => get(r).toLowerCase().includes(v.toLowerCase());
+            if (op === "notILike") return (r: InventoryRowUIShape) => !get(r).toLowerCase().includes(v.toLowerCase());
+            return null;
           }
           case "Status": {
             if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.Status;

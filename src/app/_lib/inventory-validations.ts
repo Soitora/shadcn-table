@@ -17,7 +17,7 @@ export const inventorySearchParamsCache = createSearchParamsCache({
   mk: parseAsArrayOf(z.string()).withDefault([]),
   // advanced filter
   filters: getFiltersStateParser().withDefault([]),
-  joinOperator: parseAsStringEnum(["and", "or"] as const).withDefault("and"),
+  joinOperator: parseAsStringEnum(["och", "eller"] as const).withDefault("och"),
 });
 
 export type GetInventorySearch = Awaited<ReturnType<typeof inventorySearchParamsCache.parse>>;

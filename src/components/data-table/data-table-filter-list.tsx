@@ -116,7 +116,7 @@ export function DataTableFilterList<TData>({
 
   const [joinOperator, setJoinOperator] = useQueryState(
     JOIN_OPERATOR_KEY,
-    parseAsStringEnum(["and", "or"]).withDefault("and").withOptions({
+    parseAsStringEnum(["och", "eller"]).withDefault("och").withOptions({
       clearOnDefault: true,
       shallow,
     }),
@@ -174,7 +174,7 @@ export function DataTableFilterList<TData>({
 
   const onFiltersReset = React.useCallback(() => {
     void setFilters(null);
-    void setJoinOperator("and");
+    void setJoinOperator("och");
   }, [setFilters, setJoinOperator]);
 
   React.useEffect(() => {
@@ -316,8 +316,8 @@ export function DataTableFilterList<TData>({
       <SortableOverlay>
         <div className="flex items-center gap-2">
           <div className="h-8 min-w-[72px] rounded-sm bg-primary/10" />
-          <div className="h-8 w-32 rounded-sm bg-primary/10" />
-          <div className="h-8 w-32 rounded-sm bg-primary/10" />
+          <div className="h-8 w-40 rounded-sm bg-primary/10" />
+          <div className="h-8 w-40 rounded-sm bg-primary/10" />
           <div className="h-8 min-w-36 flex-1 rounded-sm bg-primary/10" />
           <div className="size-8 shrink-0 rounded-sm bg-primary/10" />
           <div className="size-8 shrink-0 rounded-sm bg-primary/10" />
@@ -404,7 +404,7 @@ function DataTableFilterItem<TData>({
       >
         <div className="min-w-[72px] text-center">
           {index === 0 ? (
-            <span className="text-muted-foreground text-sm">Where</span>
+            <span className="text-muted-foreground text-sm">Där</span>
           ) : index === 1 ? (
             <Select
               value={joinOperator}
@@ -441,11 +441,11 @@ function DataTableFilterItem<TData>({
               aria-controls={fieldListboxId}
               variant="outline"
               size="sm"
-              className="w-32 justify-between rounded font-normal"
+              className="w-40 justify-between rounded font-normal"
             >
               <span className="truncate">
                 {columns.find((column) => column.id === filter.id)?.columnDef
-                  .meta?.label ?? "Select field"}
+                  .meta?.label ?? "Välj fält"}
               </span>
               <ChevronsUpDown className="opacity-50" />
             </Button>
@@ -456,9 +456,9 @@ function DataTableFilterItem<TData>({
             className="w-40 origin-[var(--radix-popover-content-transform-origin)] p-0"
           >
             <Command>
-              <CommandInput placeholder="Search fields..." />
+              <CommandInput placeholder="Sök fält..." />
               <CommandList>
-                <CommandEmpty>No fields found.</CommandEmpty>
+                <CommandEmpty>Inga fält hittades.</CommandEmpty>
                 <CommandGroup>
                   {columns.map((column) => (
                     <CommandItem
@@ -509,7 +509,7 @@ function DataTableFilterItem<TData>({
         >
           <SelectTrigger
             aria-controls={operatorListboxId}
-            className="h-8 w-32 rounded lowercase [&[data-size]]:h-8"
+            className="h-8 w-40 rounded lowercase [&[data-size]]:h-8"
           >
             <div className="truncate">
               <SelectValue placeholder={filter.operator} />
@@ -622,7 +622,7 @@ function onFilterInputRender<TData>({
           aria-label={`${columnMeta?.label} filter value`}
           aria-describedby={`${inputId}-description`}
           inputMode={isNumber ? "numeric" : undefined}
-          placeholder={columnMeta?.placeholder ?? "Enter a value..."}
+          placeholder={columnMeta?.placeholder ?? "Ange ett värde..."}
           className="h-8 w-full rounded"
           defaultValue={
             typeof filter.value === "string" ? filter.value : undefined
@@ -658,11 +658,11 @@ function onFilterInputRender<TData>({
             aria-label={`${columnMeta?.label} boolean filter`}
             className="h-8 w-full rounded [&[data-size]]:h-8"
           >
-            <SelectValue placeholder={filter.value ? "True" : "False"} />
+            <SelectValue placeholder={filter.value ? "Sant" : "Falskt"} />
           </SelectTrigger>
           <SelectContent id={inputListboxId}>
-            <SelectItem value="true">True</SelectItem>
-            <SelectItem value="false">False</SelectItem>
+            <SelectItem value="true">Sant</SelectItem>
+            <SelectItem value="false">Falskt</SelectItem>
           </SelectContent>
         </Select>
       );
@@ -706,7 +706,7 @@ function onFilterInputRender<TData>({
                 options={columnMeta?.options}
                 placeholder={
                   columnMeta?.placeholder ??
-                  `Select option${multiple ? "s" : ""}...`
+                  `Välj alternativ${multiple ? "s" : ""}...`
                 }
               />
             </Button>
@@ -716,11 +716,11 @@ function onFilterInputRender<TData>({
             className="w-[200px] origin-[var(--radix-popover-content-transform-origin)]"
           >
             <FacetedInput
-              aria-label={`Search ${columnMeta?.label} options`}
-              placeholder={columnMeta?.placeholder ?? "Search options..."}
+              aria-label={`Sök ${columnMeta?.label} alternativ`}
+              placeholder={columnMeta?.placeholder ?? "Sök alternativ..."}
             />
             <FacetedList>
-              <FacetedEmpty>No options found.</FacetedEmpty>
+              <FacetedEmpty>Inga alternativ hittades.</FacetedEmpty>
               <FacetedGroup>
                 {columnMeta?.options?.map((option) => (
                   <FacetedItem key={option.value} value={option.value}>
