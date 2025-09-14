@@ -41,8 +41,15 @@ export function DataTablePagination<TData>({
       {...props}
     >
       <div className="flex-1 whitespace-nowrap text-muted-foreground text-sm">
-        {table.getFilteredSelectedRowModel().rows.length} av {table.getFilteredRowModel().rows.length} rader valda{typeof total === "number" ? ` • ${total} artiklar` : ""}
-        {typeof lastUpdatedMs === "number" ? ` • Uppdaterad ${formatRelativeTime(lastUpdatedMs)}` : ""}
+        {(() => {
+          const selectedCount = table.getFilteredSelectedRowModel().rows.length;
+          const filteredCount = table.getFilteredRowModel().rows.length;
+          const parts: string[] = [];
+          if (selectedCount > 0) parts.push(`${selectedCount} av ${filteredCount} rader valda`);
+          if (typeof total === "number") parts.push(`${total} artiklar`);
+          if (typeof lastUpdatedMs === "number") parts.push(`Uppdaterad ${formatRelativeTime(lastUpdatedMs)}`);
+          return parts.join(" • ");
+        })()}
       </div>
       <div className="flex flex-col-reverse items-center gap-4 sm:flex-row sm:gap-6 lg:gap-8">
         <div className="flex items-center space-x-2">
