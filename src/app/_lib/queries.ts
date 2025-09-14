@@ -339,13 +339,14 @@ export async function getInventory(input: GetInventorySchema) {
         const filtered = applyFilters(all, input);
         const sorted = applySorting(filtered, input.sort);
         const total = sorted.length;
+        const totalUnfiltered = all.length;
         const start = Math.max(0, (input.page - 1) * input.perPage);
         const end = start + input.perPage;
         const page = sorted.slice(start, end);
         const pageCount = Math.ceil(total / input.perPage);
-        return { data: page, pageCount, total, lastUpdatedMs };
+        return { data: page, pageCount, total, totalUnfiltered, lastUpdatedMs };
       } catch (_err) {
-        return { data: [], pageCount: 0, total: 0, lastUpdatedMs: Date.now() };
+        return { data: [], pageCount: 0, total: 0, totalUnfiltered: 0, lastUpdatedMs: Date.now() };
       }
     },
     ["inventory", JSON.stringify(input)],

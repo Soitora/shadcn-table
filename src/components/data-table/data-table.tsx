@@ -17,6 +17,7 @@ interface DataTableProps<TData> extends React.ComponentProps<"div"> {
   table: TanstackTable<TData>;
   actionBar?: React.ReactNode;
   total?: number;
+  totalUnfiltered?: number;
   lastUpdatedMs?: number;
 }
 
@@ -24,6 +25,7 @@ export function DataTable<TData>({
   table,
   actionBar,
   total,
+  totalUnfiltered,
   lastUpdatedMs,
   children,
   className,
@@ -96,7 +98,7 @@ export function DataTable<TData>({
         </Table>
       </div>
       <div className="flex flex-col gap-2.5">
-        <DataTablePagination table={table} total={total} lastUpdatedMs={lastUpdatedMs} />
+        <DataTablePagination table={table} total={total} totalUnfiltered={totalUnfiltered} lastUpdatedMs={lastUpdatedMs} />
         {actionBar &&
           table.getFilteredSelectedRowModel().rows.length > 0 &&
           actionBar}

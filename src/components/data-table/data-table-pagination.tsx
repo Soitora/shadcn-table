@@ -21,6 +21,7 @@ interface DataTablePaginationProps<TData> extends React.ComponentProps<"div"> {
   table: Table<TData>;
   pageSizeOptions?: number[];
   total?: number;
+  totalUnfiltered?: number;
   lastUpdatedMs?: number;
 }
 
@@ -28,6 +29,7 @@ export function DataTablePagination<TData>({
   table,
   pageSizeOptions = [10, 15, 30, 60, 120],
   total,
+  totalUnfiltered,
   lastUpdatedMs,
   className,
   ...props
@@ -46,7 +48,14 @@ export function DataTablePagination<TData>({
           const filteredCount = table.getFilteredRowModel().rows.length;
           const parts: string[] = [];
           if (typeof lastUpdatedMs === "number") parts.push(`Uppdaterad ${formatRelativeTime(lastUpdatedMs)}`);
-          if (typeof total === "number") parts.push(`${total} artiklar`);
+          if (typeof total === "number" && typeof totalUnfiltered === "number") {
+            const isFiltered = total < totalUnfiltered;
+            if (isFiltered) {
+              parts.push(`${total} av ${totalUnfiltered} artiklar`);
+            } else {
+              parts.push(`${total} artiklar`);
+            }
+          }
           if (selectedCount > 0) parts.push(`${selectedCount} av ${filteredCount} rader valda`);
           return parts.join(" • ");
         })()}
