@@ -248,22 +248,40 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
 }
 
 function applySorting(rows: InventoryRowUIShape[], sort: GetInventorySchema["sort"] | undefined): InventoryRowUIShape[] {
-  if (!sort || sort.length === 0) return [...rows].sort((a, b) => a.artikelnummer.localeCompare(b.artikelnummer));
-  const cmp = (a: InventoryRowUIShape, b: InventoryRowUIShape, id: GetInventorySchema["sort"][number]["id"], desc: boolean) => {
+  function compareTextWithEmptyLast(a: string | null | undefined, b: string | null | undefined, desc: boolean): number {
+    const av = (a ?? "").trim();
+    const bv = (b ?? "").trim();
+    const aEmpty = av.length === 0;
+    const bEmpty = bv.length === 0;
+    if (aEmpty && !bEmpty) return 1; // a goes after b
+    if (!aEmpty && bEmpty) return -1; // a goes before b
     const dir = desc ? -1 : 1;
+    return dir * av.localeCompare(bv);
+  }
+
+  if (!sort || sort.length === 0) {
+    return [...rows].sort((a, b) => compareTextWithEmptyLast(a.artikelnummer, b.artikelnummer, false));
+  }
+
+  const cmp = (
+    a: InventoryRowUIShape,
+    b: InventoryRowUIShape,
+    id: GetInventorySchema["sort"][number]["id"],
+    desc: boolean,
+  ) => {
     switch (id) {
       case "markeskod":
-        return dir * a.markeskod.localeCompare(b.markeskod);
+        return compareTextWithEmptyLast(a.markeskod, b.markeskod, desc);
       case "artikelnummer":
-        return dir * a.artikelnummer.localeCompare(b.artikelnummer);
+        return compareTextWithEmptyLast(a.artikelnummer, b.artikelnummer, desc);
       case "status":
-        return dir * ((a.status ?? "").localeCompare(b.status ?? ""));
+        return compareTextWithEmptyLast(a.status, b.status, desc);
       case "benamning":
-        return dir * ((a.benamning ?? "").localeCompare(b.benamning ?? ""));
+        return compareTextWithEmptyLast(a.benamning, b.benamning, desc);
       case "lagerplats":
-        return dir * ((a.lagerplats ?? "").localeCompare(b.lagerplats ?? ""));
+        return compareTextWithEmptyLast(a.lagerplats, b.lagerplats, desc);
       default:
-        return dir * a.artikelnummer.localeCompare(b.artikelnummer);
+        return compareTextWithEmptyLast(a.artikelnummer, b.artikelnummer, desc);
     }
   };
 
