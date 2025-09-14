@@ -361,7 +361,7 @@ export function getInventoryTableColumns({
         if (!artikel) return null;
         const cleanArticleNr = artikel.replace(/[/.\s]/g, "");
         const src = `https://sts.xhs.gg/img/lager/${cleanArticleNr}.webp`;
-        return <ImageZoom><Image src={src} alt={`Bild ${cleanArticleNr}`} className="w-12 h-12" width={1000} height={1000} /></ImageZoom>;
+        return <ImageZoom><Image src={src} alt={`Bild ${cleanArticleNr}`} className="w-12 h-12 rounded" width={1000} height={1000} /></ImageZoom>;
       },
       meta: { label: "Bild", variant: "boolean", icon: ImageIcon },
       enableColumnFilter: true,
