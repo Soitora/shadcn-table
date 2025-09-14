@@ -252,7 +252,7 @@ export function DataTableSortList<TData>({
       <SortableOverlay>
         <div className="flex items-center gap-2">
           <div className="h-8 w-[180px] rounded-sm bg-primary/10" />
-          <div className="h-8 w-24 rounded-sm bg-primary/10" />
+          <div className="h-8 w-30 rounded-sm bg-primary/10" />
           <div className="size-8 shrink-0 rounded-sm bg-primary/10" />
           <div className="size-8 shrink-0 rounded-sm bg-primary/10" />
         </div>

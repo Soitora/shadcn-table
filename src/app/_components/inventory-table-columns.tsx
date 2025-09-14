@@ -1,7 +1,7 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Ellipsis, Hash, Tag, Bolt, Loader, Package, Replace, ReplaceAll, Boxes, Truck, Blocks, ALargeSmall, Image } from "lucide-react";
+import { Ellipsis, Hash, Tag, Bolt, Loader, Package, Replace, ReplaceAll, Boxes, Truck, Blocks, ALargeSmall, Image, Baseline } from "lucide-react";
 import * as React from "react";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { Badge } from "@/components/ui/badge";
@@ -145,11 +145,10 @@ export function getInventoryTableColumns({
       },
       meta: {
         label: "Benämning",
-        variant: "text",
-        icon: Tag,
-        placeholder: "Sök...",
+        icon: Baseline,
+        placeholder: "Sök benämning...",
       },
-      enableColumnFilter: false,
+      enableColumnFilter: true,
     },
     {
       id: "Status",
