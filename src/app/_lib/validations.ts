@@ -16,7 +16,7 @@ export const searchParamsCache = createSearchParamsCache({
   page: parseAsInteger.withDefault(1),
   perPage: parseAsInteger.withDefault(10),
   sort: getSortingStateParser<Record<string, unknown>>().withDefault([
-    { id: "artikelnr", desc: false },
+    { id: "artikelnummer", desc: false },
   ]),
   title: parseAsString.withDefault(""),
   status: parseAsArrayOf(z.string()).withDefault([]),

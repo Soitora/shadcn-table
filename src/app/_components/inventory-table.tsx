@@ -21,7 +21,7 @@ interface InventoryTableProps {
   promises: Promise<[
     Awaited<ReturnType<typeof import("../_lib/queries").getInventory>>,
     Awaited<ReturnType<typeof import("../_lib/queries").getInventoryStatusCounts>>,
-    Awaited<ReturnType<typeof import("../_lib/queries").getInventoryMkCounts>>,
+    Awaited<ReturnType<typeof import("../_lib/queries").getInventoryMarkeskodCounts>>,
   ]>;
 }
 
@@ -29,11 +29,11 @@ export function InventoryTable({ promises }: InventoryTableProps) {
   const { enableAdvancedFilter, filterFlag } = useFeatureFlags();
   const [rowAction, setRowAction] = React.useState<DataTableRowAction<InventoryRowUI> | null>(null);
 
-  const [{ data, pageCount }, statusCounts, mkOptions] = React.use(promises);
+  const [{ data, pageCount }, statusCounts, markeskodOptions] = React.use(promises);
 
   const columns = React.useMemo(
-    () => getInventoryTableColumns({ statusCounts, mkOptions, setRowAction }),
-    [statusCounts, mkOptions]
+    () => getInventoryTableColumns({ statusCounts, markeskodOptions, setRowAction }),
+    [statusCounts, markeskodOptions]
   );
 
   const { table, shallow, debounceMs, throttleMs } = useDataTable({
@@ -68,7 +68,7 @@ export function InventoryTable({ promises }: InventoryTableProps) {
       .withDefault(1),
   );
 
-  // Global search (q): searches Artikelnr + Benämning(+2)
+  // Global search (q): searches artikelnummer + benamning(+alt)
   const [q, setQ] = useQueryState("q", {
     parse: (v) => v ?? "",
     serialize: (v) => v ?? "",

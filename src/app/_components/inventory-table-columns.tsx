@@ -25,7 +25,7 @@ interface FacetOption { value: string; label: string; count?: number }
 
 interface GetInventoryTableColumnsProps {
   statusCounts: Record<string, number>;
-  mkOptions?: FacetOption[];
+  markeskodOptions?: FacetOption[];
   setRowAction?: React.Dispatch<
     React.SetStateAction<DataTableRowAction<InventoryRowUI> | null>
   >;
@@ -33,7 +33,7 @@ interface GetInventoryTableColumnsProps {
 
 export function getInventoryTableColumns({
   statusCounts,
-  mkOptions = [],
+  markeskodOptions = [],
   setRowAction,
 }: GetInventoryTableColumnsProps): ColumnDef<InventoryRowUI>[] {
   const STATUS_INFO: Record<string, { label: string; tone: "positive" | "neutral" | "negative" }> = {
@@ -110,7 +110,7 @@ export function getInventoryTableColumns({
         label: "Märkeskod",
         variant: "multiSelect",
         icon: Bolt,
-        options: mkOptions,
+        options: markeskodOptions,
         placeholder: "Välj märkeskod...",
       },
       enableColumnFilter: true,

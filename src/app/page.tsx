@@ -10,7 +10,7 @@ import { InventoryTable } from "./_components/inventory-table";
 import {
   getInventory,
   getInventoryStatusCounts,
-  getInventoryMkCounts,
+  getInventoryMarkeskodCounts,
 } from "./_lib/queries";
 import { inventorySearchParamsCache } from "./_lib/inventory-validations";
 
@@ -29,16 +29,16 @@ export default async function IndexPage(props: IndexPageProps) {
     getInventory({
       page: inv.page,
       perPage: inv.perPage,
-      sort: (inv.sort as any) ?? [{ id: "Artikelnr", desc: false }],
+      sort: (inv.sort as any) ?? [{ id: "artikelnummer", desc: false }],
       q: inv.q ?? "",
       status: inv.status,
-      mk: inv.mk,
+      markeskod: Array.from(new Set([...(inv.markeskod ?? [])])),
       filterFlag: inv.filterFlag ?? undefined,
       filters: validFilters,
       joinOperator: inv.joinOperator as "och" | "eller",
     }),
     getInventoryStatusCounts(),
-    getInventoryMkCounts(),
+    getInventoryMarkeskodCounts(),
   ]);
 
   return (

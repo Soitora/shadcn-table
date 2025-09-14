@@ -14,7 +14,7 @@ export const inventorySearchParamsCache = createSearchParamsCache({
   ]),
   q: parseAsString.withDefault(""),
   status: parseAsArrayOf(z.string()).withDefault([]),
-  mk: parseAsArrayOf(z.string()).withDefault([]),
+  markeskod: parseAsArrayOf(z.string()).withDefault([]),
   // advanced filter
   filters: getFiltersStateParser().withDefault([]),
   joinOperator: parseAsStringEnum(["och", "eller"] as const).withDefault("och"),

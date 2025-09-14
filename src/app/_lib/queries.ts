@@ -9,9 +9,9 @@ export interface GetInventorySchema {
   sort: Array<{ id: "markeskod" | "artikelnummer" | "benamning" | "status" | "lagerplats"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
-  q?: string; // matches artikelnr, benamning, benamning2
+  q?: string; // matches artikelnummer, benamning, benamning_alt
   status?: string[];
-  mk?: string[];
+  markeskod?: string[];
   // advanced/command filters
   filters?: Array<{
     id: string;
@@ -158,7 +158,7 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
   const q = (input.q ?? "").trim().toLowerCase();
   const hasQ = q.length > 0;
   const statusSet = new Set(input.status ?? []);
-  const mkSet = new Set(input.mk ?? []);
+  const markeskodSet = new Set(input.markeskod ?? []);
 
   const isCmdLike = input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters";
   const overridden = new Set<string>(
@@ -177,11 +177,11 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
       if (!(inArt || inName || inName2)) return false;
     }
     if (!overridden.has("status") && statusSet.size > 0 && (!r.status || !statusSet.has(r.status))) return false;
-    if (!overridden.has("markeskod") && mkSet.size > 0 && !mkSet.has(r.markeskod)) return false;
+    if (!overridden.has("markeskod") && markeskodSet.size > 0 && !markeskodSet.has(r.markeskod)) return false;
     return true;
   });
 
-  // Advanced/command filters (limited support for mk/status)
+  // Advanced/command filters (limited support for markeskod/status)
   if ((input.filterFlag === "advancedFilters" || input.filterFlag === "commandFilters") && input.filters?.length) {
     const joinOr = input.joinOperator === "eller";
     const preds = input.filters
@@ -318,7 +318,7 @@ export async function getInventory(input: GetInventorySchema) {
 }
 
 // Option providers for faceted filters
-export async function getInventoryMkCounts() {
+export async function getInventoryMarkeskodCounts() {
   return unstable_cache(
     async () => {
       try {
@@ -335,7 +335,7 @@ export async function getInventoryMkCounts() {
         return [] as Array<{ value: string; label: string; count: number }>;
       }
     },
-    ["inventory-mk-counts"],
+    ["inventory-markeskod-counts"],
     { revalidate: 300 },
   )();
 }
