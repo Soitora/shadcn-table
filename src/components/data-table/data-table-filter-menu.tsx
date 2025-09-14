@@ -535,10 +535,10 @@ function FilterValueSelector<TData>({
       return (
         <CommandGroup>
           <CommandItem value="true" onSelect={() => onSelect("true")}>
-            True
+            Sant
           </CommandItem>
           <CommandItem value="false" onSelect={() => onSelect("false")}>
-            False
+            Falskt
           </CommandItem>
         </CommandGroup>
       );
@@ -690,11 +690,11 @@ function onFilterInputRender<TData>({
             aria-controls={inputListboxId}
             className="rounded-none bg-transparent px-1.5 py-0.5 [&_svg]:hidden"
           >
-            <SelectValue placeholder={filter.value ? "True" : "False"} />
+            <SelectValue placeholder={filter.value ? "Sant" : "Falskt"} />
           </SelectTrigger>
           <SelectContent id={inputListboxId}>
-            <SelectItem value="true">True</SelectItem>
-            <SelectItem value="false">False</SelectItem>
+            <SelectItem value="true">Sant</SelectItem>
+            <SelectItem value="false">Falskt</SelectItem>
           </SelectContent>
         </Select>
       );

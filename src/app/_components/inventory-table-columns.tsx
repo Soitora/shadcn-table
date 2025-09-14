@@ -1,7 +1,8 @@
 "use client";
 
 import type { ColumnDef } from "@tanstack/react-table";
-import { Ellipsis, Hash, Tag, Bolt, Loader, Package, Replace, ReplaceAll, Boxes, Truck, Blocks, ALargeSmall, Image, Baseline } from "lucide-react";
+import { Ellipsis, Hash, Tag, Bolt, Loader, Package, Replace, ReplaceAll, Boxes, Truck, Blocks, ALargeSmall, Image as ImageIcon, Baseline } from "lucide-react";
+import Image from "next/image";
 import * as React from "react";
 import { DataTableColumnHeader } from "@/components/data-table/data-table-column-header";
 import { Badge } from "@/components/ui/badge";
@@ -353,13 +354,19 @@ export function getInventoryTableColumns({
       accessorKey: "bild",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Bild" />,
       cell: ({ row }) => {
-        const has = !!row.getValue("bild");
-        return has ? (
-          <Badge className="py-0.5" variant="outline">Ja</Badge>
-        ) : "";
+        const hasImage = !!row.getValue("bild");
+        if (!hasImage) return null;
+        const artikel = String(row.getValue("artikelnummer") ?? "");
+        if (!artikel) return null;
+        const cleanArticleNr = artikel.replace(/[/.\s]/g, "");
+        const src = `https://sts.xhs.gg/img/lager/${cleanArticleNr}.webp`;
+        return <Image src={src} alt={`Bild ${cleanArticleNr}`} width={50} height={50} />;
       },
-      meta: { label: "Bild", variant: "boolean", icon: Image },
+      meta: { label: "Bild", variant: "boolean", icon: ImageIcon },
       enableColumnFilter: true,
+      filterFn: (row) => {
+        return row.getValue("bild") ? true : false;
+      },
     },
     {
       id: "actions",

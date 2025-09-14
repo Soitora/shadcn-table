@@ -11,6 +11,16 @@ const nextConfig: NextConfig = {
   // Already doing linting and typechecking as separate tasks in CI
   eslint: { ignoreDuringBuilds: true },
   typescript: { ignoreBuildErrors: true },
+  images: {
+    remotePatterns: [
+      {
+        protocol: "https",
+        hostname: "sts.xhs.gg",
+        port: "",
+        pathname: "/img/lager/**",
+      },
+    ],
+  },
 };
 
 export default nextConfig;
