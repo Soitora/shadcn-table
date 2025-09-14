@@ -375,7 +375,7 @@ export function getInventoryTableColumns({
                 alt={`Bild ${cleanArticleNr}`}
                 width={1000}
                 height={1000}
-                className="w-12 h-12 object-cover transform transition-transform duration-500 group-hover:scale-150"
+                className="w-12 h-12 object-cover transform transition-transform duration-500 group-hover:scale-80"
               />
             </ImageZoom>
           </div>
