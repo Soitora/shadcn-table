@@ -56,7 +56,7 @@
         "status": "R",
         "extra_info": "Fjäderbenslager {FL 802 419}.\\nKolvstångsskydd: {SK 44882}.",
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9063201033" },
             { "markeskod": "KG", "artikelnummer": "92-319 684" }
         ]
@@ -412,7 +412,7 @@
         "benamning": "ABS-GIVARE, BAK",
         "paket": ["MB-908221-BROMS"],
         "fordon": ["Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A2479058600" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A2479058600" }]
     },
     {
         "markeskod": "ABR",
@@ -420,7 +420,7 @@
         "benamning": "ABS-GIVARE, FRAM",
         "paket": ["MB-908221-BROMS", "MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (UPS)", "Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9079050100" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9079050100" }]
     },
     {
         "markeskod": "ABR",
@@ -438,7 +438,7 @@
         "status": "J",
         "lagerplats": "H2-25B",
         "fordon": ["Mercedes P70 (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A6673200073" },
             { "markeskod": "MD", "artikelnummer": "1215-1287601" },
             { "markeskod": "KG", "artikelnummer": "16-12876 01" }
@@ -453,7 +453,7 @@
         "lagerplats": "H1-15D",
         "bild": true,
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "8560291" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "8560291" }]
     },
     { "markeskod": "ABR", "artikelnummer": "BV 183963", "benamning": "K-STAG", "benamning_alt": "MELLANSTAG", "status": "R" },
     {
@@ -464,7 +464,7 @@
         "lagerplats": "H1-15D",
         "bild": true,
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "93814618" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "93814618" }]
     },
     { "markeskod": "ABR", "artikelnummer": "C 24508", "benamning": "LUFTFILTER", "status": "R" },
     { "markeskod": "ABR", "artikelnummer": "DA 33925", "benamning": "STYRVÄXELDAMASK", "status": "R" },
@@ -796,7 +796,7 @@
         "markeskod": "AF",
         "artikelnummer": "390",
         "ersatter": "AF001490489280",
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MBT", "artikelnummer": "A001490489280" },
             { "markeskod": "EV", "artikelnummer": "A.001.490.48.92.80" }
         ]
@@ -1008,7 +1008,7 @@
         "lagerplats": "H1-09C",
         "extra_info": "Se även anslutningsstuts {A.000.491.26.10}.",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EV", "artikelnummer": "A.000.550.99.55" }]
+        "korsnummer": [{ "markeskod": "EV", "artikelnummer": "A.000.550.99.55" }]
     },
     {
         "markeskod": "AHL",
@@ -1088,7 +1088,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21748697" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21748697" }]
     },
     {
         "markeskod": "AV",
@@ -1099,7 +1099,7 @@
         "lagerplats": "H1-12E",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22409820" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22409820" }]
     },
     {
         "markeskod": "AV",
@@ -1145,7 +1145,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21775710" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21775710" }]
     },
     {
         "markeskod": "AV",
@@ -1183,7 +1183,7 @@
         "benamning_alt": "D75MM",
         "status": "R",
         "fordon": ["Volvo B8R (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "23002696" },
             { "markeskod": "EV", "artikelnummer": "A.002.835.44.47" }
         ]
@@ -1232,7 +1232,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo FM11"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "82356754" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "82356754" }]
     },
     {
         "markeskod": "AV",
@@ -1295,7 +1295,7 @@
         "lagerplats": "H2-38E",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "24082830" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "24082830" }]
     },
     {
         "markeskod": "AV",
@@ -1305,7 +1305,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21147350" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21147350" }]
     },
     { "markeskod": "AV", "artikelnummer": "65-0261", "benamning": "TIDUR", "benamning_alt": "WEBASTO / SPHEROS", "status": "R" },
     {
@@ -2321,7 +2321,7 @@
         "benamning_alt": "VANHOOL",
         "bild": true,
         "fordon": ["VanHool (YKH)"],
-        "alternativa_artiklar": [{ "markeskod": "VHAN", "artikelnummer": "0 124 655 181 OR" }]
+        "korsnummer": [{ "markeskod": "VHAN", "artikelnummer": "0 124 655 181 OR" }]
     },
     { "markeskod": "DAF", "artikelnummer": "1936323", "benamning": "OLJEFILTERLOCK, LÅG", "status": "R" },
     { "markeskod": "DAF", "artikelnummer": "1936325", "benamning": "OLJEFILTERLOCK, HÖG", "status": "R" },
@@ -2533,7 +2533,7 @@
         "status": "R",
         "extra_info": "Downstream/Efter katalysator",
         "fordon": ["VanHool (YKH)"],
-        "alternativa_artiklar": [{ "markeskod": "DAF", "artikelnummer": "2139930RN" }]
+        "korsnummer": [{ "markeskod": "DAF", "artikelnummer": "2139930RN" }]
     },
     {
         "markeskod": "DAF",
@@ -2542,7 +2542,7 @@
         "status": "R",
         "extra_info": "Downstream/Efter katalysator",
         "fordon": ["VanHool (YKH)"],
-        "alternativa_artiklar": [{ "markeskod": "DAF", "artikelnummer": "2139930" }]
+        "korsnummer": [{ "markeskod": "DAF", "artikelnummer": "2139930" }]
     },
     { "markeskod": "DAF", "artikelnummer": "2142288", "benamning": "LUFTTORKFILTER", "status": "R", "bild": true },
     { "markeskod": "DAF", "artikelnummer": "2144946", "benamning": "KABELMATTA SPRIDARE, 4-6", "status": "R", "bild": true },
@@ -2612,7 +2612,7 @@
         "status": "R",
         "extra_info": "Upstream/Före katalysator",
         "fordon": ["VanHool (YKH)"],
-        "alternativa_artiklar": [{ "markeskod": "DAF", "artikelnummer": "2429860RN" }]
+        "korsnummer": [{ "markeskod": "DAF", "artikelnummer": "2429860RN" }]
     },
     {
         "markeskod": "DAF",
@@ -2664,7 +2664,7 @@
         "status": "R",
         "extra_info": "Upstream/Före katalysator",
         "fordon": ["VanHool (YKH)"],
-        "alternativa_artiklar": [{ "markeskod": "DAF", "artikelnummer": "2293965" }]
+        "korsnummer": [{ "markeskod": "DAF", "artikelnummer": "2293965" }]
     },
     { "markeskod": "DH", "artikelnummer": "10202000", "benamning": "SKÄRRING 15MM", "status": "H", "lagerplats": "H1-08" },
     { "markeskod": "DH", "artikelnummer": "10302000", "benamning": "SKÄRRING, 22MM", "status": "H", "lagerplats": "H1-08" },
@@ -3046,7 +3046,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5801279032" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5801279032" }]
     },
     { "markeskod": "EP", "artikelnummer": "1339632705", "benamning": "AC KOMPRESSOR PF. XSC", "status": "R" },
     { "markeskod": "EP", "artikelnummer": "1340020676", "benamning": "BAKLAMPA RUND LED JOKON", "status": "R" },
@@ -3057,7 +3057,7 @@
         "benamning": "STÖTDÄMPARE",
         "status": "R",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "503612244" },
             { "markeskod": "ABR", "artikelnummer": "312 397" },
             { "markeskod": "KG", "artikelnummer": "FB-20588" },
@@ -3199,7 +3199,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "42576681" },
             { "markeskod": "MD", "artikelnummer": "1100-PP1535" }
         ]
@@ -3214,7 +3214,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "500055563" },
             { "markeskod": "KG", "artikelnummer": "HP C6023" },
             { "markeskod": "RY", "artikelnummer": "GDB1747" }
@@ -3231,7 +3231,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "500054697" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "500054697" }]
     },
     {
         "markeskod": "EP",
@@ -3366,7 +3366,7 @@
         "lagerplats": "H1-10E, H1-06D",
         "bild": true,
         "fordon": ["Setra S531", "Mercedes Tourismo", "VanHool"],
-        "alternativa_artiklar": [{ "markeskod": "EV", "artikelnummer": "A.930.423.00.50" }]
+        "korsnummer": [{ "markeskod": "EV", "artikelnummer": "A.930.423.00.50" }]
     },
     { "markeskod": "EP", "artikelnummer": "3400810000", "benamning": "BROMSSKIVA/SC PF.XSC", "status": "R" },
     { "markeskod": "EP", "artikelnummer": "3400968370", "benamning": "TORKFILTER F.BAJONETT", "status": "R" },
@@ -3715,7 +3715,7 @@
         "benamning": "KUPEFILTER, 313MM",
         "benamning_alt": "313X225X37",
         "status": "R",
-        "alternativa_artiklar": [{ "markeskod": "MBT", "artikelnummer": "A9608300818" }]
+        "korsnummer": [{ "markeskod": "MBT", "artikelnummer": "A9608300818" }]
     },
     {
         "markeskod": "EP",
@@ -3761,7 +3761,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "3879901" },
             { "markeskod": "HU", "artikelnummer": "VO22627712" },
             { "markeskod": "VO", "artikelnummer": "22627712" }
@@ -3802,7 +3802,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B11R"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "24070789" },
             { "markeskod": "VO", "artikelnummer": "85023583" }
         ]
@@ -3841,7 +3841,7 @@
         "extra_info": "Vignal 280009",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "SL", "artikelnummer": "098291230" }]
+        "korsnummer": [{ "markeskod": "SL", "artikelnummer": "098291230" }]
     },
     { "markeskod": "EP", "artikelnummer": "9501658552", "benamning": "STRÅLKASTARE, VÄ", "status": "R", "bild": true },
     { "markeskod": "EP", "artikelnummer": "9501658553", "benamning": "STRÅLKASTARE, HÖ", "status": "R", "bild": true },
@@ -3869,7 +3869,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B11R", "DAF"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "23446987" },
             { "markeskod": "DAF", "artikelnummer": "2167682" }
         ]
@@ -3947,7 +3947,7 @@
         "benamning_alt": "B8",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "H11006Z" },
             { "markeskod": "HU", "artikelnummer": "F026407292" },
             { "markeskod": "VO", "artikelnummer": "23958454" }
@@ -4934,7 +4934,7 @@
             "Mercedes Tourismo",
             "Mercedes Actros 1836"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MBT", "artikelnummer": "A0004295695" },
             { "markeskod": "MD", "artikelnummer": "1027-4329012232" },
             { "markeskod": "HU", "artikelnummer": "TB1394/16X" },
@@ -5864,7 +5864,7 @@
         "lagerplats": "H1-09C",
         "extra_info": "Se även anslutningsstuts {A.000.491.26.10}.",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "AHL", "artikelnummer": "8546938" }]
+        "korsnummer": [{ "markeskod": "AHL", "artikelnummer": "8546938" }]
     },
     {
         "markeskod": "EV",
@@ -7399,7 +7399,7 @@
         "lagerplats": "H1-27E",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22584975" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22584975" }]
     },
     {
         "markeskod": "EV",
@@ -7417,7 +7417,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Setra S531", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "24002150" },
             { "markeskod": "EV", "artikelnummer": "A.000.980.88.15" }
         ]
@@ -7432,7 +7432,7 @@
         "lagerplats": "H2-38E",
         "bild": true,
         "fordon": ["Setra S531", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "24002150" },
             { "markeskod": "EV", "artikelnummer": "A.000.980.61.15" }
         ]
@@ -9740,7 +9740,7 @@
         "status": "J",
         "lagerplats": "FL-10E",
         "fordon": ["Volvo B8R (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "23002696" },
             { "markeskod": "AV", "artikelnummer": "31-5560" }
         ]
@@ -9754,7 +9754,7 @@
         "lagerplats": "FL-09C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "CU50001" },
             { "markeskod": "VO", "artikelnummer": "22740074" }
         ]
@@ -9942,7 +9942,7 @@
         "status": "R",
         "extra_info": "Ligger i EVA som en 20-liters artikel, så vill man fakturera 1 liter så lägger man på antalet 0,05.",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "AA02 913 521" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "AA02 913 521" }]
     },
     { "markeskod": "EV", "artikelnummer": "A.002.989.92.51.12", "benamning": "KOMPRESSOROLJA T4620L", "status": "H" },
     {
@@ -16656,7 +16656,7 @@
         "lagerplats": "H1-10D",
         "bild": true,
         "fordon": ["Setra S531", "Mercedes Tourismo", "VanHool"],
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "3400741750" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "3400741750" }]
     },
     {
         "markeskod": "EV",
@@ -17123,7 +17123,7 @@
         "benamning": "STÖDLAGER, BAKRE",
         "status": "R",
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "FB-31852" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "FB-31852" }]
     },
     { "markeskod": "EV", "artikelnummer": "A.990.528.40.00", "benamning": "INTERCOOLERSLANG", "status": "R" },
     { "markeskod": "EV", "artikelnummer": "A.990.540.38.00", "benamning": "DIODKAPSEL", "status": "H" },
@@ -18568,7 +18568,7 @@
         "lagerplats": "FL-05C",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21707132" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21707132" }]
     },
     { "markeskod": "HU", "artikelnummer": "0501100041", "benamning": "MAGNETVENTIL ELC", "status": "R" },
     { "markeskod": "HU", "artikelnummer": "098291017", "benamning": "DIODENHET KLAR 24V ERMAX", "status": "R", "bild": true },
@@ -18580,7 +18580,7 @@
         "status": "H",
         "lagerplats": "H1-03A",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "85020823" },
             { "markeskod": "RY", "artikelnummer": "0986049360" }
         ]
@@ -18594,7 +18594,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22707523" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22707523" }]
     },
     { "markeskod": "HU", "artikelnummer": "12866", "benamning": "LAMPA, 12V 10W", "benamning_alt": "11X41MM", "status": "R" },
     {
@@ -18603,7 +18603,7 @@
         "benamning": "MOTOROLJEFILTER",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MAN", "artikelnummer": "51.05500-6073" },
             { "markeskod": "MD", "artikelnummer": "1025-1457429278" }
         ]
@@ -18637,7 +18637,7 @@
         "benamning_alt": "470X184X70, AKTIVTKOL",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MAN", "artikelnummer": "81.61910-0045" }]
+        "korsnummer": [{ "markeskod": "MAN", "artikelnummer": "81.61910-0045" }]
     },
     {
         "markeskod": "HU",
@@ -18655,7 +18655,7 @@
         "lagerplats": "R2-B1",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23098671" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23098671" }]
     },
     {
         "markeskod": "HU",
@@ -18762,7 +18762,7 @@
         "status": "J",
         "lagerplats": "R2-C2",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23961551" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23961551" }]
     },
     {
         "markeskod": "HU",
@@ -18869,7 +18869,7 @@
         "lagerplats": "FL-04A",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "23264525" },
             { "markeskod": "VO", "artikelnummer": "85013698" }
         ]
@@ -18883,7 +18883,7 @@
         "status": "J",
         "lagerplats": "R2-C3",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "20464710" },
             { "markeskod": "VO", "artikelnummer": "24636039" }
         ]
@@ -18931,7 +18931,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "70369131" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "70369131" }]
     },
     {
         "markeskod": "HU",
@@ -18969,7 +18969,7 @@
         "extra_info": "Kan stå {R2.03.11.728} eller {LRG728} på kartongen/oket.",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21024417" },
             { "markeskod": "RY", "artikelnummer": "MXC9309032" }
         ]
@@ -18984,7 +18984,7 @@
         "extra_info": "Kan stå {R2.03.11.729} eller {LRG729} på kartongen/oket.",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21024419" },
             { "markeskod": "RY", "artikelnummer": "MXC9309033" }
         ]
@@ -19009,7 +19009,7 @@
         "lagerplats": "FL-05E",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21834199" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21834199" }]
     },
     { "markeskod": "HU", "artikelnummer": "C40002", "benamning": "MOTORLUFTFILTER", "status": "R" },
     {
@@ -19021,7 +19021,7 @@
         "lagerplats": "FL-05B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21743197" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21743197" }]
     },
     {
         "markeskod": "HU",
@@ -19029,7 +19029,7 @@
         "benamning": "MOTORLUFTFILTER",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1027-LX2810" },
             { "markeskod": "MAN", "artikelnummer": "81.08405-0032" }
         ]
@@ -19043,7 +19043,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "5801619418" },
             { "markeskod": "IV", "artikelnummer": "500086309" },
             { "markeskod": "MD", "artikelnummer": "1460-AH703" }
@@ -19059,7 +19059,7 @@
         "lagerplats": "FL-06C",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21130158" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21130158" }]
     },
     {
         "markeskod": "HU",
@@ -19071,7 +19071,7 @@
         "lagerplats": "FL-06C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22409822" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22409822" }]
     },
     {
         "markeskod": "HU",
@@ -19082,7 +19082,7 @@
         "lagerplats": "FL-06B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "EV", "artikelnummer": "A.002.835.46.47" },
             { "markeskod": "VO", "artikelnummer": "22740074" }
         ]
@@ -19095,7 +19095,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "42555669" },
             { "markeskod": "MD", "artikelnummer": "1100-0986494257" },
             { "markeskod": "IV", "artikelnummer": "500086041" }
@@ -19112,7 +19112,7 @@
         "lagerplats": "FL-05D",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22480372" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22480372" }]
     },
     { "markeskod": "HU", "artikelnummer": "F026402131", "benamning": "BRÄNSLEFÖRFILTER", "bild": true },
     {
@@ -19130,7 +19130,7 @@
         "status": "J",
         "lagerplats": "FL-05D",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21746575" },
             { "markeskod": "VO", "artikelnummer": "22892652" }
         ]
@@ -19145,7 +19145,7 @@
         "lagerplats": "FL-05D",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21380475" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21380475" }]
     },
     { "markeskod": "HU", "artikelnummer": "F026402859", "benamning": "BRÄNSLEFILTER", "benamning_alt": "PRIMÄR", "status": "R" },
     {
@@ -19158,7 +19158,7 @@
         "lagerplats": "FL-05C",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23658092" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23658092" }]
     },
     {
         "markeskod": "HU",
@@ -19168,7 +19168,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "H11006Z" },
             { "markeskod": "EP", "artikelnummer": "9750360307" },
             { "markeskod": "VO", "artikelnummer": "23958454" }
@@ -19184,7 +19184,7 @@
         "lagerplats": "FL-05C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "EP", "artikelnummer": "9750360307" },
             { "markeskod": "HU", "artikelnummer": "F026407292" },
             { "markeskod": "VO", "artikelnummer": "23958454" }
@@ -19200,7 +19200,7 @@
         "lagerplats": "FL-05B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21654583" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21654583" }]
     },
     {
         "markeskod": "HU",
@@ -19212,7 +19212,7 @@
         "lagerplats": "FL-05B",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "24074626" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "24074626" }]
     },
     {
         "markeskod": "HU",
@@ -19229,7 +19229,7 @@
         "benamning": "LUFTBÄLG, VÄ-BAK",
         "status": "R",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "504190916" },
             { "markeskod": "RY", "artikelnummer": "5C2-0016" }
         ]
@@ -19240,7 +19240,7 @@
         "benamning": "LUFTBÄLG, HÖ-BAK",
         "status": "R",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "504190917" },
             { "markeskod": "RY", "artikelnummer": "5C2-0017" }
         ]
@@ -19254,7 +19254,7 @@
         "status": "J",
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "KG", "artikelnummer": "F 026 400 645" },
             { "markeskod": "IV", "artikelnummer": "5801686484" }
         ]
@@ -19279,7 +19279,7 @@
         "lagerplats": "FL-05E",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21337557" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21337557" }]
     },
     {
         "markeskod": "HU",
@@ -19287,7 +19287,7 @@
         "benamning": "BRÄNSLEFILTER",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MAN", "artikelnummer": "51.12503-0109" }]
+        "korsnummer": [{ "markeskod": "MAN", "artikelnummer": "51.12503-0109" }]
     },
     {
         "markeskod": "HU",
@@ -19297,7 +19297,7 @@
         "lagerplats": "FL-08C",
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1025-KX399D" },
             { "markeskod": "IV", "artikelnummer": "500086009" }
         ]
@@ -19323,7 +19323,7 @@
         "lagerplats": "PS-01B",
         "extra_info": "Ersätter: {PD196KHD}.",
         "fordon": ["Universal", "Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21024702" },
             { "markeskod": "RY", "artikelnummer": "PD196KHD" }
         ]
@@ -19370,7 +19370,7 @@
         "benamning_alt": "BAKLUCKA",
         "status": "J",
         "lagerplats": "H1-40B",
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21740617" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21740617" }]
     },
     {
         "markeskod": "HU",
@@ -19379,7 +19379,7 @@
         "status": "J",
         "lagerplats": "PS-01B",
         "fordon": ["Mercedes (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1565-EA1000X" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1565-EA1000X" }]
     },
     {
         "markeskod": "HU",
@@ -19392,7 +19392,7 @@
             "Mercedes Tourismo",
             "Mercedes Actros 1836"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MBT", "artikelnummer": "A0004295695" },
             { "markeskod": "MD", "artikelnummer": "1027-4329012232" },
             { "markeskod": "MAN", "artikelnummer": "51.12503-0109" },
@@ -19434,7 +19434,7 @@
         "status": "U",
         "lagerplats": "H1-28E",
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "1629499" },
             { "markeskod": "RY", "artikelnummer": "80921" }
         ]
@@ -19457,7 +19457,7 @@
         "lagerplats": "H1-07B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "2.24495" },
             { "markeskod": "VO", "artikelnummer": "20480486" }
         ]
@@ -19494,7 +19494,7 @@
         "lagerplats": "H2-23B",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "20804638" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "20804638" }]
     },
     {
         "markeskod": "HU",
@@ -19536,7 +19536,7 @@
         "status": "U",
         "lagerplats": "H1-18",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21271982" },
             { "markeskod": "RY", "artikelnummer": "10A2-0009" }
         ]
@@ -19557,7 +19557,7 @@
         "benamning_alt": "B8/B9, 805MM",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21444881" },
             { "markeskod": "RY", "artikelnummer": "3196402" }
         ]
@@ -19571,7 +19571,7 @@
         "status": "J",
         "lagerplats": "V3-03C",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "6620NP02" },
             { "markeskod": "VO", "artikelnummer": "21513833" }
         ]
@@ -19587,7 +19587,7 @@
         "lagerplats": "H2-23C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21717748" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21717748" }]
     },
     { "markeskod": "HU", "artikelnummer": "VO21836530", "benamning": "LUFTBÄLG CONTI 6623NP01/", "status": "R" },
     { "markeskod": "HU", "artikelnummer": "VO21836532", "benamning": "LUFTBÄLG CONTI 6622NP01/", "status": "R" },
@@ -19601,7 +19601,7 @@
         "lagerplats": "R2-B3",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21945304" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21945304" }]
     },
     {
         "markeskod": "HU",
@@ -19612,7 +19612,7 @@
         "lagerplats": "FL-06D",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22218547" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22218547" }]
     },
     {
         "markeskod": "HU",
@@ -19621,7 +19621,7 @@
         "benamning_alt": "B8/B9, 1728MM",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "3879901" },
             { "markeskod": "EP", "artikelnummer": "9073192901" },
             { "markeskod": "VO", "artikelnummer": "22627712" }
@@ -19633,7 +19633,7 @@
         "benamning": "GUMMIBUSSNING, K-STAG",
         "benamning_alt": "FRAM/BAK",
         "status": "R",
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "407-6214" },
             { "markeskod": "VO", "artikelnummer": "70301194" }
         ]
@@ -19645,7 +19645,7 @@
         "benamning_alt": "120MM",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "3193731" },
             { "markeskod": "KG", "artikelnummer": "VKDCV06069" },
             { "markeskod": "RY", "artikelnummer": "2879201" }
@@ -19658,7 +19658,7 @@
         "benamning_alt": "88MM",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "3869301" },
             { "markeskod": "KG", "artikelnummer": "VKDCV06054" },
             { "markeskod": "VO", "artikelnummer": "21431675" }
@@ -19680,7 +19680,7 @@
         "benamning": "LUFTTRYCKGIVARE, BROMS",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "20829689" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "20829689" }]
     },
     { "markeskod": "HU", "artikelnummer": "VO700261", "benamning": "NAVENHET (INK LAGER)", "status": "H" },
     {
@@ -19698,7 +19698,7 @@
         "benamning": "GENERATOR 1/2",
         "benamning_alt": "B8",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VHAN", "artikelnummer": "VHA 04-375" },
             { "markeskod": "VO", "artikelnummer": "85022622" }
         ]
@@ -19713,7 +19713,7 @@
         "extra_info": "143mm hög, 93mm diameter.",
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "2995655" },
             { "markeskod": "RY", "artikelnummer": "H17W29" },
             { "markeskod": "MD", "artikelnummer": "1025-F026407083" }
@@ -19730,7 +19730,7 @@
         "lagerplats": "FL-05D",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21538975" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21538975" }]
     },
     {
         "markeskod": "HU",
@@ -19825,7 +19825,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "H17W29" },
             { "markeskod": "MD", "artikelnummer": "1025-F026407083" },
             { "markeskod": "HU", "artikelnummer": "W940/69" }
@@ -19839,7 +19839,7 @@
         "bild": true,
         "paket": ["IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "H12W08" },
             { "markeskod": "MD", "artikelnummer": "1025-OC570" }
         ]
@@ -19881,7 +19881,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "RY GS8856" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "RY GS8856" }]
     },
     { "markeskod": "IV", "artikelnummer": "42554758", "benamning": "BROMSOK, VÄ-BAK", "status": "R" },
     { "markeskod": "IV", "artikelnummer": "42554990", "ersatter": "504122833", "benamning": "BROMSOK, VÄ-BAK", "bild": true },
@@ -19895,7 +19895,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS", "IV-TIM-BROMS"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "3A7-0002" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "3A7-0002" }]
     },
     { "markeskod": "IV", "artikelnummer": "42555559", "ersatter": "504121785", "benamning": "BROMSOK, VÄ-FRAM", "bild": true },
     { "markeskod": "IV", "artikelnummer": "42555560", "ersatter": "504121786", "benamning": "BROMSOK, HÖ-FRAM", "bild": true },
@@ -19908,7 +19908,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-133900" },
             { "markeskod": "IV", "artikelnummer": "500055652" }
         ]
@@ -19920,7 +19920,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-0986494257" },
             { "markeskod": "HU", "artikelnummer": "CVP025" },
             { "markeskod": "IV", "artikelnummer": "500086041" }
@@ -19934,7 +19934,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1165-0839" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1165-0839" }]
     },
     {
         "markeskod": "IV",
@@ -19945,7 +19945,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "3B8-0003" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "3B8-0003" }]
     },
     {
         "markeskod": "IV",
@@ -19978,7 +19978,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1165-1090069" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1165-1090069" }]
     },
     {
         "markeskod": "IV",
@@ -19989,7 +19989,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1175-WS0245A" },
             { "markeskod": "RY", "artikelnummer": "GIC345" }
         ]
@@ -20003,7 +20003,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1175-WS0280A" },
             { "markeskod": "RY", "artikelnummer": "GIC343" }
         ]
@@ -20015,7 +20015,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1175-WS0323A" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1175-WS0323A" }]
     },
     { "markeskod": "IV", "artikelnummer": "42567624", "benamning": "NIPPEL, KYL, ÖVRE", "status": "R", "bild": true },
     { "markeskod": "IV", "artikelnummer": "42568749", "benamning": "AXELKORS", "status": "R" },
@@ -20029,7 +20029,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-PP1535" },
             { "markeskod": "EP", "artikelnummer": "2132912303" }
         ]
@@ -20043,7 +20043,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1125-345379" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1125-345379" }]
     },
     { "markeskod": "IV", "artikelnummer": "42577829", "benamning": "PACKNING", "status": "R" },
     { "markeskod": "IV", "artikelnummer": "42578003", "benamning": "STYRLED, YTTRE", "status": "R", "bild": true },
@@ -20067,7 +20067,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1115-0986479638" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1115-0986479638" }]
     },
     {
         "markeskod": "IV",
@@ -20079,7 +20079,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "112-222" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "112-222" }]
     },
     {
         "markeskod": "IV",
@@ -20091,7 +20091,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "2138040700" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "2138040700" }]
     },
     {
         "markeskod": "IV",
@@ -20102,7 +20102,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "KG", "artikelnummer": "HP C6023" },
             { "markeskod": "RY", "artikelnummer": "GDB1747" },
             { "markeskod": "EP", "artikelnummer": "2132922901" }
@@ -20117,7 +20117,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-133900" },
             { "markeskod": "IV", "artikelnummer": "42555633" }
         ]
@@ -20140,7 +20140,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1025-KX399D" },
             { "markeskod": "HU", "artikelnummer": "PU7004Z" }
         ]
@@ -20154,7 +20154,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "42555669" },
             { "markeskod": "MD", "artikelnummer": "1100-0986494257" },
             { "markeskod": "HU", "artikelnummer": "CVP025" }
@@ -20177,7 +20177,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "5801619418" },
             { "markeskod": "HU", "artikelnummer": "CU22029" },
             { "markeskod": "MD", "artikelnummer": "1460-AH703" }
@@ -20209,7 +20209,7 @@
         "artikelnummer": "504190916",
         "benamning": "LUFTBÄLG, VÄ-BAK",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "5C2-0016" },
             { "markeskod": "HU", "artikelnummer": "IV504190916" }
         ]
@@ -20219,7 +20219,7 @@
         "artikelnummer": "504190917",
         "benamning": "LUFTBÄLG, HÖ-BAK",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "5C2-0017" },
             { "markeskod": "HU", "artikelnummer": "IV504190917" }
         ]
@@ -20240,7 +20240,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS", "IV-TIM-BROMS"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1185-B0265008414" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1185-B0265008414" }]
     },
     {
         "markeskod": "IV",
@@ -20251,7 +20251,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "1325997152" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "1325997152" }]
     },
     {
         "markeskod": "IV",
@@ -20262,7 +20262,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "3C2-0011" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "3C2-0011" }]
     },
     { "markeskod": "IV", "artikelnummer": "5801283685", "benamning": "MOTORFÄSTE", "status": "R" },
     {
@@ -20281,7 +20281,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "E1516L" },
             { "markeskod": "MD", "artikelnummer": "1025-LX3603" }
         ]
@@ -20319,7 +20319,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "500086309" },
             { "markeskod": "HU", "artikelnummer": "CU22029" },
             { "markeskod": "MD", "artikelnummer": "1460-AH703" }
@@ -20334,7 +20334,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1115-0986479641" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1115-0986479641" }]
     },
     {
         "markeskod": "IV",
@@ -20363,7 +20363,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "MF700032" },
             { "markeskod": "KG", "artikelnummer": "F 026 400 645" }
         ]
@@ -20396,7 +20396,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "EF-BC1921" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "EF-BC1921" }]
     },
     {
         "markeskod": "IV",
@@ -20415,7 +20415,7 @@
         "bild": true,
         "paket": ["IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1025-KX564D" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1025-KX564D" }]
     },
     {
         "markeskod": "IV",
@@ -20428,7 +20428,7 @@
         "bild": true,
         "paket": ["IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1401-6PK1218" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1401-6PK1218" }]
     },
     {
         "markeskod": "IV",
@@ -20438,7 +20438,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1401-4PK1102SF" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1401-4PK1102SF" }]
     },
     { "markeskod": "IV", "artikelnummer": "5802137626", "benamning": "KYLSLANG, DPF", "status": "H", "lagerplats": "H1-15B" },
     { "markeskod": "IV", "artikelnummer": "5802137630", "benamning": "KYLSLANG, DPF", "status": "H", "lagerplats": "H1-15B" },
@@ -20522,7 +20522,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "ABR", "artikelnummer": "BV 15610" }]
+        "korsnummer": [{ "markeskod": "ABR", "artikelnummer": "BV 15610" }]
     },
     { "markeskod": "IV", "artikelnummer": "8585819", "benamning": "BUSSNING, K-STAG", "status": "R", "bild": true },
     {
@@ -20535,7 +20535,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "WA233" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "WA233" }]
     },
     {
         "markeskod": "IV",
@@ -20545,7 +20545,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "3A7-0003" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "3A7-0003" }]
     },
     {
         "markeskod": "IV",
@@ -20562,7 +20562,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "ABR", "artikelnummer": "BV 35232" }]
+        "korsnummer": [{ "markeskod": "ABR", "artikelnummer": "BV 35232" }]
     },
     {
         "markeskod": "IV",
@@ -20970,7 +20970,7 @@
         "status": "H",
         "paket": ["MB-P60-BROMS", "MB-P70-BROMS", "MB-LERUM-LE-BROMS"],
         "fordon": ["Mercedes P60 (UPS)", "Mercedes P70 (UPS)", "Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9069053301" },
             { "markeskod": "MD", "artikelnummer": "1185-0986594645" }
         ]
@@ -20988,7 +20988,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9069053701" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9069053701" }]
     },
     {
         "markeskod": "KG",
@@ -21003,7 +21003,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9069053801" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9069053801" }]
     },
     { "markeskod": "KG", "artikelnummer": "10-360461", "benamning": "ABS-GIVARE, VÄ-BAK", "benamning_alt": "1920MM" },
     { "markeskod": "KG", "artikelnummer": "10-360462", "benamning": "ABS-GIVARE, HÖ-BAK", "benamning_alt": "1830MM" },
@@ -21048,7 +21048,7 @@
         "benamning": "K-STAG, BUSSNING, BAK",
         "status": "R",
         "fordon": ["Mercedes P70 (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A6673200073" },
             { "markeskod": "MD", "artikelnummer": "1215-1287601" },
             { "markeskod": "ABR", "artikelnummer": "BV 06844" }
@@ -21259,7 +21259,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21673420" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21673420" }]
     },
     { "markeskod": "KG", "artikelnummer": "434.941", "benamning": "OLJEPLUGG INKL. PACKNING", "status": "R" },
     { "markeskod": "KG", "artikelnummer": "442.802", "benamning": "CYLINDERPACKNING", "status": "R" },
@@ -21428,7 +21428,7 @@
         "benamning": "STÖTDÄMPARE, FRAM",
         "status": "R",
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9063201033" },
             { "markeskod": "ABR", "artikelnummer": "319 684" }
         ]
@@ -21522,7 +21522,7 @@
         "status": "H",
         "lagerplats": "KEMRUM",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EV", "artikelnummer": "A.002.989.45.03.12" }]
+        "korsnummer": [{ "markeskod": "EV", "artikelnummer": "A.002.989.45.03.12" }]
     },
     {
         "markeskod": "KG",
@@ -21592,7 +21592,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5801980467" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5801980467" }]
     },
     {
         "markeskod": "KG",
@@ -21619,7 +21619,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "MF700032" },
             { "markeskod": "IV", "artikelnummer": "5801686484" }
         ]
@@ -21634,7 +21634,7 @@
         "benamning": "BROMSOK, VÄ-FRAM, BYTES",
         "paket": ["MB-P45-BROMS"],
         "fordon": ["Mercedes P45 (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0044205583" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0044205583" }]
     },
     { "markeskod": "KG", "artikelnummer": "F 50 241", "benamning": "BROMSOK, HÖ-FRAM, BYTES" },
     { "markeskod": "KG", "artikelnummer": "F 50 242", "benamning": "BROMSOK, VÄ-BAK, BYTES" },
@@ -21644,7 +21644,7 @@
         "benamning": "BROMSOK, HÖ-BAK, BYTES",
         "paket": ["MB-P45-BROMS"],
         "fordon": ["Mercedes P45 (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0034207283" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0034207283" }]
     },
     { "markeskod": "KG", "artikelnummer": "F A6 026", "benamning": "BROMSOK, VÄ-BAK, BYTES", "status": "R" },
     { "markeskod": "KG", "artikelnummer": "F A6 030", "benamning": "BROMSOK, VÄ-FRAM", "bild": true },
@@ -21698,7 +21698,7 @@
         "status": "J",
         "lagerplats": "H1-35B",
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "EV", "artikelnummer": "A.990.410.35.00" }]
+        "korsnummer": [{ "markeskod": "EV", "artikelnummer": "A.990.410.35.00" }]
     },
     {
         "markeskod": "KG",
@@ -21757,7 +21757,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "500055563" },
             { "markeskod": "RY", "artikelnummer": "GDB1747" },
             { "markeskod": "EP", "artikelnummer": "2132922901" }
@@ -22154,7 +22154,7 @@
         "status": "J",
         "lagerplats": "KALLRM",
         "extra_info": "Ange certifikatsnummer vid beställning.\\nKommer i 14kg flaskor med stomme.",
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1860-WA8887100059" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1860-WA8887100059" }]
     },
     { "markeskod": "KG", "artikelnummer": "RV 7DM56C", "benamning": "BACKKAMERASYSTEM", "status": "R" },
     {
@@ -22396,7 +22396,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO3987648" },
             { "markeskod": "RY", "artikelnummer": "3869301" },
             { "markeskod": "VO", "artikelnummer": "21431675" }
@@ -22409,7 +22409,7 @@
         "benamning_alt": "120MM",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "3193731" },
             { "markeskod": "HU", "artikelnummer": "VO3193731" },
             { "markeskod": "RY", "artikelnummer": "2879201" }
@@ -23882,7 +23882,7 @@
         "benamning": "MOTOROLJEFILTER",
         "status": "R",
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "1457429278" },
             { "markeskod": "MD", "artikelnummer": "1025-1457429278" }
         ]
@@ -23896,7 +23896,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "PU1059X" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "PU1059X" }]
     },
     { "markeskod": "MAN", "artikelnummer": "51.26201-9263", "benamning": "STARTMOTOR, BYTES", "status": "R" },
     { "markeskod": "MAN", "artikelnummer": "81.08405-0031", "benamning": "LUFTFILTER", "status": "H", "lagerplats": "FL-12D" },
@@ -23907,7 +23907,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1027-LX2810" },
             { "markeskod": "HU", "artikelnummer": "C62001" }
         ]
@@ -23951,7 +23951,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "1987431458" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "1987431458" }]
     },
     { "markeskod": "MAN", "artikelnummer": "81.61990-6125", "benamning": "VÄRMARMODUL", "status": "R" },
     { "markeskod": "MAN", "artikelnummer": "81.63730-6742", "benamning": "YTTERBACKSPEGEL, HÖ", "status": "R" },
@@ -23996,7 +23996,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1025-A1266" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1025-A1266" }]
     },
     {
         "markeskod": "MB",
@@ -24038,7 +24038,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1165-1499X" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1165-1499X" }]
     },
     {
         "markeskod": "MB",
@@ -24070,7 +24070,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1165-1218" },
             { "markeskod": "MB", "artikelnummer": "A0004280100" }
         ]
@@ -24089,7 +24089,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1165-1218" },
             { "markeskod": "MB", "artikelnummer": "A0004280000" }
         ]
@@ -24214,7 +24214,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1165-1050004" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1165-1050004" }]
     },
     { "markeskod": "MB", "artikelnummer": "A0009972663", "benamning": "KOPPLINGSMUFF", "status": "R" },
     { "markeskod": "MB", "artikelnummer": "A0009980446", "benamning": "RUTA, MOTORHUV, 2", "status": "R" },
@@ -24233,7 +24233,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1165-1762" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1165-1762" }]
     },
     { "markeskod": "MB", "artikelnummer": "A0015424323", "benamning": "BACKSUMMER", "status": "U", "lagerplats": "H2-23D" },
     { "markeskod": "MB", "artikelnummer": "A0015455080", "benamning": "LEDARTÄTNING, 0.22-1.0MM", "status": "R" },
@@ -24345,7 +24345,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS"],
         "fordon": ["Mercedes P45 (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "F 50 243" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "F 50 243" }]
     },
     { "markeskod": "MB", "artikelnummer": "A003420728380", "ersatter": "A0034207283", "benamning": "BROMSOK, HÖ-BAK, BYTES" },
     {
@@ -24359,7 +24359,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1125-344384" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1125-344384" }]
     },
     { "markeskod": "MB", "artikelnummer": "A0035452626", "benamning": "KONTAKTHYLSA", "status": "R" },
     { "markeskod": "MB", "artikelnummer": "A0039827026", "benamning": "KONTAKTHYLSA, 0.5MM", "status": "R" },
@@ -24391,7 +24391,7 @@
         "artikelnummer": "A0062030071",
         "benamning": "LUFTBÄLG",
         "fordon": ["Mercedes Sprinter"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "5C20052" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "5C20052" }]
     },
     {
         "markeskod": "MB",
@@ -24406,7 +24406,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1100-0986494122" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1100-0986494122" }]
     },
     { "markeskod": "MB", "artikelnummer": "A0064667801", "benamning": "STYRSERVOPUMP", "status": "R" },
     {
@@ -24476,7 +24476,7 @@
         "benamning": "MANÖVERSPAK, HANDBROMS",
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1165-12053002" },
             { "markeskod": "MB", "artikelnummer": "A1234200073" },
             { "markeskod": "MB", "artikelnummer": "A1164230050" }
@@ -24504,7 +24504,7 @@
         "benamning": "ABS-GIVARE, BAK",
         "paket": ["MB-908221-BROMS"],
         "fordon": ["Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "ABR", "artikelnummer": "AG GBS2805" }]
+        "korsnummer": [{ "markeskod": "ABR", "artikelnummer": "AG GBS2805" }]
     },
     {
         "markeskod": "MB",
@@ -24623,7 +24623,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS", "MB-LERUM-LE-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)", "Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1175-WS0229A" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1175-WS0229A" }]
     },
     {
         "markeskod": "MB",
@@ -24650,7 +24650,7 @@
         "status": "H",
         "lagerplats": "FL-03E",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1025-F026402839" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1025-F026402839" }]
     },
     {
         "markeskod": "MB",
@@ -24666,7 +24666,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1025-F026402840" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1025-F026402840" }]
     },
     { "markeskod": "MB", "artikelnummer": "A6510903842", "benamning": "LADDLUFTSLEDNING", "status": "R" },
     { "markeskod": "MB", "artikelnummer": "A6510905037", "benamning": "LADDLUFTFÖRDELARE", "status": "R" },
@@ -24720,7 +24720,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1025-OX1537D2" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1025-OX1537D2" }]
     },
     { "markeskod": "MB", "artikelnummer": "A6512000270", "benamning": "REMHJUL, 65MM", "status": "R", "bild": true },
     { "markeskod": "MB", "artikelnummer": "A6512000670", "benamning": "REMHJUL, 69MM 6PK", "status": "R", "bild": true },
@@ -24751,7 +24751,7 @@
         "benamning": "K-STAG, BUSSNING, BAK",
         "status": "R",
         "fordon": ["Mercedes P70 (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1215-1287601" },
             { "markeskod": "KG", "artikelnummer": "16-12876 01" },
             { "markeskod": "ABR", "artikelnummer": "BV 06844" }
@@ -24796,7 +24796,7 @@
         "status": "H",
         "lagerplats": "H2-36C",
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "KG", "artikelnummer": "92-319 684" },
             { "markeskod": "ABR", "artikelnummer": "319 684" }
         ]
@@ -24882,7 +24882,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1105-0986487720" },
             { "markeskod": "MB", "artikelnummer": "A906420032028" }
         ]
@@ -24896,7 +24896,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1105-0986487720" },
             { "markeskod": "MB", "artikelnummer": "A9064200320" }
         ]
@@ -24916,7 +24916,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1105-0986487751" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1105-0986487751" }]
     },
     {
         "markeskod": "MB",
@@ -24962,7 +24962,7 @@
         "extra_info": "BW9033119",
         "bild": true,
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1160-PC23188" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1160-PC23188" }]
     },
     {
         "markeskod": "MB",
@@ -24989,7 +24989,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1115-P95081" },
             { "markeskod": "MB", "artikelnummer": "A9074210100" }
         ]
@@ -25008,7 +25008,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-0986494194" },
             { "markeskod": "MB", "artikelnummer": "A9064211500" },
             { "markeskod": "MB", "artikelnummer": "A9074209901" }
@@ -25028,7 +25028,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9064210300" },
             { "markeskod": "MD", "artikelnummer": "1100-0986494194" },
             { "markeskod": "MB", "artikelnummer": "A9074209901" }
@@ -25042,7 +25042,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-0986494121" },
             { "markeskod": "MB", "artikelnummer": "A9074208101" }
         ]
@@ -25057,7 +25057,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1115-P95091" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1115-P95091" }]
     },
     {
         "markeskod": "MB",
@@ -25074,7 +25074,7 @@
         "benamning": "BROMSBELÄGG, BAK",
         "paket": ["MB-P45-BROMS"],
         "fordon": ["Mercedes P45 (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1100-0986494123" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1100-0986494123" }]
     },
     {
         "markeskod": "MB",
@@ -25152,7 +25152,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1175-WS0227A" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1175-WS0227A" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9065451013", "benamning": "KONTROLLPANEL", "status": "R" },
     { "markeskod": "MB", "artikelnummer": "A9065460221", "benamning": "BATTERISENSOR, MED KABEL", "status": "R" },
@@ -25202,7 +25202,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1460-AHC268" },
             { "markeskod": "MB", "artikelnummer": "A9068300318" }
         ]
@@ -25223,7 +25223,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1460-AHC268" },
             { "markeskod": "MB", "artikelnummer": "A9068300218" }
         ]
@@ -25272,7 +25272,7 @@
         "benamning_alt": "952MM",
         "paket": ["MB-P60-BROMS", "MB-P70-BROMS", "MB-LERUM-LE-BROMS"],
         "fordon": ["Mercedes P60 (UPS)", "Mercedes P70 (UPS)", "Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1185-0986594645" },
             { "markeskod": "KG", "artikelnummer": "10-360426" }
         ]
@@ -25305,7 +25305,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "10-360459" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "10-360459" }]
     },
     {
         "markeskod": "MB",
@@ -25321,7 +25321,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "10-360460" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "10-360460" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9069900404", "benamning": "SKRUV", "status": "R" },
     { "markeskod": "MB", "artikelnummer": "A9069910170", "benamning": "KLAMMER", "status": "R" },
@@ -25346,7 +25346,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1100-0986494121" },
             { "markeskod": "MB", "artikelnummer": "A9064211600" }
         ]
@@ -25365,7 +25365,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9064210300" },
             { "markeskod": "MD", "artikelnummer": "1100-0986494194" },
             { "markeskod": "MB", "artikelnummer": "A9064211500" }
@@ -25396,7 +25396,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1115-P95081" },
             { "markeskod": "MB", "artikelnummer": "A9064210012" }
         ]
@@ -25410,7 +25410,7 @@
         "status": "R",
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1125-345518" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1125-345518" }]
     },
     {
         "markeskod": "MB",
@@ -25420,7 +25420,7 @@
         "status": "R",
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1125-345519" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1125-345519" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9074219100", "ersatter": "A9074212400", "benamning": "BROMSOK, VÄ-FRAM" },
     { "markeskod": "MB", "artikelnummer": "A9074219200", "ersatter": "A9074212500", "benamning": "BROMSOK, HÖ-FRAM" },
@@ -25439,7 +25439,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1115-PM0001138" },
             { "markeskod": "MD", "artikelnummer": "1115-0986479296" }
         ]
@@ -25457,7 +25457,7 @@
         "bild": true,
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1100-35280" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1100-35280" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9074923500", "benamning": "HÅLLARE, AVGAS", "status": "H", "bild": true },
     { "markeskod": "MB", "artikelnummer": "A9075001200", "benamning": "KYLVAETSKEKYLARE", "status": "R" },
@@ -25502,7 +25502,7 @@
         "bild": true,
         "paket": ["MB-908221-BROMS", "MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (UPS)", "Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "ABR", "artikelnummer": "AG GBS2860" }]
+        "korsnummer": [{ "markeskod": "ABR", "artikelnummer": "AG GBS2860" }]
     },
     {
         "markeskod": "MB",
@@ -25535,7 +25535,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1175-WS0266A" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1175-WS0266A" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9079065400", "benamning": "FLÄKT", "status": "H" },
     {
@@ -25546,7 +25546,7 @@
         "status": "R",
         "paket": ["MB-908221-BROMS"],
         "fordon": ["Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1100-35277" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1100-35277" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9104210100", "benamning": "BROMSSKIVA, FRAM", "benamning_alt": "300MM, VENTILERAD" },
     {
@@ -25556,7 +25556,7 @@
         "status": "R",
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1165-1130049X" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1165-1130049X" }]
     },
     {
         "markeskod": "MB",
@@ -25579,7 +25579,7 @@
         "bild": true,
         "paket": ["MB-LERUM-SERV"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1460-AHC518" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1460-AHC518" }]
     },
     { "markeskod": "MB", "artikelnummer": "A9108850400", "benamning": "STOETFAANGARHAALLARE", "status": "R" },
     { "markeskod": "MB", "artikelnummer": "A9108850500", "benamning": "STOETFAANGARHAALLARE", "status": "R" },
@@ -25951,7 +25951,7 @@
             "Mercedes Tourismo",
             "Mercedes Actros 1836"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1027-4329012232" },
             { "markeskod": "HU", "artikelnummer": "TB1394/16X" },
             { "markeskod": "MAN", "artikelnummer": "51.12503-0109" },
@@ -29772,7 +29772,7 @@
         "status": "J",
         "lagerplats": "FL-01D",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "9020320121" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "9020320121" }]
     },
     { "markeskod": "MBT", "artikelnummer": "A9608300983", "benamning": "VÄTSKEBEHÅLLARE", "status": "R" },
     {
@@ -30801,7 +30801,7 @@
         "benamning": "MOTOROLJEFILTER",
         "status": "R",
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "1457429278" },
             { "markeskod": "MAN", "artikelnummer": "51.05500-6073" }
         ]
@@ -30840,7 +30840,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0000903751" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0000903751" }]
     },
     {
         "markeskod": "MD",
@@ -30864,7 +30864,7 @@
         "status": "J",
         "lagerplats": "FL-03E",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A6510902852" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A6510902852" }]
     },
     {
         "markeskod": "MD",
@@ -30882,7 +30882,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A6510902952" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A6510902952" }]
     },
     {
         "markeskod": "MD",
@@ -30899,7 +30899,7 @@
         "extra_info": "142mm hög, 96mm diameter.",
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "2995655" },
             { "markeskod": "RY", "artikelnummer": "H17W29" },
             { "markeskod": "HU", "artikelnummer": "W940/69" }
@@ -30924,7 +30924,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "PU7004Z" },
             { "markeskod": "IV", "artikelnummer": "500086009" }
         ]
@@ -30938,7 +30938,7 @@
         "bild": true,
         "paket": ["IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5802050393" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5802050393" }]
     },
     { "markeskod": "MD", "artikelnummer": "1025-KX568KIT", "benamning": "BRÄNSLEFILTER", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1025-L991", "benamning": "OLJEFILTERINSATS", "status": "R" },
@@ -30955,7 +30955,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "E1516L" },
             { "markeskod": "IV", "artikelnummer": "5801317097" }
         ]
@@ -30969,7 +30969,7 @@
         "bild": true,
         "paket": ["IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "2995811" },
             { "markeskod": "RY", "artikelnummer": "H12W08" }
         ]
@@ -30999,7 +30999,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A6511800109" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A6511800109" }]
     },
     { "markeskod": "MD", "artikelnummer": "1025-OX388DM", "benamning": "OLJEFILTER", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1025-OX8132D", "benamning": "OLJEFILTER", "status": "R" },
@@ -31029,7 +31029,7 @@
             "Mercedes Tourismo",
             "Mercedes Actros 1836"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MBT", "artikelnummer": "A0004295695" },
             { "markeskod": "HU", "artikelnummer": "TB1394/16X" },
             { "markeskod": "MAN", "artikelnummer": "51.12503-0109" },
@@ -31062,7 +31062,7 @@
         "benamning": "LUFTFILTER, YTTRE",
         "benamning_alt": "B8",
         "status": "R",
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21337557" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21337557" }]
     },
     { "markeskod": "MD", "artikelnummer": "1027-KC300", "benamning": "BRÄNSLEFILTER", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1027-KC491D", "benamning": "BRÄNSLEFILTER VOLVO", "status": "R" },
@@ -31073,7 +31073,7 @@
         "artikelnummer": "1027-LX2810",
         "benamning": "MOTORLUFTFILTER",
         "fordon": ["MAN TGL (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "C62001" },
             { "markeskod": "MAN", "artikelnummer": "81.08405-0032" }
         ]
@@ -31140,7 +31140,7 @@
         "benamning_alt": "B9",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "85021310" },
             { "markeskod": "MD", "artikelnummer": "1047-M9T61471AM" }
         ]
@@ -31153,7 +31153,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "85021310" },
             { "markeskod": "MD", "artikelnummer": "1047-0986024670090" }
         ]
@@ -31179,7 +31179,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9074208101" },
             { "markeskod": "MB", "artikelnummer": "A9064211600" }
         ]
@@ -31199,7 +31199,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0064204520" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0064204520" }]
     },
     {
         "markeskod": "MD",
@@ -31211,7 +31211,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS"],
         "fordon": ["Mercedes P45 (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9064230400" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9064230400" }]
     },
     {
         "markeskod": "MD",
@@ -31228,7 +31228,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9064210300" },
             { "markeskod": "MB", "artikelnummer": "A9064211500" },
             { "markeskod": "MB", "artikelnummer": "A9074209901" }
@@ -31244,7 +31244,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "42555669" },
             { "markeskod": "HU", "artikelnummer": "CVP025" },
             { "markeskod": "IV", "artikelnummer": "500086041" }
@@ -31267,7 +31267,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "42555633" },
             { "markeskod": "IV", "artikelnummer": "500055652" }
         ]
@@ -31282,7 +31282,7 @@
         "status": "R",
         "paket": ["MB-908221-BROMS"],
         "fordon": ["Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9104207300" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9104207300" }]
     },
     {
         "markeskod": "MD",
@@ -31292,7 +31292,7 @@
         "bild": true,
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9074239700" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9074239700" }]
     },
     { "markeskod": "MD", "artikelnummer": "1100-LP3408", "benamning": "BROMSBELÄGG", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1100-PM0000585", "benamning": "BROMSBELÄGG PROMEISTER", "status": "R" },
@@ -31306,7 +31306,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "42576681" },
             { "markeskod": "EP", "artikelnummer": "2132912303" }
         ]
@@ -31333,7 +31333,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9064200320" },
             { "markeskod": "MB", "artikelnummer": "A906420032028" }
         ]
@@ -31353,7 +31353,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9064200420" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9064200420" }]
     },
     { "markeskod": "MD", "artikelnummer": "1105-BP30523", "benamning": "HANDBROMSBACKSATS, BAK", "status": "R" },
     {
@@ -31370,7 +31370,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9074230100" },
             { "markeskod": "MD", "artikelnummer": "1115-PM0001138" }
         ]
@@ -31384,7 +31384,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "46393181" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "46393181" }]
     },
     {
         "markeskod": "MD",
@@ -31395,7 +31395,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5801639518" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5801639518" }]
     },
     { "markeskod": "MD", "artikelnummer": "1115-0986479D19", "benamning": "BROMSSKIVA BOSCH", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1115-0986479D20", "benamning": "BROMSSKIVA BOSCH", "status": "R" },
@@ -31428,7 +31428,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9074210100" },
             { "markeskod": "MB", "artikelnummer": "A9064210012" }
         ]
@@ -31444,7 +31444,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9064230012" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9064230012" }]
     },
     {
         "markeskod": "MD",
@@ -31463,7 +31463,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9074230100" },
             { "markeskod": "MD", "artikelnummer": "1115-0986479296" }
         ]
@@ -31487,7 +31487,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0034207383" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0034207383" }]
     },
     {
         "markeskod": "MD",
@@ -31501,7 +31501,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0034207483" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0034207483" }]
     },
     { "markeskod": "MD", "artikelnummer": "1125-345378", "benamning": "BROMSOK, VÄ-BAK", "bild": true },
     {
@@ -31512,7 +31512,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "42576914" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "42576914" }]
     },
     {
         "markeskod": "MD",
@@ -31520,7 +31520,7 @@
         "benamning": "BROMSOK, VÄ-FRAM, BYTES",
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9074218900" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9074218900" }]
     },
     {
         "markeskod": "MD",
@@ -31528,7 +31528,7 @@
         "benamning": "BROMSOK, HÖ-FRAM, BYTES",
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9074219000" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9074219000" }]
     },
     { "markeskod": "MD", "artikelnummer": "1125-345524", "benamning": "BROMSOK, VÄ-BAK, BYTES" },
     { "markeskod": "MD", "artikelnummer": "1125-345525", "benamning": "BROMSOK, HÖ-BAK, BYTES" },
@@ -31542,7 +31542,7 @@
         "extra_info": "BW9033119",
         "bild": true,
         "fordon": ["Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9064207085" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9064207085" }]
     },
     {
         "markeskod": "MD",
@@ -31553,7 +31553,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "42556774" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "42556774" }]
     },
     {
         "markeskod": "MD",
@@ -31578,7 +31578,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0009935307" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0009935307" }]
     },
     { "markeskod": "MD", "artikelnummer": "1165-1090028", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
     {
@@ -31590,7 +31590,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "42561635" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "42561635" }]
     },
     { "markeskod": "MD", "artikelnummer": "1165-1090100", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1165-1090105", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
@@ -31611,7 +31611,7 @@
         "bild": true,
         "paket": ["MB-LERUM-BROMS"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9104214800" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9104214800" }]
     },
     { "markeskod": "MD", "artikelnummer": "1165-1131458X", "benamning": "GLIDBULTSATS", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1165-1194", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
@@ -31625,7 +31625,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A1234200073" },
             { "markeskod": "MB", "artikelnummer": "A2014200589" },
             { "markeskod": "MB", "artikelnummer": "A1164230050" }
@@ -31646,7 +31646,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A0004280100" },
             { "markeskod": "MB", "artikelnummer": "A0004280000" }
         ]
@@ -31672,7 +31672,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0004210850" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0004210850" }]
     },
     { "markeskod": "MD", "artikelnummer": "1165-1600", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1165-1678", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
@@ -31691,7 +31691,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A0014211191" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A0014211191" }]
     },
     { "markeskod": "MD", "artikelnummer": "1165-1768", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1165-1780", "benamning": "MONTERINGSSATS BROMSBELÄ", "status": "R" },
@@ -31724,7 +31724,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9065401517" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9065401517" }]
     },
     {
         "markeskod": "MD",
@@ -31737,7 +31737,7 @@
         "bild": true,
         "paket": ["MB-P45-BROMS", "MB-908221-BROMS", "MB-LERUM-LE-BROMS"],
         "fordon": ["Mercedes P45 (UPS)", "Mercedes Sprinter (UPS)", "Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A6395401517" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A6395401517" }]
     },
     {
         "markeskod": "MD",
@@ -31750,7 +31750,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "GIC345" },
             { "markeskod": "IV", "artikelnummer": "42567352" }
         ]
@@ -31771,7 +31771,7 @@
             "Mercedes Sprinter (Skola)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9079057103" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9079057103" }]
     },
     {
         "markeskod": "MD",
@@ -31784,7 +31784,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "GIC343" },
             { "markeskod": "IV", "artikelnummer": "42567353" }
         ]
@@ -31798,7 +31798,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "42567355" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "42567355" }]
     },
     { "markeskod": "MD", "artikelnummer": "1185-0986594590", "benamning": "ABS-GIVARE", "status": "R", "bild": true },
     {
@@ -31809,7 +31809,7 @@
         "bild": true,
         "paket": ["MB-P60-BROMS", "MB-P70-BROMS", "MB-LERUM-LE-BROMS"],
         "fordon": ["Mercedes P60 (UPS)", "Mercedes P70 (UPS)", "Mercedes Sprinter LE (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9069053301" },
             { "markeskod": "KG", "artikelnummer": "10-360426" }
         ]
@@ -31834,7 +31834,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS", "IV-TIM-BROMS"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5801279030" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5801279030" }]
     },
     { "markeskod": "MD", "artikelnummer": "1187-121790", "benamning": "EBS GIVARE", "status": "R" },
     { "markeskod": "MD", "artikelnummer": "1187-121791", "benamning": "EBS GIVARE", "status": "R" },
@@ -31885,7 +31885,7 @@
         "benamning": "K-STAG, BUSSNING, BAK",
         "status": "R",
         "fordon": ["Mercedes P70 (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A6673200073" },
             { "markeskod": "KG", "artikelnummer": "16-12876 01" },
             { "markeskod": "ABR", "artikelnummer": "BV 06844" }
@@ -32021,7 +32021,7 @@
         "benamning_alt": "AC-KOMPRESSOR",
         "status": "H",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5802102131" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5802102131" }]
     },
     { "markeskod": "MD", "artikelnummer": "1401-5PK1545", "benamning": "FLÄKTREM MICRO-V XF 5PK1", "status": "R" },
     {
@@ -32072,7 +32072,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "5801619418" },
             { "markeskod": "IV", "artikelnummer": "500086309" },
             { "markeskod": "HU", "artikelnummer": "CU22029" }
@@ -32095,7 +32095,7 @@
             "Mercedes Sprinter LE (Lerum)",
             "Mercedes Sprinter BB (Skola)"
         ],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MB", "artikelnummer": "A9068300318" },
             { "markeskod": "MB", "artikelnummer": "A9068300218" }
         ]
@@ -32111,7 +32111,7 @@
         "bild": true,
         "paket": ["MB-LERUM-SERV"],
         "fordon": ["Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "MB", "artikelnummer": "A9108301100" }]
+        "korsnummer": [{ "markeskod": "MB", "artikelnummer": "A9108301100" }]
     },
     { "markeskod": "MD", "artikelnummer": "1460-AHH373", "benamning": "KUPEFILTER ANTIALLERGI H", "status": "R" },
     {
@@ -32163,7 +32163,7 @@
         "extra_info": "Se även 2x kopplingar med nummer {20805109}.",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23674076" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23674076" }]
     },
     {
         "markeskod": "MD",
@@ -32188,7 +32188,7 @@
         "status": "J",
         "lagerplats": "SH-A1",
         "extra_info": "OSRAM",
-        "alternativa_artiklar": [{ "markeskod": "EV", "artikelnummer": "8.978.103.249.0" }]
+        "korsnummer": [{ "markeskod": "EV", "artikelnummer": "8.978.103.249.0" }]
     },
     {
         "markeskod": "MD",
@@ -32224,7 +32224,7 @@
         "lagerplats": "PS-01B",
         "bild": true,
         "fordon": ["Mercedes (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "TA1000" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "TA1000" }]
     },
     {
         "markeskod": "MD",
@@ -32256,7 +32256,7 @@
         "lagerplats": "PS-01B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "TK1060" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "TK1060" }]
     },
     { "markeskod": "MD", "artikelnummer": "1565-EK720X", "benamning": "EK720 EXIDE AGM", "status": "R" },
     {
@@ -32268,7 +32268,7 @@
         "lagerplats": "PS-01B",
         "bild": true,
         "fordon": ["Mercedes Sprinter LE (Lerum)", "Mercedes Sprinter (Skola)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "TK960" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "TK960" }]
     },
     {
         "markeskod": "MD",
@@ -32407,7 +32407,7 @@
         "benamning": "KÖLDMEDIUM",
         "status": "R",
         "extra_info": "Kommer i 12kg flaskor med stomme som ska returneras till Waeco.",
-        "alternativa_artiklar": [{ "markeskod": "KG", "artikelnummer": "R134A-14" }]
+        "korsnummer": [{ "markeskod": "KG", "artikelnummer": "R134A-14" }]
     },
     { "markeskod": "MD", "artikelnummer": "1860-WA8887200029", "benamning": "ESTEROLJA 1 LITER", "status": "R" },
     {
@@ -32920,7 +32920,7 @@
         "benamning_alt": "B9, 64MM",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "85020823" },
             { "markeskod": "HU", "artikelnummer": "0986049360" }
         ]
@@ -32946,7 +32946,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21271982" },
             { "markeskod": "HU", "artikelnummer": "VO21271982" }
         ]
@@ -32964,7 +32964,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "46393184" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "46393184" }]
     },
     { "markeskod": "RY", "artikelnummer": "119407", "benamning": "TORKARBLAD SWF", "status": "R" },
     {
@@ -32974,7 +32974,7 @@
         "benamning": "REMSPÄNNARE, VATTENPUMP",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21576596" },
             { "markeskod": "RY", "artikelnummer": "APV2388" }
         ]
@@ -33001,7 +33001,7 @@
         "benamning_alt": "B9, KOMPLETT, HALDEX",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "70369129" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "70369129" }]
     },
     {
         "markeskod": "RY",
@@ -33033,7 +33033,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO20480486" },
             { "markeskod": "VO", "artikelnummer": "20480486" }
         ]
@@ -33095,7 +33095,7 @@
         "lagerplats": "H1-04A",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "3193731" },
             { "markeskod": "HU", "artikelnummer": "VO3193731" },
             { "markeskod": "KG", "artikelnummer": "VKDCV06069" }
@@ -33125,7 +33125,7 @@
         "status": "J",
         "lagerplats": "R2-C1",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21829180" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21829180" }]
     },
     {
         "markeskod": "RY",
@@ -33133,7 +33133,7 @@
         "benamning": "STÖTDÄMPARE",
         "status": "R",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "503612244" },
             { "markeskod": "ABR", "artikelnummer": "312 397" },
             { "markeskod": "KG", "artikelnummer": "FB-20588" },
@@ -33152,7 +33152,7 @@
         "lagerplats": "PS-04B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO21444881" },
             { "markeskod": "VO", "artikelnummer": "21444881" }
         ]
@@ -33186,7 +33186,7 @@
         "lagerplats": "H1-04A",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO3987648" },
             { "markeskod": "KG", "artikelnummer": "VKDCV06054" },
             { "markeskod": "VO", "artikelnummer": "21431675" }
@@ -33206,7 +33206,7 @@
         "benamning_alt": "B8/B9, 1728MM",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "EP", "artikelnummer": "9073192901" },
             { "markeskod": "HU", "artikelnummer": "VO22627712" },
             { "markeskod": "VO", "artikelnummer": "22627712" }
@@ -33231,7 +33231,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS", "IV-TIM-BROMS"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "42555416" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "42555416" }]
     },
     {
         "markeskod": "RY",
@@ -33242,7 +33242,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "93161759" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "93161759" }]
     },
     {
         "markeskod": "RY",
@@ -33253,7 +33253,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "42556775" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "42556775" }]
     },
     {
         "markeskod": "RY",
@@ -33265,7 +33265,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "5801279037" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "5801279037" }]
     },
     {
         "markeskod": "RY",
@@ -33388,7 +33388,7 @@
         "benamning": "LUFTBÄLG, VÄ-BAK",
         "status": "R",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "504190916" },
             { "markeskod": "HU", "artikelnummer": "IV504190916" }
         ]
@@ -33399,7 +33399,7 @@
         "benamning": "LUFTBÄLG, HÖ-BAK",
         "status": "R",
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "504190917" },
             { "markeskod": "HU", "artikelnummer": "IV504190917" }
         ]
@@ -33483,7 +33483,7 @@
         "benamning": "LUFTBÄLG, BAKRE-BAK",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "70377052" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "70377052" }]
     },
     {
         "markeskod": "RY",
@@ -33491,7 +33491,7 @@
         "benamning": "LUFTBÄLG, FRÄMRE-BAK",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21251607" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21251607" }]
     },
     {
         "markeskod": "RY",
@@ -33500,7 +33500,7 @@
         "status": "J",
         "lagerplats": "V3-03C",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22445751" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22445751" }]
     },
     {
         "markeskod": "RY",
@@ -33509,7 +33509,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO21513833P" },
             { "markeskod": "VO", "artikelnummer": "21513833" }
         ]
@@ -33580,7 +33580,7 @@
         "benamning_alt": "B9",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "85013335" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "85013335" }]
     },
     { "markeskod": "RY", "artikelnummer": "925.461.470.0", "benamning": "BROMSCYL, HÖ-DRIV", "status": "R", "bild": true },
     {
@@ -33655,7 +33655,7 @@
         "status": "U",
         "lagerplats": "H1-13A",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21576596" },
             { "markeskod": "RY", "artikelnummer": "11A1-0010" }
         ]
@@ -33668,7 +33668,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22307251" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22307251" }]
     },
     { "markeskod": "RY", "artikelnummer": "BHV923E", "benamning": "BROMSOK, HÖ-BAK", "status": "R" },
     { "markeskod": "RY", "artikelnummer": "CR2025", "benamning": "CR2025 3V 1 PACK BLISTER", "status": "R", "bild": true },
@@ -33681,7 +33681,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1025-LX3603" },
             { "markeskod": "IV", "artikelnummer": "5801317097" }
         ]
@@ -33706,7 +33706,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE", "IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Daily (Lerum)", "Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1460-AH703" },
             { "markeskod": "HU", "artikelnummer": "CU22029" },
             { "markeskod": "IV", "artikelnummer": "500086309" }
@@ -33734,7 +33734,7 @@
         "bild": true,
         "paket": ["IV-TIM-BROMS"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "500055563" },
             { "markeskod": "KG", "artikelnummer": "HP C6023" },
             { "markeskod": "EP", "artikelnummer": "2132922901" }
@@ -33751,7 +33751,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1175-WS0280A" },
             { "markeskod": "IV", "artikelnummer": "42567353" }
         ]
@@ -33766,7 +33766,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1175-WS0245A" },
             { "markeskod": "IV", "artikelnummer": "42567352" }
         ]
@@ -33789,7 +33789,7 @@
         "bild": true,
         "paket": ["IV-TIM-SERVICE+R"],
         "fordon": ["Iveco Tim (UPS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "2995811" },
             { "markeskod": "MD", "artikelnummer": "1025-OC570" }
         ]
@@ -33803,7 +33803,7 @@
         "bild": true,
         "paket": ["IV-DAILY-SERVICE"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "IV", "artikelnummer": "2995655" },
             { "markeskod": "MD", "artikelnummer": "1025-F026407083" },
             { "markeskod": "HU", "artikelnummer": "W940/69" }
@@ -33818,7 +33818,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21707132" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21707132" }]
     },
     { "markeskod": "RY", "artikelnummer": "H60WK07", "benamning": "BRÄNSLEFILTER", "status": "R", "bild": true },
     { "markeskod": "RY", "artikelnummer": "K019821N00", "benamning": "KONTROLLVENTIL, BAK", "status": "R" },
@@ -33830,7 +33830,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21122035" },
             { "markeskod": "VO", "artikelnummer": "85023435" },
             { "markeskod": "HU", "artikelnummer": "K020023N50" }
@@ -33843,7 +33843,7 @@
         "benamning_alt": "B9",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "21122034" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "21122034" }]
     },
     {
         "markeskod": "RY",
@@ -33861,7 +33861,7 @@
         "benamning_alt": "B8",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22225550" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22225550" }]
     },
     {
         "markeskod": "RY",
@@ -33871,7 +33871,7 @@
         "status": "U",
         "lagerplats": "H1-26A",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22225552" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22225552" }]
     },
     { "markeskod": "RY", "artikelnummer": "K162265X00", "benamning": "LUFTKOMPRESSOR, BYTES", "status": "R" },
     {
@@ -33890,7 +33890,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21024417" },
             { "markeskod": "HU", "artikelnummer": "BO300013" }
         ]
@@ -33903,7 +33903,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21024419" },
             { "markeskod": "HU", "artikelnummer": "BO300014" }
         ]
@@ -33926,7 +33926,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Universal", "Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21024702" },
             { "markeskod": "HU", "artikelnummer": "SB350018F" }
         ]
@@ -33960,7 +33960,7 @@
         "bild": true,
         "paket": ["IV-DAILY-BROMS"],
         "fordon": ["Iveco Daily (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "IV", "artikelnummer": "93161757" }]
+        "korsnummer": [{ "markeskod": "IV", "artikelnummer": "93161757" }]
     },
     { "markeskod": "SCAN", "artikelnummer": "0573125", "benamning": "AC-KOMPRESSOR", "status": "R", "bild": true },
     { "markeskod": "SCAN", "artikelnummer": "1377374", "benamning": "O-RING, AC-KOMPRESSOR", "status": "R", "bild": true },
@@ -34378,7 +34378,7 @@
         "extra_info": "Vignal 280009",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "9501245216" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "9501245216" }]
     },
     {
         "markeskod": "SL",
@@ -34465,7 +34465,7 @@
         "benamning": "PLASTRÖR, 12MM",
         "status": "J",
         "lagerplats": "SS-?",
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "492519147" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "492519147" }]
     },
     {
         "markeskod": "SL",
@@ -34475,7 +34475,7 @@
         "status": "U",
         "lagerplats": "SS-?",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "9010060445" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "9010060445" }]
     },
     {
         "markeskod": "SL",
@@ -34499,7 +34499,7 @@
         "status": "J",
         "lagerplats": "SS-?",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "9176720081" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "9176720081" }]
     },
     {
         "markeskod": "SL",
@@ -34509,7 +34509,7 @@
         "status": "U",
         "lagerplats": "SS-?",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "0492519137" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "0492519137" }]
     },
     { "markeskod": "SL", "artikelnummer": "9831885N1COA", "benamning": "LUFTBÄLG, BAK, FRÄMRE", "status": "R" },
     { "markeskod": "SL", "artikelnummer": "983882N1COA", "benamning": "LUFTBÄLG, BAK, BAKRE", "status": "R" },
@@ -34520,7 +34520,7 @@
         "benamning": "PLASTRÖR, 8MM",
         "status": "R",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "0492519167" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "0492519167" }]
     },
     {
         "markeskod": "SMTR",
@@ -36503,7 +36503,7 @@
         "status": "J",
         "lagerplats": "H1-03B",
         "fordon": ["VanHool (YKH)"],
-        "alternativa_artiklar": [{ "markeskod": "DAF", "artikelnummer": "1932592" }]
+        "korsnummer": [{ "markeskod": "DAF", "artikelnummer": "1932592" }]
     },
     {
         "markeskod": "VHAN",
@@ -36511,7 +36511,7 @@
         "benamning": "GENERATOR 1/2",
         "benamning_alt": "B8",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO760012" },
             { "markeskod": "VO", "artikelnummer": "85022622" }
         ]
@@ -36522,7 +36522,7 @@
         "benamning": "GENERATOR 3",
         "benamning_alt": "B8",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "85022624" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "85022624" }]
     },
     { "markeskod": "VHAN", "artikelnummer": "VHA03-408", "benamning": "GENERATOR MB", "status": "R" },
     { "markeskod": "VHAN", "artikelnummer": "VHS 02-377", "benamning": "STARTMOTOR", "status": "R" },
@@ -36601,7 +36601,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B12B"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO1542780" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO1542780" }]
     },
     { "markeskod": "VO", "artikelnummer": "1542781", "benamning": "TÄTNINGSRING", "status": "R" },
     {
@@ -36624,7 +36624,7 @@
         "lagerplats": "H1-14C",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO1547252" },
             { "markeskod": "EP", "artikelnummer": "6170215060" }
         ]
@@ -36637,7 +36637,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO1547254" },
             { "markeskod": "EP", "artikelnummer": "8002536125" }
         ]
@@ -36700,7 +36700,7 @@
         "benamning": "AVGASKLÄMMA",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO1629499" },
             { "markeskod": "RY", "artikelnummer": "80921" }
         ]
@@ -36724,7 +36724,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO1675066" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO1675066" }]
     },
     {
         "markeskod": "VO",
@@ -36745,7 +36745,7 @@
         "lagerplats": "H1-14C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO1677370" },
             { "markeskod": "EP", "artikelnummer": "1325011067" }
         ]
@@ -36907,7 +36907,7 @@
         "lagerplats": "R2-C3",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "24636039" },
             { "markeskod": "HU", "artikelnummer": "8PK1400" }
         ]
@@ -36920,7 +36920,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "2.24495" },
             { "markeskod": "HU", "artikelnummer": "VO20480486" }
         ]
@@ -37439,7 +37439,7 @@
         "lagerplats": "H2-23B",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO20804638" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO20804638" }]
     },
     {
         "markeskod": "VO",
@@ -37479,7 +37479,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO700248" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO700248" }]
     },
     { "markeskod": "VO", "artikelnummer": "20833927", "benamning": "VENTILSÄTE", "benamning_alt": " ", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "20833930", "benamning": "VENTILSÄTE", "benamning_alt": " ", "status": "R" },
@@ -37781,7 +37781,7 @@
         "benamning": "BROMSBELÄGG",
         "status": "R",
         "fordon": ["Universal", "Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "PD196KHD" },
             { "markeskod": "HU", "artikelnummer": "SB350018F" }
         ]
@@ -37891,7 +37891,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "85023435" },
             { "markeskod": "HU", "artikelnummer": "K020023N50" },
             { "markeskod": "RY", "artikelnummer": "K020023" }
@@ -37905,7 +37905,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "CU4150" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "CU4150" }]
     },
     {
         "markeskod": "VO",
@@ -38016,7 +38016,7 @@
         "benamning": "LUFTBÄLG, FRÄMRE-BAK",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "6611NP03" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "6611NP03" }]
     },
     { "markeskod": "VO", "artikelnummer": "21251690", "benamning": "STÖTDÄMPARE", "benamning_alt": " ", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "21255974", "benamning": "RELÄ", "status": "R", "bild": true },
@@ -38039,7 +38039,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO21271982" },
             { "markeskod": "RY", "artikelnummer": "10A2-0009" }
         ]
@@ -38101,7 +38101,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1027-E528L" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1027-E528L" }]
     },
     {
         "markeskod": "VO",
@@ -38183,7 +38183,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "F026402794" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "F026402794" }]
     },
     { "markeskod": "VO", "artikelnummer": "21380488", "benamning": "BRÄNSLEFILTER, FH/FM", "status": "R", "bild": true },
     { "markeskod": "VO", "artikelnummer": "21380619", "benamning": "FÄSTBAND, LUFTTANK, BAK", "status": "R", "bild": true },
@@ -38300,7 +38300,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO3987648" },
             { "markeskod": "RY", "artikelnummer": "3869301" },
             { "markeskod": "KG", "artikelnummer": "VKDCV06054" }
@@ -38423,7 +38423,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23145003" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23145003" }]
     },
     { "markeskod": "VO", "artikelnummer": "21484416", "benamning": "KÅPA, REGLAGEHUS", "status": "R" },
     {
@@ -38493,7 +38493,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "6620NP02" },
             { "markeskod": "HU", "artikelnummer": "VO21513833P" }
         ]
@@ -38541,7 +38541,7 @@
         "lagerplats": "H1-14C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO21532261" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO21532261" }]
     },
     {
         "markeskod": "VO",
@@ -38551,7 +38551,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "7A10-0012" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "7A10-0012" }]
     },
     {
         "markeskod": "VO",
@@ -38562,7 +38562,7 @@
         "lagerplats": "FL-05D",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "WK11038Z" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "WK11038Z" }]
     },
     { "markeskod": "VO", "artikelnummer": "21543897", "ersatt_av": "22566510", "fordon": ["Volvo FH"] },
     { "markeskod": "VO", "artikelnummer": "21563456", "benamning": "GUMMIKUDDE", "benamning_alt": " ", "status": "R" },
@@ -38577,7 +38577,7 @@
         "lagerplats": "H1-13A",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "11A1-0010" },
             { "markeskod": "RY", "artikelnummer": "APV2388" }
         ]
@@ -38700,7 +38700,7 @@
         "lagerplats": "FL-05B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "HF450007" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "HF450007" }]
     },
     { "markeskod": "VO", "artikelnummer": "21654749", "benamning": "AVGASTÄTNING, VENTURI", "benamning_alt": " ", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "21669952", "benamning": "LJUDDÄMPARE", "benamning_alt": " ", "status": "R" },
@@ -38741,7 +38741,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "H200WN01" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "H200WN01" }]
     },
     { "markeskod": "VO", "artikelnummer": "21707850", "benamning": "ABS-HÅLLARE, HÖ-FRAM", "status": "R" },
     {
@@ -38760,7 +38760,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO21717748" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO21717748" }]
     },
     {
         "markeskod": "VO",
@@ -38808,7 +38808,7 @@
         "benamning_alt": "BAKLUCKA",
         "status": "R",
         "bild": true,
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "ST083798" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "ST083798" }]
     },
     { "markeskod": "VO", "artikelnummer": "21742293", "ersatt_av": "24075099", "benamning": "PACKNING", "status": "R" },
     {
@@ -38821,7 +38821,7 @@
         "lagerplats": "FL-05B",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "C52/1" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "C52/1" }]
     },
     {
         "markeskod": "VO",
@@ -38882,7 +38882,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "F026402371" },
             { "markeskod": "VO", "artikelnummer": "22892652" }
         ]
@@ -38913,7 +38913,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "AV", "artikelnummer": "05-8960" }]
+        "korsnummer": [{ "markeskod": "AV", "artikelnummer": "05-8960" }]
     },
     { "markeskod": "VO", "artikelnummer": "21750256", "benamning": "BROMSOK", "benamning_alt": " ", "status": "R" },
     {
@@ -38954,7 +38954,7 @@
         "status": "H",
         "lagerplats": "H2-36B",
         "fordon": ["Volvo"],
-        "alternativa_artiklar": [{ "markeskod": "AV", "artikelnummer": "28-5710" }]
+        "korsnummer": [{ "markeskod": "AV", "artikelnummer": "28-5710" }]
     },
     { "markeskod": "VO", "artikelnummer": "21778993", "benamning": "RETUROLJERÖR", "benamning_alt": " ", "status": "R" },
     {
@@ -39007,7 +39007,7 @@
         "status": "J",
         "lagerplats": "R2-C1",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "2XPB2510" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "2XPB2510" }]
     },
     { "markeskod": "VO", "artikelnummer": "21832098", "benamning": "MAGNET", "status": "R", "bild": true },
     {
@@ -39018,7 +39018,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "C311345/1" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "C311345/1" }]
     },
     { "markeskod": "VO", "artikelnummer": "21840318", "benamning": "SLANGLEDNING, KOMPRESSOR", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "21840321", "benamning": "SLANGLEDNING, KOMPRESSOR", "status": "R", "bild": true },
@@ -39151,7 +39151,7 @@
         "lagerplats": "H1-14C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO1547255" },
             { "markeskod": "EP", "artikelnummer": "6170210208" }
         ]
@@ -39174,7 +39174,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO21945304" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO21945304" }]
     },
     { "markeskod": "VO", "artikelnummer": "21949316", "benamning": "SOLSKYDD, A-STOLPE", "status": "H", "bild": true },
     { "markeskod": "VO", "artikelnummer": "21952221", "benamning": "LÄNKSTAG, K-STAG", "status": "R", "bild": true },
@@ -39353,7 +39353,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO22218547" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO22218547" }]
     },
     {
         "markeskod": "VO",
@@ -39364,7 +39364,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "K093190N50" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "K093190N50" }]
     },
     {
         "markeskod": "VO",
@@ -39375,7 +39375,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "K093192N50" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "K093192N50" }]
     },
     { "markeskod": "VO", "artikelnummer": "22225612", "benamning": "O-RING", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "22229031", "benamning": "GUMMIRING", "benamning_alt": " ", "status": "R" },
@@ -39435,7 +39435,7 @@
         "lagerplats": "H1-13A",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "APV3142" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "APV3142" }]
     },
     { "markeskod": "VO", "artikelnummer": "22307253", "benamning": "REMHJUL", "status": "R", "bild": true },
     { "markeskod": "VO", "artikelnummer": "22310648", "benamning": "SNABBKOPPLING", "status": "R", "bild": true },
@@ -39541,7 +39541,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "CU42003" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "CU42003" }]
     },
     {
         "markeskod": "VO",
@@ -39603,7 +39603,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "70347584" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "70347584" }]
     },
     {
         "markeskod": "VO",
@@ -39621,7 +39621,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "6619NP01" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "6619NP01" }]
     },
     { "markeskod": "VO", "artikelnummer": "22445832", "benamning": "SÄKERHETSPLATTA", "benamning_alt": " ", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "22446561", "benamning": "BRÄNSLERÖR", "benamning_alt": " ", "status": "R" },
@@ -39650,7 +39650,7 @@
         "lagerplats": "FL-05D",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "F026402017" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "F026402017" }]
     },
     { "markeskod": "VO", "artikelnummer": "22487923", "benamning": "PACKNING, TURBO", "status": "R", "lagerplats": "H1-28B" },
     {
@@ -39703,7 +39703,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "EV", "artikelnummer": "A.000.951.05.60" }]
+        "korsnummer": [{ "markeskod": "EV", "artikelnummer": "A.000.951.05.60" }]
     },
     {
         "markeskod": "VO",
@@ -39754,7 +39754,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "RY", "artikelnummer": "3879901" },
             { "markeskod": "EP", "artikelnummer": "9073192901" },
             { "markeskod": "HU", "artikelnummer": "VO22627712" }
@@ -39812,7 +39812,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "10PK1570" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "10PK1570" }]
     },
     {
         "markeskod": "VO",
@@ -39842,7 +39842,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "CU50001" },
             { "markeskod": "EV", "artikelnummer": "A.002.835.46.47" }
         ]
@@ -39967,7 +39967,7 @@
         "lagerplats": "FL-05D",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "21746575" },
             { "markeskod": "HU", "artikelnummer": "F026402371" }
         ]
@@ -40026,7 +40026,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (Lerum)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "EV", "artikelnummer": "A.002.835.44.47" },
             { "markeskod": "AV", "artikelnummer": "31-5560" }
         ]
@@ -40108,7 +40108,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "2-XPB2081" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "2-XPB2081" }]
     },
     { "markeskod": "VO", "artikelnummer": "23108082", "benamning": "EGR-KYLARE", "benamning_alt": " ", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "23119514", "ersatt_av": "21778993", "benamning": "RETUROLJERÖR", "status": "R" },
@@ -40348,7 +40348,7 @@
         "benamning_alt": "B8",
         "status": "R",
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23607816" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23607816" }]
     },
     { "markeskod": "VO", "artikelnummer": "23612522", "benamning": "OLJEMÄTSTICKA", "benamning_alt": " ", "status": "R" },
     {
@@ -40397,7 +40397,7 @@
         "lagerplats": "FL-05C",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "F026407043" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "F026407043" }]
     },
     {
         "markeskod": "VO",
@@ -40408,7 +40408,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "MD", "artikelnummer": "1505-102641" }]
+        "korsnummer": [{ "markeskod": "MD", "artikelnummer": "1505-102641" }]
     },
     {
         "markeskod": "VO",
@@ -40539,7 +40539,7 @@
         "lagerplats": "FL-05C",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "H11006Z" },
             { "markeskod": "EP", "artikelnummer": "9750360307" },
             { "markeskod": "HU", "artikelnummer": "F026407292" }
@@ -40553,7 +40553,7 @@
         "benamning_alt": "B9, VATTENPUMP",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "5PK1500" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "5PK1500" }]
     },
     {
         "markeskod": "VO",
@@ -40633,7 +40633,7 @@
         "lagerplats": "FL-05B",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "HU721Y" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "HU721Y" }]
     },
     { "markeskod": "VO", "artikelnummer": "24075099", "benamning": "AVGASGRENRÖRSPACKNING", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "24078857", "benamning": "KYLVÄTSKA GLYKOL, ORANGE", "status": "R", "bild": true },
@@ -40787,7 +40787,7 @@
         "lagerplats": "R2-C3",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "20464710" },
             { "markeskod": "HU", "artikelnummer": "8PK1400" }
         ]
@@ -40913,7 +40913,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO3193731" },
             { "markeskod": "KG", "artikelnummer": "VKDCV06069" },
             { "markeskod": "RY", "artikelnummer": "2879201" }
@@ -40929,7 +40929,7 @@
         "lagerplats": "H1-10D",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO3199066" },
             { "markeskod": "EP", "artikelnummer": "1325065014" }
         ]
@@ -41048,7 +41048,7 @@
         "benamning": "GUMMIBUSSNING, K-STAG",
         "benamning_alt": "FRAM/BAK",
         "status": "R",
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO3028447" },
             { "markeskod": "RY", "artikelnummer": "407-6214" }
         ]
@@ -41160,7 +41160,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "22425455" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "22425455" }]
     },
     { "markeskod": "VO", "artikelnummer": "70348303", "benamning": "KÅPA, TORKARARM", "status": "R", "bild": true },
     {
@@ -41251,7 +41251,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "120-93096" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "120-93096" }]
     },
     {
         "markeskod": "VO",
@@ -41261,7 +41261,7 @@
         "status": "H",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "93101S" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "93101S" }]
     },
     { "markeskod": "VO", "artikelnummer": "70369720", "benamning": "SYMBOL, HUVUDSTRÖM", "status": "R", "bild": true },
     { "markeskod": "VO", "artikelnummer": "70369721", "benamning": "SYMBOL, NIGNING", "status": "R" },
@@ -41344,7 +41344,7 @@
         "benamning": "LUFTBÄLG, BAKRE-BAK",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "6611NP01" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "6611NP01" }]
     },
     { "markeskod": "VO", "artikelnummer": "70378020", "benamning": "LADDLUFTRÖR", "status": "R" },
     {
@@ -41522,7 +41522,7 @@
         "status": "H",
         "lagerplats": "V3-01A",
         "fordon": ["Volvo B12B (TJO)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "20429343" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "20429343" }]
     },
     { "markeskod": "VO", "artikelnummer": "85001709", "benamning": "VÄXELLÅDA - BYTES", "status": "R" },
     { "markeskod": "VO", "artikelnummer": "85002647", "benamning": "LONGBLOCK, BYTES", "status": "R" },
@@ -41535,7 +41535,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "85020052" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "85020052" }]
     },
     {
         "markeskod": "VO",
@@ -41578,7 +41578,7 @@
         "benamning_alt": "B9",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "RY", "artikelnummer": "912512015R" }]
+        "korsnummer": [{ "markeskod": "RY", "artikelnummer": "912512015R" }]
     },
     {
         "markeskod": "VO",
@@ -41605,7 +41605,7 @@
         "status": "H",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "23264525" },
             { "markeskod": "HU", "artikelnummer": "8AI001-RX" }
         ]
@@ -41620,7 +41620,7 @@
         "benamning_alt": "B9, KONISK",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "85003951" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "85003951" }]
     },
     {
         "markeskod": "VO",
@@ -41638,7 +41638,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23287028" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23287028" }]
     },
     {
         "markeskod": "VO",
@@ -41667,7 +41667,7 @@
         "extra_info": "Relä: {21019165}.",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "MD", "artikelnummer": "1047-0986024670090" },
             { "markeskod": "MD", "artikelnummer": "1047-M9T61471AM" }
         ]
@@ -41691,7 +41691,7 @@
         "lagerplats": "FL-05A",
         "bild": true,
         "fordon": ["Volvo B8R (Lerum)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "23386578" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "23386578" }]
     },
     {
         "markeskod": "VO",
@@ -41712,7 +41712,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO760012" },
             { "markeskod": "VHAN", "artikelnummer": "VHA 04-375" }
         ]
@@ -41725,7 +41725,7 @@
         "status": "R",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "VHAN", "artikelnummer": "VHA 04-400" }]
+        "korsnummer": [{ "markeskod": "VHAN", "artikelnummer": "VHA 04-400" }]
     },
     {
         "markeskod": "VO",
@@ -41742,7 +41742,7 @@
         "benamning_alt": "B9",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)", "Volvo B11R"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "VO", "artikelnummer": "24070789" },
             { "markeskod": "EP", "artikelnummer": "9150000908" }
         ]
@@ -41811,7 +41811,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "6175103703" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "6175103703" }]
     },
     {
         "markeskod": "VO",
@@ -41926,7 +41926,7 @@
         "status": "U",
         "lagerplats": "H1-14A",
         "fordon": ["Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO925073" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO925073" }]
     },
     {
         "markeskod": "VO",
@@ -41945,7 +41945,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)", "Volvo B9R (DOT)", "Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO925257" },
             { "markeskod": "EP", "artikelnummer": "6170420397" }
         ]
@@ -41968,7 +41968,7 @@
         "status": "U",
         "lagerplats": "H1-14A",
         "fordon": ["Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO925261" },
             { "markeskod": "EP", "artikelnummer": "6170925261" }
         ]
@@ -41980,7 +41980,7 @@
         "benamning_alt": "B9, UTAN TÄTNING",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "984802" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "984802" }]
     },
     {
         "markeskod": "VO",
@@ -42041,7 +42041,7 @@
         "status": "U",
         "lagerplats": "H1-14A",
         "fordon": ["Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO948980" },
             { "markeskod": "EP", "artikelnummer": "6170215900" }
         ]
@@ -42054,7 +42054,7 @@
         "status": "U",
         "lagerplats": "H1-14A",
         "fordon": ["Volvo B12B"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "HU", "artikelnummer": "VO948983" },
             { "markeskod": "EP", "artikelnummer": "1325048983" }
         ]
@@ -42096,7 +42096,7 @@
         "status": "U",
         "lagerplats": "H1-14A",
         "fordon": ["Volvo B12M", "Raba Molitus"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO949722" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO949722" }]
     },
     { "markeskod": "VO", "artikelnummer": "9519339", "benamning": "NIPPEL, LUFTTORK", "status": "H", "lagerplats": "H1-09" },
     {
@@ -42269,7 +42269,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "EP", "artikelnummer": "1325053508" }]
+        "korsnummer": [{ "markeskod": "EP", "artikelnummer": "1325053508" }]
     },
     {
         "markeskod": "VO",
@@ -42374,7 +42374,7 @@
         "benamning_alt": "B8, MED TÄTNING",
         "status": "R",
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [{ "markeskod": "VO", "artikelnummer": "941582" }]
+        "korsnummer": [{ "markeskod": "VO", "artikelnummer": "941582" }]
     },
     {
         "markeskod": "VO",
@@ -42558,7 +42558,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B8R (YAS)"],
-        "alternativa_artiklar": [{ "markeskod": "HU", "artikelnummer": "VO994041" }]
+        "korsnummer": [{ "markeskod": "HU", "artikelnummer": "VO994041" }]
     },
     { "markeskod": "VO", "artikelnummer": "994195", "benamning": "FLÄNSSKRUV", "benamning_alt": " ", "status": "R" },
     {
@@ -42587,7 +42587,7 @@
         "lagerplats": "H1-14A",
         "bild": true,
         "fordon": ["Volvo B9R (DOT)"],
-        "alternativa_artiklar": [
+        "korsnummer": [
             { "markeskod": "EP", "artikelnummer": "8000258300" },
             { "markeskod": "VO", "artikelnummer": "992065" },
             { "markeskod": "HU", "artikelnummer": "VO700105" },

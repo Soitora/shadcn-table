@@ -26,7 +26,7 @@
               "type": "array",
               "items": { "type": "string" }
             },
-            "alternativa_artiklar": {
+            "korsnummer": {
               "type": "array",
               "items": {
                 "type": "object",

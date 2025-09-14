@@ -93,14 +93,14 @@ export function getInventoryTableColumns({
       size: 40,
     },
     {
-      id: "MK",
-      accessorKey: "MK",
+      id: "markeskod",
+      accessorKey: "markeskod",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="MK" />
+        <DataTableColumnHeader column={column} title="Märkeskod" />
       ),
       cell: ({ row }) => (
         <div className="flex items-center gap-2">
-          <Badge variant="outline" className="py-1">{row.getValue("MK")}</Badge>
+          <Badge variant="outline" className="py-1">{row.getValue("markeskod")}</Badge>
         </div>
       ),
       meta: {
@@ -108,17 +108,17 @@ export function getInventoryTableColumns({
         variant: "multiSelect",
         icon: Bolt,
         options: mkOptions,
-        placeholder: "Välj Märkeskod...",
+        placeholder: "Välj märkeskod...",
       },
       enableColumnFilter: true,
     },
     {
-      id: "Artikelnr",
-      accessorKey: "Artikelnr",
+      id: "artikelnummer",
+      accessorKey: "artikelnummer",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Artikelnummer" />
       ),
-      cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("Artikelnr")}</div>,
+      cell: ({ row }) => <div className="w-40 font-semibold">{row.getValue("artikelnummer")}</div>,
       meta: {
         label: "Artikelnummer",
         icon: Hash,
@@ -126,19 +126,19 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "Benämning",
-      accessorKey: "Benämning",
+      id: "benamning",
+      accessorKey: "benamning",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Benämning" />
       ),
       cell: ({ row }) => {
-        const benamning = row.getValue<string | null>("Benämning");
-        const benamning2 = row.original.Benämning2;
+        const benamning = row.getValue<string | null>("benamning");
+        const benamning_alt = row.original.benamning_alt;
         return (
           <div className="max-w-[28rem]">
             <div className="truncate">{benamning}</div>
-            {benamning2 ? (
-              <div className="truncate text-muted-foreground text-sm">{benamning2}</div>
+            {benamning_alt ? (
+              <div className="truncate text-muted-foreground text-sm">{benamning_alt}</div>
             ) : null}
           </div>
         );
@@ -146,18 +146,17 @@ export function getInventoryTableColumns({
       meta: {
         label: "Benämning",
         icon: Baseline,
-        placeholder: "Sök benämning...",
       },
       enableColumnFilter: true,
     },
     {
-      id: "Status",
-      accessorKey: "Status",
+      id: "status",
+      accessorKey: "status",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Status" />
       ),
       cell: ({ row }) => {
-        const status = row.getValue<string | null>("Status");
+        const status = row.getValue<string | null>("status");
         if (!status) return null;
         const info = STATUS_INFO[status] ?? { label: "Okänd", tone: "neutral" as const };
         return (
@@ -196,17 +195,18 @@ export function getInventoryTableColumns({
             });
         })(),
         icon: Loader,
+        placeholder: "Välj status...",
       },
       enableColumnFilter: true,
     },
     {
-      id: "Lagerplats",
-      accessorKey: "Lagerplats",
+      id: "lagerplats",
+      accessorKey: "lagerplats",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Lagerplats" />
       ),
       cell: ({ row }) => {
-        const value = row.getValue<string | null>("Lagerplats");
+        const value = row.getValue<string | null>("lagerplats");
         if (!value) return null;
         return (
           <div className="flex items-center gap-2">
@@ -222,11 +222,12 @@ export function getInventoryTableColumns({
     },
     {
       id: "ersatter",
+      accessorKey: "ersatter",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Ersätter" />
       ),
       cell: ({ row }) => {
-        const values = row.original.Ersätter ?? [];
+        const values = row.original.ersatter ?? [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -239,15 +240,16 @@ export function getInventoryTableColumns({
         );
       },
       meta: { label: "Ersätter", variant: "text", icon: Replace },
-      enableColumnFilter: false,
+      enableColumnFilter: true,
     },
     {
-      id: "ersattAv",
+      id: "ersatt_av",
+      accessorKey: "ersatt_av",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Ersatt av" />
       ),
       cell: ({ row }) => {
-        const values = row.original.ErsattAv ?? [];
+        const values = row.original.ersatt_av ?? [];
         if (values.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -260,36 +262,36 @@ export function getInventoryTableColumns({
         );
       },
       meta: { label: "Ersatt av", variant: "text", icon: ReplaceAll },
-      enableColumnFilter: false,
+      enableColumnFilter: true,
     },
     {
-      id: "AlternativArt",
-      accessorKey: "AlternativArt",
+      id: "korsnummer",
+      accessorKey: "korsnummer",
       header: ({ column }) => (
-        <DataTableColumnHeader column={column} title="Alternativ Artikel" />
+        <DataTableColumnHeader column={column} title="Korsnummer" />
       ),
       cell: ({ row }) => {
-        const list = (row.getValue("AlternativArt") as InventoryRowUI["AlternativArt"]) || [];
+        const list = (row.getValue("korsnummer") as InventoryRowUI["korsnummer"]) || [];
         if (!list || list.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
             {list.map((item) => (
-              <Badge key={`${item.märkeskod}-${item.artikelnummer}`} variant="outline" className="px-1 py-0.5">
-                {item.märkeskod} {item.artikelnummer}
+              <Badge key={`${item.markeskod}-${item.artikelnummer}`} variant="outline" className="px-1 py-0.5">
+                {item.markeskod} {item.artikelnummer}
               </Badge>
             ))}
           </div>
         );
       },
-      meta: { label: "Alternativ Artikel", variant: "text", icon: Boxes },
-      enableColumnFilter: false,
+      meta: { label: "Korsnummer", icon: Boxes },
+      enableColumnFilter: true,
     },
     {
-      id: "Fordon",
-      accessorKey: "Fordon",
+      id: "fordon",
+      accessorKey: "fordon",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Fordon" />,
       cell: ({ row }) => {
-        const list = (row.getValue("Fordon") as string[] | null) || [];
+        const list = (row.getValue("fordon") as string[] | null) || [];
         if (!list || list.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -305,11 +307,11 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "Paket",
-      accessorKey: "Paket",
+      id: "paket",
+      accessorKey: "paket",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Paket" />,
       cell: ({ row }) => {
-        const list = (row.getValue("Paket") as string[] | null) || [];
+        const list = (row.getValue("paket") as string[] | null) || [];
         if (!list || list.length === 0) return null;
         return (
           <div className="flex max-w-[28rem] flex-wrap gap-1">
@@ -325,29 +327,29 @@ export function getInventoryTableColumns({
       enableColumnFilter: true,
     },
     {
-      id: "ExtraInfo",
-      accessorKey: "ExtraInfo",
+      id: "extra_info",
+      accessorKey: "extra_info",
       header: ({ column }) => (
         <DataTableColumnHeader column={column} title="Extra Information" />
       ),
       cell: ({ row }) => (
-        <span className="max-w-[28rem] truncate">{row.getValue("ExtraInfo") ?? ""}</span>
+        <span className="max-w-[28rem] truncate">{row.getValue("extra_info") ?? ""}</span>
       ),
       meta: { label: "Extra Information", icon: ALargeSmall },
       enableColumnFilter: true,
     },
     {
-      id: "Bild",
-      accessorKey: "Bild",
+      id: "bild",
+      accessorKey: "bild",
       header: ({ column }) => <DataTableColumnHeader column={column} title="Bild" />,
       cell: ({ row }) => {
-        const has = !!row.getValue("Bild");
+        const has = !!row.getValue("bild");
         return has ? (
           <Badge className="py-0.5" variant="outline">Ja</Badge>
         ) : "";
       },
       meta: { label: "Bild", variant: "boolean", icon: Image },
-      enableColumnFilter: false,
+      enableColumnFilter: true,
     },
     {
       id: "actions",

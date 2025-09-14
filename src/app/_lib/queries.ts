@@ -6,7 +6,7 @@ import path from "node:path";
 export interface GetInventorySchema {
   page: number;
   perPage: number;
-  sort: Array<{ id: "MK" | "Artikelnr" | "Benämning" | "Status" | "Lagerplats"; desc: boolean }>;
+  sort: Array<{ id: "markeskod" | "artikelnummer" | "benamning" | "status" | "lagerplats"; desc: boolean }>;
   filterFlag?: "advancedFilters" | "commandFilters" | "simple";
   // simple filters
   q?: string; // matches artikelnr, benamning, benamning2
@@ -30,57 +30,57 @@ function normalizeStatusTokenToCode(token: string): string | null {
   // Accept common Swedish labels (case-insensitive)
   const s = t.toLowerCase();
   switch (s) {
-    case "Lagervara":
+    case "lagervara":
       return "J";
-    case "Utgående":
+    case "utgående":
       return "U";
-    case "Hemtagen":
+    case "hemtagen":
       return "H";
-    case "Avskriven":
+    case "avskriven":
       return "A";
-    case "Rörelseregistrerad":
+    case "rörelseregistrerad":
       return "R";
-    case "Ej lagerförd":
+    case "ej lagerförd":
       return "N";
     default:
       return null;
   }
 }
 
-interface RawAlternativArt { "märkeskod": string; "artikelnummer": string }
+interface RawKorsnummer { "markeskod": string; "artikelnummer": string }
 interface RawInventoryItem {
-  MK: string;
-  Artikelnr: string;
-  Benämning?: string | null;
-  Benämning2?: string | null;
-  Status?: string | null;
-  Lagerplats?: string | null;
-  Paket?: string[] | null;
-  Fordon?: string[] | null;
-  Ersätter?: string[] | null;
-  ErsattAv?: string[] | null;
-  AlternativArt?: RawAlternativArt[] | null;
-  ExtraInfo?: string | null;
-  Bild?: boolean | null;
+  markeskod: string;
+  artikelnummer: string;
+  benamning?: string | null;
+  benamning2?: string | null;
+  status?: string | null;
+  lagerplats?: string | null;
+  paket?: string[] | null;
+  fordon?: string[] | null;
+  ersatter?: string[] | null;
+  ersatt_av?: string[] | null;
+  korsnummer?: RawKorsnummer[] | null;
+  extra_info?: string | null;
+  bild?: boolean | null;
   // Raw JSON may include additional keys we don't map; they are ignored here
   [key: string]: unknown;
 }
 
 export interface InventoryRowUIShape {
-  ID: string;
-  MK: string;
-  Artikelnr: string;
-  Benämning: string | null;
-  Benämning2: string | null;
-  Status: string | null;
-  Lagerplats: string | null;
-  Ersätter: string[] | null;
-  ErsattAv: string[] | null;
-  AlternativArt: Array<{ märkeskod: string; artikelnummer: string }> | null;
-  Fordon: string[] | null;
-  Paket: string[] | null;
-  ExtraInfo: string | null;
-  Bild: boolean | null;
+  id: string;
+  markeskod: string;
+  artikelnummer: string;
+  benamning: string | null;
+  benamning_alt: string | null;
+  status: string | null;
+  lagerplats: string | null;
+  ersatter: string[] | null;
+  ersatt_av: string[] | null;
+  korsnummer: Array<{ markeskod: string; artikelnummer: string }> | null;
+  fordon: string[] | null;
+  paket: string[] | null;
+  extra_info: string | null;
+  bild: boolean | null;
 }
 
 async function readLager(): Promise<unknown> {
@@ -94,50 +94,50 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
   if (Array.isArray(json)) {
     for (const itRaw of json as RawInventoryItem[]) {
       const it = itRaw ?? ({} as RawInventoryItem);
-      const id = `${it.MK} ${it.Artikelnr}`;
+      const id = `${it.markeskod} ${it.artikelnummer}`;
       rows.push({
-        ID: id,
-        MK: it.MK ?? "",
-        Artikelnr: it.Artikelnr ?? "",
-        Benämning: (it["Benämning"] as string | undefined) ?? null,
-        Benämning2: (it["Benämning2"] as string | undefined) ?? null,
-        Status: (() => {
-          const s = it["Status"] as string | undefined;
+        id,
+        markeskod: it.markeskod ?? "",
+        artikelnummer: it.artikelnummer ?? "",
+        benamning: (it["benamning"] as string | undefined) ?? null,
+        benamning_alt: (it["benamning_alt"] as string | undefined) ?? null,
+        status: (() => {
+          const s = it["status"] as string | undefined;
           return typeof s === "string" ? s.trim() : null;
         })(),
-        Lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
-        Ersätter: (it.Ersätter as string[] | undefined) ?? null,
-        ErsattAv: (it.ErsattAv as string[] | undefined) ?? null,
-        AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-        Fordon: (it["Fordon"] as string[] | undefined) ?? null,
-        Paket: (it["Paket"] as string[] | undefined) ?? null,
-        ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
-        Bild: (it["Bild"] as boolean | undefined) ?? null,
+        lagerplats: (it["lagerplats"] as string | undefined) ?? null,
+        ersatter: (it["ersatter"] as string[] | undefined) ?? null,
+        ersatt_av: (it["ersatt_av"] as string[] | undefined) ?? null,
+        korsnummer: (it["korsnummer"] as RawKorsnummer[] | undefined) ?? null,
+        fordon: (it["fordon"] as string[] | undefined) ?? null,
+        paket: (it["paket"] as string[] | undefined) ?? null,
+        extra_info: (it["extra_info"] as string | undefined) ?? null,
+        bild: (it["bild"] as boolean | undefined) ?? null,
       });
     }
   } else if (json && typeof json === "object") {
     for (const items of Object.values(json as Record<string, RawInventoryItem[]>)) {
       if (!Array.isArray(items)) continue;
       for (const it of items) {
-        const id = `${it.MK} ${it.Artikelnr}`;
+        const id = `${it.markeskod} ${it.artikelnummer}`;
         rows.push({
-          ID: id,
-          MK: it.MK ?? "",
-          Artikelnr: it.Artikelnr ?? "",
-          Benämning: (it["Benämning"] as string | undefined) ?? null,
-          Benämning2: (it["Benämning2"] as string | undefined) ?? null,
-          Status: (() => {
-            const s = it["Status"] as string | undefined;
+          id,
+          markeskod: it.markeskod ?? "",
+          artikelnummer: it.artikelnummer ?? "",
+          benamning: (it["benamning"] as string | undefined) ?? null,
+          benamning_alt: (it["benamning_alt"] as string | undefined) ?? null,
+          status: (() => {
+            const s = it["status"] as string | undefined;
             return typeof s === "string" ? s.trim() : null;
           })(),
-          Lagerplats: (it["Lagerplats"] as string | undefined) ?? null,
-          Ersätter: (it.Ersätter as string[] | undefined) ?? null,
-          ErsattAv: (it.ErsattAv as string[] | undefined) ?? null,
-          AlternativArt: (it["AlternativArt"] as RawAlternativArt[] | undefined) ?? null,
-          Paket: (it["Paket"] as string[] | undefined) ?? null,
-          Fordon: (it["Fordon"] as string[] | undefined) ?? null,
-          ExtraInfo: (it["ExtraInfo"] as string | undefined) ?? null,
-          Bild: (it["Bild"] as boolean | undefined) ?? null,
+          lagerplats: (it["lagerplats"] as string | undefined) ?? null,
+          ersatter: (it["ersatter"] as string[] | undefined) ?? null,
+          ersatt_av: (it["ersatt_av"] as string[] | undefined) ?? null,
+          korsnummer: (it["korsnummer"] as RawKorsnummer[] | undefined) ?? null,
+          paket: (it["paket"] as string[] | undefined) ?? null,
+          fordon: (it["fordon"] as string[] | undefined) ?? null,
+          extra_info: (it["extra_info"] as string | undefined) ?? null,
+          bild: (it["bild"] as boolean | undefined) ?? null,
         });
       }
     }
@@ -156,19 +156,19 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
     isCmdLike && input.filters
       ? input.filters
           .map((f) => f.id)
-          .filter((id): id is "MK" | "Status" => id === "MK" || id === "Status")
+          .filter((id): id is "markeskod" | "status" => id === "markeskod" || id === "status")
       : [],
   );
 
   let out = rows.filter((r) => {
     if (hasQ) {
-      const inArt = r.Artikelnr.toLowerCase().includes(q);
-      const inName = (r.Benämning ?? "").toLowerCase().includes(q);
-      const inName2 = (r.Benämning2 ?? "").toLowerCase().includes(q);
+      const inArt = r.artikelnummer.toLowerCase().includes(q);
+      const inName = (r.benamning ?? "").toLowerCase().includes(q);
+      const inName2 = (r.benamning_alt ?? "").toLowerCase().includes(q);
       if (!(inArt || inName || inName2)) return false;
     }
-    if (!overridden.has("Status") && statusSet.size > 0 && (!r.Status || !statusSet.has(r.Status))) return false;
-    if (!overridden.has("MK") && mkSet.size > 0 && !mkSet.has(r.MK)) return false;
+    if (!overridden.has("status") && statusSet.size > 0 && (!r.status || !statusSet.has(r.status))) return false;
+    if (!overridden.has("markeskod") && mkSet.size > 0 && !mkSet.has(r.markeskod)) return false;
     return true;
   });
 
@@ -183,15 +183,15 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
           : [String(f.value ?? "")].filter(Boolean);
 
         switch (f.id) {
-          case "MK": {
-            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.MK;
-            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.MK;
+          case "markeskod": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.markeskod;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.markeskod;
             if (values.length === 0) return null;
-            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.MK);
-            return (r: InventoryRowUIShape) => values.includes(r.MK);
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !values.includes(r.markeskod);
+            return (r: InventoryRowUIShape) => values.includes(r.markeskod);
           }
-          case "Artikelnr": {
-            const get = (r: InventoryRowUIShape) => r.Artikelnr ?? "";
+          case "artikelnummer": {
+            const get = (r: InventoryRowUIShape) => r.artikelnummer ?? "";
             if (op === "isEmpty") return (r: InventoryRowUIShape) => get(r).trim() === "";
             if (op === "isNotEmpty") return (r: InventoryRowUIShape) => get(r).trim() !== "";
             if (values.length === 0) return null;
@@ -202,8 +202,8 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
             if (op === "notILike") return (r: InventoryRowUIShape) => !get(r).toLowerCase().includes(v.toLowerCase());
             return null;
           }
-          case "Lagerplats": {
-            const get = (r: InventoryRowUIShape) => r.Lagerplats ?? "";
+          case "lagerplats": {
+            const get = (r: InventoryRowUIShape) => r.lagerplats ?? "";
             if (op === "isEmpty") return (r: InventoryRowUIShape) => get(r).trim() === "";
             if (op === "isNotEmpty") return (r: InventoryRowUIShape) => get(r).trim() !== "";
             if (values.length === 0) return null;
@@ -214,16 +214,16 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
             if (op === "notILike") return (r: InventoryRowUIShape) => !get(r).toLowerCase().includes(v.toLowerCase());
             return null;
           }
-          case "Status": {
-            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.Status;
-            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.Status;
+          case "status": {
+            if (op === "isEmpty") return (r: InventoryRowUIShape) => !r.status;
+            if (op === "isNotEmpty") return (r: InventoryRowUIShape) => !!r.status;
             if (values.length === 0) return null;
             const normValues = values
               .map((v) => normalizeStatusTokenToCode(v))
               .filter((v): v is string => !!v);
             if (normValues.length === 0) return null;
-            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.Status || !normValues.includes(r.Status);
-            return (r: InventoryRowUIShape) => !!r.Status && normValues.includes(r.Status);
+            if (op === "notInArray") return (r: InventoryRowUIShape) => !r.status || !normValues.includes(r.status);
+            return (r: InventoryRowUIShape) => !!r.status && normValues.includes(r.status);
           }
           default:
             return null;
@@ -239,22 +239,22 @@ function applyFilters(rows: InventoryRowUIShape[], input: GetInventorySchema): I
 }
 
 function applySorting(rows: InventoryRowUIShape[], sort: GetInventorySchema["sort"] | undefined): InventoryRowUIShape[] {
-  if (!sort || sort.length === 0) return [...rows].sort((a, b) => a.Artikelnr.localeCompare(b.Artikelnr));
+  if (!sort || sort.length === 0) return [...rows].sort((a, b) => a.artikelnummer.localeCompare(b.artikelnummer));
   const cmp = (a: InventoryRowUIShape, b: InventoryRowUIShape, id: GetInventorySchema["sort"][number]["id"], desc: boolean) => {
     const dir = desc ? -1 : 1;
     switch (id) {
-      case "MK":
-        return dir * a.MK.localeCompare(b.MK);
-      case "Artikelnr":
-        return dir * a.Artikelnr.localeCompare(b.Artikelnr);
-      case "Status":
-        return dir * ((a.Status ?? "").localeCompare(b.Status ?? ""));
-      case "Benämning":
-        return dir * ((a.Benämning ?? "").localeCompare(b.Benämning ?? ""));
-      case "Lagerplats":
-        return dir * ((a.Lagerplats ?? "").localeCompare(b.Lagerplats ?? ""));
+      case "markeskod":
+        return dir * a.markeskod.localeCompare(b.markeskod);
+      case "artikelnummer":
+        return dir * a.artikelnummer.localeCompare(b.artikelnummer);
+      case "status":
+        return dir * ((a.status ?? "").localeCompare(b.status ?? ""));
+      case "benamning":
+        return dir * ((a.benamning ?? "").localeCompare(b.benamning ?? ""));
+      case "lagerplats":
+        return dir * ((a.lagerplats ?? "").localeCompare(b.lagerplats ?? ""));
       default:
-        return dir * a.Artikelnr.localeCompare(b.Artikelnr);
+        return dir * a.artikelnummer.localeCompare(b.artikelnummer);
     }
   };
 
@@ -298,8 +298,8 @@ export async function getInventoryMkCounts() {
         const all = mapToRows(await readLager());
         const map = new Map<string, number>();
         for (const r of all) {
-          if (!r.MK) continue;
-          map.set(r.MK, (map.get(r.MK) ?? 0) + 1);
+          if (!r.markeskod) continue;
+          map.set(r.markeskod, (map.get(r.markeskod) ?? 0) + 1);
         }
         return Array.from(map.entries())
           .map(([value, count]) => ({ value, label: value, count }))
@@ -320,8 +320,8 @@ export async function getInventoryStatusCounts() {
       try {
         const all = mapToRows(await readLager());
         return all.reduce<Record<string, number>>((acc, r) => {
-          if (!r.Status) return acc;
-          acc[r.Status] = (acc[r.Status] ?? 0) + 1;
+          if (!r.status) return acc;
+          acc[r.status] = (acc[r.status] ?? 0) + 1;
           return acc;
         }, {});
       } catch (_err) {

@@ -318,7 +318,7 @@ export function DataTableFilterList<TData>({
           <div className="h-8 min-w-[72px] rounded-sm bg-primary/10" />
           <div className="h-8 w-40 rounded-sm bg-primary/10" />
           <div className="h-8 w-40 rounded-sm bg-primary/10" />
-          <div className="h-8 min-w-36 flex-1 rounded-sm bg-primary/10" />
+          <div className="h-8 min-w-40 flex-1 rounded-sm bg-primary/10" />
           <div className="size-8 shrink-0 rounded-sm bg-primary/10" />
           <div className="size-8 shrink-0 rounded-sm bg-primary/10" />
         </div>
@@ -530,7 +530,7 @@ function DataTableFilterItem<TData>({
             ))}
           </SelectContent>
         </Select>
-        <div className="min-w-36 flex-1">
+        <div className="min-w-40 flex-1">
           {onFilterInputRender({
             filter,
             inputId,
@@ -706,7 +706,7 @@ function onFilterInputRender<TData>({
                 options={columnMeta?.options}
                 placeholder={
                   columnMeta?.placeholder ??
-                  `Välj alternativ${multiple ? "s" : ""}...`
+                  `Välj alternativ...`
                 }
               />
             </Button>
