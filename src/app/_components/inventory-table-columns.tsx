@@ -17,6 +17,7 @@ import {
 } from "@/components/ui/dropdown-menu";
 import type { DataTableRowAction } from "@/types/data-table";
 import type { InventoryRowUIShape } from "../_lib/queries";
+import { cn } from "@/lib/utils";
 
 export type InventoryRowUI = InventoryRowUIShape;
 
@@ -357,11 +358,28 @@ export function getInventoryTableColumns({
       cell: ({ row }) => {
         const hasImage = !!row.getValue("bild");
         if (!hasImage) return null;
+
         const artikel = String(row.getValue("artikelnummer") ?? "");
         if (!artikel) return null;
+
         const cleanArticleNr = artikel.replace(/[/.\s]/g, "");
         const src = `https://sts.xhs.gg/img/lager/${cleanArticleNr}.webp`;
-        return <ImageZoom><Image src={src} alt={`Bild ${cleanArticleNr}`} className="w-12 h-12 rounded" width={1000} height={1000} /></ImageZoom>;
+
+        return (
+          <div className="w-12 h-12 relative group overflow-hidden rounded-md">
+            <ImageZoom
+              backdropClassName={cn('[&_[data-rmiz-modal-overlay="visible"]]:bg-black/80')}
+            >
+              <Image
+                src={src}
+                alt={`Bild ${cleanArticleNr}`}
+                width={1000}
+                height={1000}
+                className="w-12 h-12 object-cover transform transition-transform duration-500 group-hover:scale-150"
+              />
+            </ImageZoom>
+          </div>
+        );
       },
       meta: { label: "Bild", variant: "boolean", icon: ImageIcon },
       enableColumnFilter: true,
