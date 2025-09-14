@@ -45,9 +45,9 @@ export function DataTablePagination<TData>({
           const selectedCount = table.getFilteredSelectedRowModel().rows.length;
           const filteredCount = table.getFilteredRowModel().rows.length;
           const parts: string[] = [];
-          if (selectedCount > 0) parts.push(`${selectedCount} av ${filteredCount} rader valda`);
-          if (typeof total === "number") parts.push(`${total} artiklar`);
           if (typeof lastUpdatedMs === "number") parts.push(`Uppdaterad ${formatRelativeTime(lastUpdatedMs)}`);
+          if (typeof total === "number") parts.push(`${total} artiklar`);
+          if (selectedCount > 0) parts.push(`${selectedCount} av ${filteredCount} rader valda`);
           return parts.join(" • ");
         })()}
       </div>

@@ -1,48 +1,57 @@
 {
-    "$schema": "https://json-schema.org/draft/2020-12/schema",
-    "type": "object",
-    "patternProperties": {
-      ".*": {
-        "type": "array",
-        "items": {
-          "type": "object",
-          "required": ["markeskod", "artikelnummer"],
-          "properties": {
-            "markeskod": { "type": "string" },
-            "artikelnummer": { "type": "string" },
-            "ersatter": { "type": "string" },
-            "ersatt_av": { "type": "string" },
-            "benamning": { "type": "string" },
-            "benamning_alt": { "type": "string" },
-            "status": { "type": "string" },
-            "extra_info": { "type": "string" },
-            "lagerplats": { "type": "string" },
-            "bild": { "type": "boolean" },
-            "paket": {
-              "type": "array",
-              "items": { "type": "string" }
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "type": "object",
+  "$defs": {
+    "item": {
+      "type": "object",
+      "required": ["markeskod", "artikelnummer"],
+      "properties": {
+        "markeskod": { "type": "string" },
+        "artikelnummer": { "type": "string" },
+        "ersatter": { "type": "string" },
+        "ersatt_av": { "type": "string" },
+        "benamning": { "type": "string" },
+        "benamning_alt": { "type": "string" },
+        "status": { "type": "string" },
+        "extra_info": { "type": "string" },
+        "lagerplats": { "type": "string" },
+        "bild": { "type": "boolean" },
+        "paket": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "fordon": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "korsnummer": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["markeskod", "artikelnummer"],
+            "properties": {
+              "markeskod": { "type": "string" },
+              "artikelnummer": { "type": "string" }
             },
-            "fordon": {
-              "type": "array",
-              "items": { "type": "string" }
-            },
-            "korsnummer": {
-              "type": "array",
-              "items": {
-                "type": "object",
-                "required": ["markeskod", "artikelnummer"],
-                "properties": {
-                  "markeskod": { "type": "string" },
-                  "artikelnummer": { "type": "string" }
-                },
-                "additionalProperties": false
-              }
-            }
-          },
-          "additionalProperties": false
+            "additionalProperties": false
+          }
         }
-      }
-    },
-    "additionalProperties": false
-  }
-  
+      },
+      "additionalProperties": false
+    }
+  },
+  "properties": {
+    "last_edited": { "type": "string" },
+    "inventory": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "patternProperties": {
+    ".*": {
+      "type": "array",
+      "items": { "$ref": "#/$defs/item" }
+    }
+  },
+  "additionalProperties": false
+}

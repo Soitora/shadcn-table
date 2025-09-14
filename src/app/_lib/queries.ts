@@ -311,7 +311,29 @@ export async function getInventory(input: GetInventorySchema) {
           readLager(),
           fs.stat(filePath).catch(() => null),
         ]);
-        const lastUpdatedMs = stat ? stat.mtimeMs : Date.now();
+        // Determine last updated time: prefer JSON's own metadata if present
+        let lastUpdatedMs = stat ? stat.mtimeMs : Date.now();
+        if (json && typeof json === "object" && !Array.isArray(json)) {
+          const lastEdited = (json as Record<string, unknown>)["last_edited"];
+          if (typeof lastEdited === "string" && lastEdited.trim().length > 0) {
+            const raw = lastEdited.trim();
+            // Try native Date first
+            let dt = new Date(raw);
+            if (isNaN(dt.getTime())) {
+              // Support pattern like 'YYYY-MM-DD: HH:MM'
+              const m = raw.match(/^(\d{4}-\d{2}-\d{2})\:\s*(\d{2}:\d{2})(?::(\d{2}))?$/);
+              if (m) {
+                const date = m[1];
+                const time = m[2] + (m[3] ? `:${m[3]}` : ':00');
+                // Construct as local time
+                dt = new Date(`${date} ${time}`);
+              }
+            }
+            if (!isNaN(dt.getTime())) {
+              lastUpdatedMs = dt.getTime();
+            }
+          }
+        }
 
         const all = mapToRows(json);
         const filtered = applyFilters(all, input);
