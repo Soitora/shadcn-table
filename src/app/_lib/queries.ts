@@ -111,8 +111,11 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
         benamning: (it["benamning"] as string | undefined) ?? null,
         benamning_alt: (it["benamning_alt"] as string | undefined) ?? null,
         status: (() => {
-          const s = it["status"] as string | undefined;
-          return typeof s === "string" ? s.trim() : null;
+          const raw = it["status"] as string | undefined;
+          const s = typeof raw === "string" ? raw.trim() : "";
+          const allowed = new Set(["J", "U", "H", "A", "R", "N"]);
+          // Default unknown/empty to 'N' (Ej lagerförd)
+          return allowed.has(s) ? s : "N";
         })(),
         lagerplats: (it["lagerplats"] as string | undefined) ?? null,
         ersatter: toStringArray(it["ersatter"]),
@@ -136,8 +139,11 @@ function mapToRows(json: unknown): InventoryRowUIShape[] {
           benamning: (it["benamning"] as string | undefined) ?? null,
           benamning_alt: (it["benamning_alt"] as string | undefined) ?? null,
           status: (() => {
-            const s = it["status"] as string | undefined;
-            return typeof s === "string" ? s.trim() : null;
+            const raw = it["status"] as string | undefined;
+            const s = typeof raw === "string" ? raw.trim() : "";
+            const allowed = new Set(["J", "U", "H", "A", "R", "N"]);
+            // Default unknown/empty to 'N' (Ej lagerförd)
+            return allowed.has(s) ? s : "N";
           })(),
           lagerplats: (it["lagerplats"] as string | undefined) ?? null,
           ersatter: toStringArray(it["ersatter"]),
