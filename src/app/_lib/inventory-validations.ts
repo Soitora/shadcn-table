@@ -4,7 +4,7 @@ import { z } from "zod";
 import { getFiltersStateParser, getSortingStateParser } from "@/lib/parsers";
 
 export const inventorySearchParamsCache = createSearchParamsCache({
-  filterFlag: parseAsStringEnum(["advancedFilters", "commandFilters", "simple"] as const),
+  filterFlag: parseAsStringEnum(["advancedFilters", "commandFilters", "simple"] as const).withDefault("simple"),
   page: parseAsInteger.withDefault(1),
   perPage: parseAsInteger.withDefault(10),
   // Use a generic that permits string IDs so we can sort by column IDs coming from the table

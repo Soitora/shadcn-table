@@ -47,7 +47,8 @@ export function FeatureFlagsProvider({ children }: FeatureFlagsProviderProps) {
           : null;
       },
       serialize: (value) => value ?? "",
-      defaultValue: null,
+      // Default to simple (Normala filter)
+      defaultValue: "simple",
       clearOnDefault: true,
       shallow: false,
       eq: (a, b) => (!a && !b) || a === b,
@@ -55,8 +56,10 @@ export function FeatureFlagsProvider({ children }: FeatureFlagsProviderProps) {
   );
 
   const onFilterFlagChange = React.useCallback(
-    (value: FilterFlag) => {
-      setFilterFlag(value);
+    (value: FilterFlag | "") => {
+      // Prevent empty selection; coerce to 'simple'
+      const next = (value || "simple") as FilterFlag;
+      setFilterFlag(next);
     },
     [setFilterFlag],
   );
@@ -77,7 +80,7 @@ export function FeatureFlagsProvider({ children }: FeatureFlagsProviderProps) {
           type="single"
           variant="outline"
           size="sm"
-          value={filterFlag}
+          value={filterFlag ?? "simple"}
           onValueChange={onFilterFlagChange}
           className="w-fit gap-0"
         >

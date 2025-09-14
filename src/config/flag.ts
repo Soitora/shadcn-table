@@ -1,9 +1,16 @@
-import { CommandIcon, FileSpreadsheetIcon } from "lucide-react";
+import { CommandIcon, FileSpreadsheetIcon, ListFilter } from "lucide-react";
 
 export type FlagConfig = typeof flagConfig;
 
 export const flagConfig = {
   featureFlags: [
+    {
+      label: "Normala filter",
+      value: "simple" as const,
+      icon: ListFilter,
+      tooltipTitle: "Normala filter",
+      tooltipDescription: "Standardfilter med snabb facetterad filtrering.",
+    },
     {
       label: "Avancerade filter",
       value: "advancedFilters" as const,
